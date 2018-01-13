@@ -4,8 +4,6 @@ project(Projekt_ArtysciProgramisici)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Projekt_ArtysciProgramisici program/main.cpp
-<<<<<<< HEAD
-<<<<<<< HEAD
                library/src/Repository.cpp library/include/Repository.h
                library/src/Order.cpp library/include/Order.h
         library/src/ShipmentType.cpp library/include/ShipmentType.h
@@ -18,6 +16,3 @@ find_package(Boost 1.55.0)
 if(NOT Boost_FOUND)
     message(FATAL_ERROR "Could not find boost!")
 endif()
-=======
-               library/src/Repository.cpp library/include/Repository.h)
->>>>>>> bde66301c69e8a0dee235b7a000e3a777b017736
