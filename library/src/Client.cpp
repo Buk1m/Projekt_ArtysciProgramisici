@@ -58,25 +58,25 @@ const string Client::getDeliveryAddress() const
 
 
 
-void Client::updateInfo(string firstName, string lastName, string e_mail)
+void Client::updateInfo(const string &firstName, const string &lastName, const string &e_mail)
 {
     this->firstName = firstName;
     this->lastName = lastName;
     this->e_mail = e_mail;
 }
 
-void Client::updateLoginAndPassword(string login, string password)
+void Client::updateLoginAndPassword(const string &login, const string &password)
 {
     this->login = login;
     this->password = password;
 }
 
-void Client::addToCart(shared_ptr<Merchandise> product, int amount)
+void Client::addToCart(const shared_ptr<Merchandise> &product, const int &amount)
 {
     cart->addProduct(product);
 }
 
-void Client::removeFromCart(shared_ptr<Merchandise> product)
+void Client::removeFromCart(const shared_ptr<Merchandise> &product)
 {
     cart->removeProduct(product);
 }

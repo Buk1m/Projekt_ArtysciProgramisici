@@ -69,6 +69,7 @@ public:
     string printBill() const; //??? nwm czy dać tutaj ???
     string getOrderState() const;
     void endOrder();
+    string getInfoAboutOrder() const;
 
 
 };

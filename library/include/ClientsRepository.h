@@ -17,7 +17,7 @@ private:
 
 public:
     ClientRepository();
-    virtual ~ClientRepository();
+    ~ClientRepository() = default;
 
     void create(shared_ptr<Client> client);
     void remove(shared_ptr<Client> client);

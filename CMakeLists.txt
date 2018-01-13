@@ -12,8 +12,8 @@ add_executable(Projekt_ArtysciProgramisici program/main.cpp
         library/src/Cart.cpp library/include/Cart.h
         library/src/Merchandise.cpp library/include/Merchandise.h
         library/src/Address.cpp library/include/Address.h
-        library/src/Clientmanager.cpp library/include/Clientmanager.h
-        library/src/ClientRepository.cpp library/include/ClientRepository.h)
+        library/src/ClientsManager.cpp library/include/ClientsManager.h
+        library/src/ClientsRepository.cpp library/include/ClientsRepository.h library/src/MerchandisesRepository.cpp library/include/MerchandisesRepository.h library/src/MerchandisesManager.cpp library/include/MerchandisesManager.h library/src/OrdersRepository.cpp library/include/OrdersRepository.h)
 
 set(BOOST_ROOT "C:/boost/boost_1_55_0/boost_1_55_0")
 

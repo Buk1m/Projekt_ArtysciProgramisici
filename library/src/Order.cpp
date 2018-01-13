@@ -82,3 +82,15 @@ void Order::endOrder()
 {
     _state = completed;
 }
+
+string Order::getInfoAboutOrder() const
+{
+    stringstream info;
+    info << "--- Order --- "
+         << "id:" << orderId
+         << "\ncost:" << orderCost
+         << "\ncomment:" << orderComment
+         << "\nstate:" << _state
+         << endl;
+    return info.str();
+}

@@ -18,7 +18,7 @@ using namespace boost::uuids;
 class Merchandise
 {
 protected:
-    const uuid merchandiseId;
+    uuid merchandiseId;
     string name;
     float price;
     int quantity;
@@ -30,9 +30,9 @@ public:
     string getSpecification() const;
     float getPrice() const;
     int getQuantity() const;
+    string getInfoAboutMerchandise() const;
 
     void resupply(const int &quantity);
 };
-
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_MERCHANDISE_H

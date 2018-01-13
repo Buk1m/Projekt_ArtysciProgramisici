@@ -9,9 +9,7 @@
 #include <vector>
 #include <memory>
 
-
 using namespace std;
-
 
 template <typename objectType> class Repository
 {
@@ -22,11 +20,7 @@ public:
     Repository(){}
 
     //destruktory
-<<<<<<< HEAD
-    ~Repository();
-=======
     virtual ~Repository(){}
->>>>>>> f89b14d8a56692bbe209b01c1c8e51cd61ad6482
 
     //metody
     virtual void    create(shared_ptr<objectType> object) = 0;

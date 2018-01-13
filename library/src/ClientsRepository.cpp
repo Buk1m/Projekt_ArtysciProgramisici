@@ -2,13 +2,11 @@
 // Created by Bartek on 1/13/2018.
 //
 
-#include "../include/ClientRepository.h"
+#include "../include/ClientsRepository.h"
 #include "../include/Client.h"
 #include <algorithm>
 
 ClientRepository::ClientRepository() {}
-
-ClientRepository::~ClientRepository() {}
 
 void ClientRepository::create(shared_ptr<Client> client)
 {

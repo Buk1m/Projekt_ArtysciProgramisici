@@ -6,7 +6,7 @@
 #define PROJEKT_ARTYSCIPROGRAMISICI_CLIENTMANAGER_H
 
 #include <memory>
-#include "ClientRepository.h"
+#include "ClientsRepository.h"
 
 using namespace std;
 
@@ -21,9 +21,9 @@ public:
 
     ~Clientmanager() = default;
 
-    void createClient(shared_ptr<Client> client);
+    void createClient(const shared_ptr<Client> &client);
 
-    void removeClient(shared_ptr<Client> client);
+    void removeClient(const shared_ptr<Client> &client);
 };
 
 
