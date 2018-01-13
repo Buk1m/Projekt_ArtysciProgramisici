@@ -14,7 +14,7 @@ using namespace std;
 template <typename objectType, typename parametr> class Repository
 {
 protected:
-    vector< unique_ptr<objectType> > objects;
+    vector< shared_ptr<objectType> > objects;
 public:
     //konstruktory
     Repository();
@@ -23,11 +23,11 @@ public:
     virtual ~Repository();
 
     //metody
-    virtual void    Create(unique_ptr<objectType> object) = 0;
-    virtual void    Remove(unique_ptr<objectType> object) = 0;
-    virtual void    Update(unique_ptr<objectType> object, parametr update) = 0;
+    virtual void    Create(shared_ptr<objectType> object) = 0;
+    virtual void    Remove(shared_ptr<objectType> object) = 0;
+    virtual void    Update(shared_ptr<objectType> object, parametr update) = 0;
     virtual string  GetAll() = 0;
-    virtual int     Find(unique_ptr<objectType> object) = 0;
+    virtual int     Find(shared_ptr<objectType> object) = 0;
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_REPOSITORY_H

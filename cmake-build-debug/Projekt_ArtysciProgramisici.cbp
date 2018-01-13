@@ -82,13 +82,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/Repository.cpp">
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/include/Order.h">
 			<Option target="Projekt_ArtysciProgramisici"/>
 		</Unit>
-		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/Repository.h">
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/include/PaymentType.h">
 			<Option target="Projekt_ArtysciProgramisici"/>
 		</Unit>
-		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/main.cpp">
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/include/Repository.h">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/include/ShipmentType.h">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/src/Order.cpp">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/src/PaymentType.cpp">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/src/Repository.cpp">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/src/ShipmentType.cpp">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/program/main.cpp">
 			<Option target="Projekt_ArtysciProgramisici"/>
 		</Unit>
 		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/CMakeLists.txt">

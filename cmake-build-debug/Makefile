@@ -122,59 +122,140 @@ Projekt_ArtysciProgramisici/fast:
 	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/build
 .PHONY : Projekt_ArtysciProgramisici/fast
 
-Repository.obj: Repository.cpp.obj
+library/src/Order.obj: library/src/Order.cpp.obj
 
-.PHONY : Repository.obj
-
-# target to build an object file
-Repository.cpp.obj:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/Repository.cpp.obj
-.PHONY : Repository.cpp.obj
-
-Repository.i: Repository.cpp.i
-
-.PHONY : Repository.i
-
-# target to preprocess a source file
-Repository.cpp.i:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/Repository.cpp.i
-.PHONY : Repository.cpp.i
-
-Repository.s: Repository.cpp.s
-
-.PHONY : Repository.s
-
-# target to generate assembly for a file
-Repository.cpp.s:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/Repository.cpp.s
-.PHONY : Repository.cpp.s
-
-main.obj: main.cpp.obj
-
-.PHONY : main.obj
+.PHONY : library/src/Order.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+library/src/Order.cpp.obj:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Order.cpp.obj
+.PHONY : library/src/Order.cpp.obj
 
-main.i: main.cpp.i
+library/src/Order.i: library/src/Order.cpp.i
 
-.PHONY : main.i
+.PHONY : library/src/Order.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/main.cpp.i
-.PHONY : main.cpp.i
+library/src/Order.cpp.i:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Order.cpp.i
+.PHONY : library/src/Order.cpp.i
 
-main.s: main.cpp.s
+library/src/Order.s: library/src/Order.cpp.s
 
-.PHONY : main.s
+.PHONY : library/src/Order.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/main.cpp.s
-.PHONY : main.cpp.s
+library/src/Order.cpp.s:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Order.cpp.s
+.PHONY : library/src/Order.cpp.s
+
+library/src/PaymentType.obj: library/src/PaymentType.cpp.obj
+
+.PHONY : library/src/PaymentType.obj
+
+# target to build an object file
+library/src/PaymentType.cpp.obj:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/PaymentType.cpp.obj
+.PHONY : library/src/PaymentType.cpp.obj
+
+library/src/PaymentType.i: library/src/PaymentType.cpp.i
+
+.PHONY : library/src/PaymentType.i
+
+# target to preprocess a source file
+library/src/PaymentType.cpp.i:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/PaymentType.cpp.i
+.PHONY : library/src/PaymentType.cpp.i
+
+library/src/PaymentType.s: library/src/PaymentType.cpp.s
+
+.PHONY : library/src/PaymentType.s
+
+# target to generate assembly for a file
+library/src/PaymentType.cpp.s:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/PaymentType.cpp.s
+.PHONY : library/src/PaymentType.cpp.s
+
+library/src/Repository.obj: library/src/Repository.cpp.obj
+
+.PHONY : library/src/Repository.obj
+
+# target to build an object file
+library/src/Repository.cpp.obj:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Repository.cpp.obj
+.PHONY : library/src/Repository.cpp.obj
+
+library/src/Repository.i: library/src/Repository.cpp.i
+
+.PHONY : library/src/Repository.i
+
+# target to preprocess a source file
+library/src/Repository.cpp.i:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Repository.cpp.i
+.PHONY : library/src/Repository.cpp.i
+
+library/src/Repository.s: library/src/Repository.cpp.s
+
+.PHONY : library/src/Repository.s
+
+# target to generate assembly for a file
+library/src/Repository.cpp.s:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Repository.cpp.s
+.PHONY : library/src/Repository.cpp.s
+
+library/src/ShipmentType.obj: library/src/ShipmentType.cpp.obj
+
+.PHONY : library/src/ShipmentType.obj
+
+# target to build an object file
+library/src/ShipmentType.cpp.obj:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/ShipmentType.cpp.obj
+.PHONY : library/src/ShipmentType.cpp.obj
+
+library/src/ShipmentType.i: library/src/ShipmentType.cpp.i
+
+.PHONY : library/src/ShipmentType.i
+
+# target to preprocess a source file
+library/src/ShipmentType.cpp.i:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/ShipmentType.cpp.i
+.PHONY : library/src/ShipmentType.cpp.i
+
+library/src/ShipmentType.s: library/src/ShipmentType.cpp.s
+
+.PHONY : library/src/ShipmentType.s
+
+# target to generate assembly for a file
+library/src/ShipmentType.cpp.s:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/ShipmentType.cpp.s
+.PHONY : library/src/ShipmentType.cpp.s
+
+program/main.obj: program/main.cpp.obj
+
+.PHONY : program/main.obj
+
+# target to build an object file
+program/main.cpp.obj:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/program/main.cpp.obj
+.PHONY : program/main.cpp.obj
+
+program/main.i: program/main.cpp.i
+
+.PHONY : program/main.i
+
+# target to preprocess a source file
+program/main.cpp.i:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/program/main.cpp.i
+.PHONY : program/main.cpp.i
+
+program/main.s: program/main.cpp.s
+
+.PHONY : program/main.s
+
+# target to generate assembly for a file
+program/main.cpp.s:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/program/main.cpp.s
+.PHONY : program/main.cpp.s
 
 # Help Target
 help:
@@ -185,12 +266,21 @@ help:
 	@echo ... Projekt_ArtysciProgramisici
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Repository.obj
-	@echo ... Repository.i
-	@echo ... Repository.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... library/src/Order.obj
+	@echo ... library/src/Order.i
+	@echo ... library/src/Order.s
+	@echo ... library/src/PaymentType.obj
+	@echo ... library/src/PaymentType.i
+	@echo ... library/src/PaymentType.s
+	@echo ... library/src/Repository.obj
+	@echo ... library/src/Repository.i
+	@echo ... library/src/Repository.s
+	@echo ... library/src/ShipmentType.obj
+	@echo ... library/src/ShipmentType.i
+	@echo ... library/src/ShipmentType.s
+	@echo ... program/main.obj
+	@echo ... program/main.i
+	@echo ... program/main.s
 .PHONY : help
 
 
