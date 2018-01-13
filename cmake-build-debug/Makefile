@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.3\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2017.3.1\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2017.3\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2017.3.1\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Bartek\Documents\GitHub\Projekt_ArtysciProgramisici
+CMAKE_SOURCE_DIR = C:\Users\4DAM\CLionProjects\Projekt_ArtysciProgramisici
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Bartek\Documents\GitHub\Projekt_ArtysciProgramisici\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\4DAM\CLionProjects\Projekt_ArtysciProgramisici\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\Bartek\Documents\GitHub\Projekt_ArtysciProgramisici\
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2017.3\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2017.3.1\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2017.3\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2017.3.1\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Bartek\Documents\GitHub\Projekt_ArtysciProgramisici\cmake-build-debug\CMakeFiles C:\Users\Bartek\Documents\GitHub\Projekt_ArtysciProgramisici\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\4DAM\CLionProjects\Projekt_ArtysciProgramisici\cmake-build-debug\CMakeFiles C:\Users\4DAM\CLionProjects\Projekt_ArtysciProgramisici\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Bartek\Documents\GitHub\Projekt_ArtysciProgramisici\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\4DAM\CLionProjects\Projekt_ArtysciProgramisici\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,59 +122,59 @@ Projekt_ArtysciProgramisici/fast:
 	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/build
 .PHONY : Projekt_ArtysciProgramisici/fast
 
-library/src/Repository.obj: library/src/Repository.cpp.obj
+Repository.obj: Repository.cpp.obj
 
-.PHONY : library/src/Repository.obj
-
-# target to build an object file
-library/src/Repository.cpp.obj:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Repository.cpp.obj
-.PHONY : library/src/Repository.cpp.obj
-
-library/src/Repository.i: library/src/Repository.cpp.i
-
-.PHONY : library/src/Repository.i
-
-# target to preprocess a source file
-library/src/Repository.cpp.i:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Repository.cpp.i
-.PHONY : library/src/Repository.cpp.i
-
-library/src/Repository.s: library/src/Repository.cpp.s
-
-.PHONY : library/src/Repository.s
-
-# target to generate assembly for a file
-library/src/Repository.cpp.s:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Repository.cpp.s
-.PHONY : library/src/Repository.cpp.s
-
-program/main.obj: program/main.cpp.obj
-
-.PHONY : program/main.obj
+.PHONY : Repository.obj
 
 # target to build an object file
-program/main.cpp.obj:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/program/main.cpp.obj
-.PHONY : program/main.cpp.obj
+Repository.cpp.obj:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/Repository.cpp.obj
+.PHONY : Repository.cpp.obj
 
-program/main.i: program/main.cpp.i
+Repository.i: Repository.cpp.i
 
-.PHONY : program/main.i
+.PHONY : Repository.i
 
 # target to preprocess a source file
-program/main.cpp.i:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/program/main.cpp.i
-.PHONY : program/main.cpp.i
+Repository.cpp.i:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/Repository.cpp.i
+.PHONY : Repository.cpp.i
 
-program/main.s: program/main.cpp.s
+Repository.s: Repository.cpp.s
 
-.PHONY : program/main.s
+.PHONY : Repository.s
 
 # target to generate assembly for a file
-program/main.cpp.s:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/program/main.cpp.s
-.PHONY : program/main.cpp.s
+Repository.cpp.s:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/Repository.cpp.s
+.PHONY : Repository.cpp.s
+
+main.obj: main.cpp.obj
+
+.PHONY : main.obj
+
+# target to build an object file
+main.cpp.obj:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/main.cpp.obj
+.PHONY : main.cpp.obj
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -185,12 +185,12 @@ help:
 	@echo ... Projekt_ArtysciProgramisici
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... library/src/Repository.obj
-	@echo ... library/src/Repository.i
-	@echo ... library/src/Repository.s
-	@echo ... program/main.obj
-	@echo ... program/main.i
-	@echo ... program/main.s
+	@echo ... Repository.obj
+	@echo ... Repository.i
+	@echo ... Repository.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 .PHONY : help
 
 
