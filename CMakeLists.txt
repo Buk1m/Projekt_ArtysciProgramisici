@@ -17,6 +17,3 @@ find_package(Boost 1.55.0)
 if(NOT Boost_FOUND)
     message(FATAL_ERROR "Could not find boost!")
 endif()
-=======
-               library/src/Repository.cpp library/include/Repository.h library/src/PenisZaWbudy.cpp library/include/PenisZaWbudy.h)
->>>>>>> 9d8844f6d94d498c7e9324cac3cb01644137fba7
