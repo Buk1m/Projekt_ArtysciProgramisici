@@ -11,6 +11,7 @@
 
 using namespace std;
 
+
 template <typename objectType, typename parametr> class Repository
 {
 protected:
