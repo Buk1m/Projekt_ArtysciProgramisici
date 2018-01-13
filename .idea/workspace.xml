@@ -11,19 +11,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acedeac9-4bd5-4bef-a42a-5e74295f9c6f" name="Default" comment="Merge branch 'master' of https://github.com/PostAdam/Projekt_ArtysciProgramisici&#10;&#10;# Conflicts:&#10;#&#9;CMakeLists.txt">
-      <change beforePath="" afterPath="$PROJECT_DIR$/library/include/Address.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/library/include/ClientRepository.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/library/include/Clientmanager.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/library/src/Address.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/library/src/ClientRepository.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/library/src/Clientmanager.cpp" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="acedeac9-4bd5-4bef-a42a-5e74295f9c6f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change beforePath="$PROJECT_DIR$/library/include/Client.h" afterPath="$PROJECT_DIR$/library/include/Client.h" />
-      <change beforePath="$PROJECT_DIR$/library/include/Repository.h" afterPath="$PROJECT_DIR$/library/include/Repository.h" />
-      <change beforePath="$PROJECT_DIR$/library/src/Client.cpp" afterPath="$PROJECT_DIR$/library/src/Client.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -314,12 +303,20 @@
       <option name="presentableId" value="Default" />
       <updated>1515860111774</updated>
       <workItem from="1515860113010" duration="393000" />
-      <workItem from="1515860837936" duration="11999000" />
+      <workItem from="1515860837936" duration="12016000" />
     </task>
+    <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/PostAdam/Projekt_ArtysciProgramisici&#10;&#10;# Conflicts:&#10;#&#9;CMakeLists.txt">
+      <created>1515872949450</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1515872949450</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12392000" />
+    <option name="totallyTimeSpent" value="12409000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1951" height="1040" extended-state="0" />
@@ -362,6 +359,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Merge branch 'master' of https://github.com/PostAdam/Projekt_ArtysciProgramisici&#10;&#10;# Conflicts:&#10;#&#9;CMakeLists.txt" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/PostAdam/Projekt_ArtysciProgramisici&#10;&#10;# Conflicts:&#10;#&#9;CMakeLists.txt" />
   </component>
