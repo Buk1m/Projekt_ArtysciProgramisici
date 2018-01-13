@@ -1,0 +1,15 @@
+//
+// Created by Bartek on 1/13/2018.
+//
+
+#ifndef PROJEKT_ARTYSCIPROGRAMISICI_CLIENT_H
+#define PROJEKT_ARTYSCIPROGRAMISICI_CLIENT_H
+
+
+class Client
+{
+
+};
+
+
+#endif //PROJEKT_ARTYSCIPROGRAMISICI_CLIENT_H
