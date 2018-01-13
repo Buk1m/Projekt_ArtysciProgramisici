@@ -48,3 +48,4 @@ cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Client.
 cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Cart.cpp.obj
 dir_to_ignore/cmake-build-debug
 dir_to_ignore/.idea
+.idea/Projekt_ArtysciProgramisici.iml
