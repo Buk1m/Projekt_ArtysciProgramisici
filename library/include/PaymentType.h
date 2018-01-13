@@ -5,10 +5,19 @@
 #ifndef PROJEKT_ARTYSCIPROGRAMISICI_PAYMENT_H
 #define PROJEKT_ARTYSCIPROGRAMISICI_PAYMENT_H
 
+#include <iostream>
+#include "boost/uuid/uuid.hpp"
+#include "boost/uuid/uuid_generators.hpp"
+#include "boost/uuid/uuid_io.hpp"
+
+using namespace std;
+using namespace boost::uuids;
 
 class PaymentType
 {
-
+protected:
+    const uuid paymentId;
+    float paymentPrice;
 };
 
 
