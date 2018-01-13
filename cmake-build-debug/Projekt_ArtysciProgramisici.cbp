@@ -82,13 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Bartek/Documents/GitHub/Projekt_ArtysciProgramisici/library/include/PenisZaWbudy.h">
-			<Option target="Projekt_ArtysciProgramisici"/>
-		</Unit>
 		<Unit filename="C:/Users/Bartek/Documents/GitHub/Projekt_ArtysciProgramisici/library/include/Repository.h">
-			<Option target="Projekt_ArtysciProgramisici"/>
-		</Unit>
-		<Unit filename="C:/Users/Bartek/Documents/GitHub/Projekt_ArtysciProgramisici/library/src/PenisZaWbudy.cpp">
 			<Option target="Projekt_ArtysciProgramisici"/>
 		</Unit>
 		<Unit filename="C:/Users/Bartek/Documents/GitHub/Projekt_ArtysciProgramisici/library/src/Repository.cpp">

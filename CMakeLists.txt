@@ -4,4 +4,4 @@ project(Projekt_ArtysciProgramisici)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Projekt_ArtysciProgramisici program/main.cpp
-               library/src/Repository.cpp library/include/Repository.h library/src/PenisZaWbudy.cpp library/include/PenisZaWbudy.h)
+               library/src/Repository.cpp library/include/Repository.h)

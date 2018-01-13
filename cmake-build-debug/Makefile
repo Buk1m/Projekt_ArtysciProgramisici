@@ -122,33 +122,6 @@ Projekt_ArtysciProgramisici/fast:
 	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/build
 .PHONY : Projekt_ArtysciProgramisici/fast
 
-library/src/PenisZaWbudy.obj: library/src/PenisZaWbudy.cpp.obj
-
-.PHONY : library/src/PenisZaWbudy.obj
-
-# target to build an object file
-library/src/PenisZaWbudy.cpp.obj:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/PenisZaWbudy.cpp.obj
-.PHONY : library/src/PenisZaWbudy.cpp.obj
-
-library/src/PenisZaWbudy.i: library/src/PenisZaWbudy.cpp.i
-
-.PHONY : library/src/PenisZaWbudy.i
-
-# target to preprocess a source file
-library/src/PenisZaWbudy.cpp.i:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/PenisZaWbudy.cpp.i
-.PHONY : library/src/PenisZaWbudy.cpp.i
-
-library/src/PenisZaWbudy.s: library/src/PenisZaWbudy.cpp.s
-
-.PHONY : library/src/PenisZaWbudy.s
-
-# target to generate assembly for a file
-library/src/PenisZaWbudy.cpp.s:
-	$(MAKE) -f CMakeFiles\Projekt_ArtysciProgramisici.dir\build.make CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/PenisZaWbudy.cpp.s
-.PHONY : library/src/PenisZaWbudy.cpp.s
-
 library/src/Repository.obj: library/src/Repository.cpp.obj
 
 .PHONY : library/src/Repository.obj
@@ -212,9 +185,6 @@ help:
 	@echo ... Projekt_ArtysciProgramisici
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... library/src/PenisZaWbudy.obj
-	@echo ... library/src/PenisZaWbudy.i
-	@echo ... library/src/PenisZaWbudy.s
 	@echo ... library/src/Repository.obj
 	@echo ... library/src/Repository.i
 	@echo ... library/src/Repository.s

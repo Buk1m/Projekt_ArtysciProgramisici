@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Bartek/Documents/GitHub/Projekt_ArtysciProgramisici/library/src/PenisZaWbudy.cpp" "C:/Users/Bartek/Documents/GitHub/Projekt_ArtysciProgramisici/cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/PenisZaWbudy.cpp.obj"
   "C:/Users/Bartek/Documents/GitHub/Projekt_ArtysciProgramisici/library/src/Repository.cpp" "C:/Users/Bartek/Documents/GitHub/Projekt_ArtysciProgramisici/cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Repository.cpp.obj"
   "C:/Users/Bartek/Documents/GitHub/Projekt_ArtysciProgramisici/program/main.cpp" "C:/Users/Bartek/Documents/GitHub/Projekt_ArtysciProgramisici/cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/program/main.cpp.obj"
   )
