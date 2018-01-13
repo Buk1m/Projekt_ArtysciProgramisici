@@ -52,7 +52,7 @@ private:
     shared_ptr<PaymentType> paymentType;
     vector< shared_ptr<Merchandise> > products;
 public:
-    Order(/*const shared_ptr<Client> &client, */const shared_ptr<ShipmentType> &shipmentType,
+    Order(const shared_ptr<Client> &client, const shared_ptr<ShipmentType> &shipmentType,
           const shared_ptr<PaymentType> &paymentType, const string &orderComment);
 
     ~Order();
