@@ -23,11 +23,10 @@ public:
     virtual ~Repository();
 
     //metody
-    virtual void    Create(shared_ptr<objectType> object) = 0;
-    virtual void    Remove(shared_ptr<objectType> object) = 0;
-    virtual void    Update(shared_ptr<objectType> object, parametr update) = 0;
-    virtual string  GetAll() = 0;
-    virtual int     Find(shared_ptr<objectType> object) = 0;
+    virtual void    create(shared_ptr<objectType> object) = 0;
+    virtual void    remove(shared_ptr<objectType> object) = 0;
+    virtual void    update(shared_ptr<objectType> object, parametr update) = 0;
+    virtual string  getAll() = 0;
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_REPOSITORY_H
