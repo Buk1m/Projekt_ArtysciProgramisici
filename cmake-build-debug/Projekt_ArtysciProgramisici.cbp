@@ -82,13 +82,49 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+<<<<<<< HEAD
+<<<<<<< HEAD
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/include/Order.h">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/include/PaymentType.h">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/include/Repository.h">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/include/ShipmentType.h">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/src/Order.cpp">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/src/PaymentType.cpp">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/src/Repository.cpp">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/library/src/ShipmentType.cpp">
+			<Option target="Projekt_ArtysciProgramisici"/>
+		</Unit>
+		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/program/main.cpp">
+=======
+		<Unit filename="C:/Users/Bartek/Documents/GitHub/Projekt_ArtysciProgramisici/library/include/PenisZaWbudy.h">
+=======
 		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/Repository.cpp">
+>>>>>>> bde66301c69e8a0dee235b7a000e3a777b017736
 			<Option target="Projekt_ArtysciProgramisici"/>
 		</Unit>
 		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/Repository.h">
 			<Option target="Projekt_ArtysciProgramisici"/>
 		</Unit>
+<<<<<<< HEAD
+		<Unit filename="C:/Users/Bartek/Documents/GitHub/Projekt_ArtysciProgramisici/library/src/PenisZaWbudy.cpp">
+>>>>>>> 9d8844f6d94d498c7e9324cac3cb01644137fba7
+=======
 		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/main.cpp">
+>>>>>>> bde66301c69e8a0dee235b7a000e3a777b017736
 			<Option target="Projekt_ArtysciProgramisici"/>
 		</Unit>
 		<Unit filename="C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/CMakeLists.txt">
