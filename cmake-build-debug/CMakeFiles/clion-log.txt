@@ -1,5 +1,7 @@
 "C:\Program Files\JetBrains\CLion 2017.3.1\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\4DAM\CLionProjects\Projekt_ArtysciProgramisici
--- Boost version: 1.55.0
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/4DAM/CLionProjects/Projekt_ArtysciProgramisici/cmake-build-debug
+CMake Error at CMakeLists.txt:20:
+  Parse error.  Expected a command name, got unquoted argument with text
+  "=======".
+
+
+-- Configuring incomplete, errors occurred!
