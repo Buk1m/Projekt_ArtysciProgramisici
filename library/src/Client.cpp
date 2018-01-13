@@ -5,10 +5,15 @@
 #include <memory>
 #include <boost/uuid/uuid.hpp>
 #include "../include/Client.h"
+#include "../include/Cart.h"
 
-Client::Client(const string &firstName, const string &lastName, const string &password, const string &login,
-               const string &e_mail) : firstName(firstName), lastName(lastName), password(password), login(login),
-                                       e_mail(e_mail)
+Client::Client(const string &firstName, const string &lastName,
+               const string &password, const string &login, const string &e_mail)
+      : firstName(firstName),
+        lastName(lastName),
+        password(password),
+        login(login),
+        e_mail(e_mail)
 {
     cart = make_shared<Cart>();
 
@@ -16,8 +21,8 @@ Client::Client(const string &firstName, const string &lastName, const string &pa
     personalID = generateID();
 
     time_zone_ptr zone(new posix_time_zone("UTC+01:00:00"));
-    ptime now = second_clock::local_time();
-    registerDate = make_shared<local_date_time>(now, zone);
+    ptime currentTime = second_clock::local_time();
+    registerDate = make_shared<local_date_time>(currentTime, zone);
 
 }
 
@@ -43,13 +48,15 @@ shared_ptr<Cart> Client::getProductsCart() const
 
 const string Client::getAddress() const
 {
-    return clientAddress->getAddress();
+    return clientAddress->getAddressInfo();
 }
 
 const string Client::getDeliveryAddress() const
 {
-    return deliveryAddress->getAddress();
+    return deliveryAddress->getAddressInfo();
 }
+
+
 
 void Client::updateInfo(string firstName, string lastName, string e_mail)
 {
@@ -66,20 +73,20 @@ void Client::updateLoginAndPassword(string login, string password)
 
 void Client::addToCart(shared_ptr<Merchandise> product, int amount)
 {
-    cart->addProduct(Merchandise
-    merchendise);
+    cart->addProduct(product);
 }
 
-void Client::removeFromCart(shared_ptr<Merchandise> merchendise)
+void Client::removeFromCart(shared_ptr<Merchandise> product)
 {
-    cart->removeProduct(Merchandise
-    merchandise);
+    cart->removeProduct(product);
 }
 
+
+
+/*
 const string Client::getClientOrders() const
 {
-    return ordersManager.getAllClientOrders(shared_ptr<Client>
-    client);
+    return ordersManager.getAllClientOrders(shared_ptr<Client> client);
 }
 
 void Client::reviceOrder() const
@@ -99,15 +106,16 @@ bool Client::makePaymant()
         return false;
     }
 }
+*/
 
 const string Client::getInfoAboutClient() const
 {
     stringstream info;
     info << "--- Client --- "
-         << "First name:" << firstName
-         << "\nLast name:" << lastName
+         << "first name:" << firstName
+         << "\nlast name:" << lastName
          << "\nemail:" << e_mail
-         << "\naddress:" << clientAddress->getAddress()
+         << "\naddress:" << clientAddress->getAddressInfo()
          << endl;
     return info.str();
 }

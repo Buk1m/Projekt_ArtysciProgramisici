@@ -3,10 +3,12 @@
 //
 
 #include "../include/ClientRepository.h"
+#include "../include/Client.h"
 #include <algorithm>
 
-ClientRepository::ClientRepository()
-{}
+ClientRepository::ClientRepository() {}
+
+ClientRepository::~ClientRepository() {}
 
 void ClientRepository::create(shared_ptr<Client> client)
 {
@@ -17,11 +19,6 @@ void ClientRepository::remove(shared_ptr<Client> client)
 {
     auto it = find(clients.begin(), clients.end(), client);
     clients.erase(it);
-}
-
-void ClientRepository::update(shared_ptr<Client> client, string update)
-{
-
 }
 
 string ClientRepository::getAll()
@@ -36,8 +33,3 @@ string ClientRepository::getAll()
     return info.str();
 }
 
-namespace kajdshfk
-{
-
-
-}

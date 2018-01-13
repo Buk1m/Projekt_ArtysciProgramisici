@@ -7,7 +7,7 @@
 Address::Address(const string &street, const string &number) : street(street), number(number)
 {}
 
-const string Address::getAddress() const
+const string Address::getAddressInfo() const
 {
     return street + " " + number;
 }

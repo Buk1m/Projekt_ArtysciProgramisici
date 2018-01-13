@@ -3,11 +3,3 @@
 //
 
 #include "../include/Repository.h"
-
-template<typename objectType, typename parametr>
-Repository<objectType, parametr>::Repository()
-{ }
-
-template<typename objectType, typename parametr>
-Repository<objectType, parametr>::~Repository()
-{ }

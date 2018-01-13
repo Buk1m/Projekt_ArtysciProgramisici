@@ -9,24 +9,24 @@
 #include <vector>
 #include <memory>
 
+
 using namespace std;
 
 
-template <typename objectType, typename parametr> class Repository
+template <typename objectType> class Repository
 {
 protected:
     vector< shared_ptr<objectType> > objects;
 public:
     //konstruktory
-    Repository();
+    Repository(){}
 
     //destruktory
-    virtual ~Repository();
+    virtual ~Repository(){}
 
     //metody
     virtual void    create(shared_ptr<objectType> object) = 0;
     virtual void    remove(shared_ptr<objectType> object) = 0;
-    virtual void    update(shared_ptr<objectType> object, parametr update) = 0;
     virtual string  getAll() = 0;
 };
 
