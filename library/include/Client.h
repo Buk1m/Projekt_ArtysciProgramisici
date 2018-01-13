@@ -18,8 +18,9 @@ using namespace boost::posix_time;
 using namespace boost::uuids;
 
 class Merchandise;
-class Cart;
 class OrderManager;
+class Cart;
+
 
 class Client
 {

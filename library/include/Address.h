@@ -18,7 +18,7 @@ public:
 
     ~Address() = default;
 
-    const string getAddress() const;
+    const string getAddressInfo() const;
 };
 
 

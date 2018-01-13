@@ -6,22 +6,21 @@
 #define PROJEKT_ARTYSCIPROGRAMISICI_CLIENTREPOSITORY_H
 
 #include "Repository.h"
-#include "Client.h"
+
+class Client;
 
 class ClientRepository
-        : public Repository
+        : public Repository<Client>
 {
 private:
     vector<shared_ptr<Client>> clients;
 
 public:
     ClientRepository();
-
-    ~ClientRepository() = default;
+    virtual ~ClientRepository();
 
     void create(shared_ptr<Client> client);
     void remove(shared_ptr<Client> client);
-    void update(shared_ptr<Client> client, string update);
     string getAll();
 };
 
