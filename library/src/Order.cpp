@@ -6,16 +6,79 @@
 #include "../include/PaymentType.h"
 #include "../include/ShipmentType.h"
 #include "../include/Client.h"
+#include "../include/Cart.h"
 
-
-Order::Order(const shared_ptr<Client> &client, const shared_ptr<ShipmentType> &shipmentType,
+//constructor==========================================================================
+Order::Order(const shared_ptr<Client> &client, const shared_ptr<Cart> &cart,
+             const shared_ptr<ShipmentType> &shipmentType,
              const shared_ptr<PaymentType> &paymentType, const string &orderComment)
-      : client(client),
-        shipmentType(shipmentType),
-        paymentType(paymentType),
-        orderComment(orderComment)
+        : orderId(boost::uuids::random_generator()()),
+          client(client),
+          shipmentType(shipmentType),
+          paymentType(paymentType),
+          orderComment(orderComment)
 {
+    _state = current;
 
+    time_zone_ptr zone(new posix_time_zone("UTC-00:00:00"));
+    ptime currentTime = second_clock::local_time();
+    submitOrderTime = make_shared<local_date_time>(currentTime, zone);
+    completionOrderTime = nullptr;
+
+    moveProductsFromCartToOrder(cart->getProducts());
+    orderCost = cart->getAllProductsPrice();
 }
 
+//descructor==========================================================================
 Order::~Order() { }
+
+
+//methods==========================================================================
+void Order::moveProductsFromCartToOrder(const vector<shared_ptr<Merchandise>> &products)
+{
+    for(auto product : products)
+    {
+        this->products.push_back(product);
+    }
+}
+
+
+void Order::setOrderState(const string &state)
+{
+    if(state == "completed")
+        _state = completed;
+    else if(state == "cancelled")
+        _state = cancelled;
+}
+
+void Order::setPaymentType(const shared_ptr<PaymentType> &paymentType)
+{
+    this->paymentType = paymentType;
+}
+
+void Order::setShipmentType(const shared_ptr<ShipmentType> &shipmentType)
+{
+    this->shipmentType = shipmentType;
+}
+
+//=============================
+string Order::printBill() const
+{
+    return std::__cxx11::string();
+}
+//=============================
+
+string Order::getOrderState() const
+{
+    if(_state == current)
+        return "current";
+    else if(_state == completed)
+        return "completed";
+    else if(_state == cancelled)
+        return "cancelled";
+}
+
+void Order::endOrder()
+{
+    _state = completed;
+}
