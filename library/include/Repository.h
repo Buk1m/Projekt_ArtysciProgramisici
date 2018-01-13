@@ -21,7 +21,7 @@ public:
     Repository();
 
     //destruktory
-    virtual ~Repository();
+    ~Repository();
 
     //metody
     virtual void    create(shared_ptr<objectType> object) = 0;
