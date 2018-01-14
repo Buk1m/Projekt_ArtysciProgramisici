@@ -4,26 +4,26 @@
 
 #include <sstream>
 #include <algorithm>
-#include "../include/OrdersRepository.h"
+#include "../../include/Repositories/OrdersRepository.h"
 
 void OrdersRepository::create(const shared_ptr<Order> &order)
 {
-    orders.push_back(order);
+    objects.push_back(order);
 }
 
 void OrdersRepository::remove(const shared_ptr<Order> &order)
 {
-    auto it = find(orders.begin(), orders.end(), order);
-    orders.erase(it);
+    auto it = find(objects.begin(), objects.end(), order);
+    objects.erase(it);
 }
 
 const string OrdersRepository::getAll() const
 {
     stringstream info;
     info << "=== OrderRepository ===\n";
-    for (auto it:orders)
+    for (auto order:objects)
     {
-        info << it->getInfoAboutOrder();
+        info << order->getInfoAboutOrder();
     }
     info << "=============================" << endl;
     return info.str();

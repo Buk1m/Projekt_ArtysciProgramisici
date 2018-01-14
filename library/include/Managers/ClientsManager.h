@@ -6,7 +6,7 @@
 #define PROJEKT_ARTYSCIPROGRAMISICI_CLIENTMANAGER_H
 
 #include <memory>
-#include "ClientsRepository.h"
+#include "../Repositories/ClientsRepository.h"
 
 using namespace std;
 

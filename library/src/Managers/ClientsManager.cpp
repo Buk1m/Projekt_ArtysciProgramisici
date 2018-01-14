@@ -2,7 +2,7 @@
 // Created by Bartek on 1/13/2018.
 //
 
-#include "../include/ClientsManager.h"
+#include "../../include/Managers/ClientsManager.h"
 
 Clientmanager::Clientmanager()
 {}

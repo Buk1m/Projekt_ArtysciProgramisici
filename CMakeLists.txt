@@ -15,7 +15,7 @@ set(CMAKE_VERBOSE_MAKEFILE TRUE)
 #Source files her
 set(SOURCE_FILES
     program/main.cpp
-    library/src/Repository.cpp library/include/Repository.h
+        library/src/Repositories/Repository.cpp library/include/Repositories/Repository.h
     library/src/Order.cpp library/include/Order.h
     library/src/ShipmentType.cpp library/include/ShipmentType.h
     library/src/PaymentType.cpp library/include/PaymentType.h
@@ -23,17 +23,20 @@ set(SOURCE_FILES
     library/src/Cart.cpp library/include/Cart.h
     library/src/Merchandise.cpp library/include/Merchandise.h
     library/src/Address.cpp library/include/Address.h
-    library/src/ClientsManager.cpp library/include/ClientsManager.h
-    library/src/ClientsRepository.cpp library/include/ClientsRepository.h
-    library/src/MerchandisesRepository.cpp library/include/MerchandisesRepository.h
-    library/src/MerchandisesManager.cpp library/include/MerchandisesManager.h
-    library/src/OrdersRepository.cpp library/include/OrdersRepository.h
+        library/src/Managers/ClientsManager.cpp library/include/Managers/ClientsManager.h
+        library/src/Repositories/ClientsRepository.cpp library/include/Repositories/ClientsRepository.h
+        library/src/Repositories/MerchandisesRepository.cpp library/include/Repositories/MerchandisesRepository.h
+        library/src/Managers/MerchandisesManager.cpp library/include/Managers/MerchandisesManager.h
+        library/src/Repositories/OrdersRepository.cpp library/include/Repositories/OrdersRepository.h
     library/src/CourierDelivery.cpp library/include/CourierDelivery.h
     library/src/SelfPickup.cpp library/include/SelfPickup.h
     library/src/CashPayment.cpp library/include/CashPayment.h
     library/src/CardPayment.cpp library/include/CardPayment.h
     library/src/Merchandises/Laptop.cpp library/include/Merchandises/Laptop.h
-    library/src/Merchandises/Smartphone.cpp library/include/Merchandises/Smartphone.h)
+    library/src/Merchandises/Smartphone.cpp library/include/Merchandises/Smartphone.h
+        library/src/Exceptions/ClientException.cpp library/include/Exceptions/ClientException.h
+        library/src/Exceptions/OrderException.cpp library/include/Exceptions/OrderException.h
+        library/src/Exceptions/MerchandiseException.cpp library/include/Exceptions/MerchandiseException.h)
 
 add_executable(Projekt_ArtysciProgramisici ${SOURCE_FILES})
 
@@ -51,7 +54,7 @@ ${Boost_INCLUDE_DIRS}
 set(SOURCE_TEST_FILES
     test/master.cpp
     test/TestClient.cpp
-    library/src/Repository.cpp library/include/Repository.h
+        library/src/Repositories/Repository.cpp library/include/Repositories/Repository.h
     library/src/Order.cpp library/include/Order.h
     library/src/ShipmentType.cpp library/include/ShipmentType.h
     library/src/PaymentType.cpp library/include/PaymentType.h
@@ -59,16 +62,18 @@ set(SOURCE_TEST_FILES
     library/src/Cart.cpp library/include/Cart.h
     library/src/Merchandise.cpp library/include/Merchandise.h
     library/src/Address.cpp library/include/Address.h
-    library/src/ClientsManager.cpp library/include/ClientsManager.h
-    library/src/ClientsRepository.cpp library/include/ClientsRepository.h
-    library/src/MerchandisesRepository.cpp library/include/MerchandisesRepository.h
-    library/src/MerchandisesManager.cpp library/include/MerchandisesManager.h
-    library/src/OrdersRepository.cpp library/include/OrdersRepository.h
+        library/src/Managers/ClientsManager.cpp library/include/Managers/ClientsManager.h
+        library/src/Repositories/ClientsRepository.cpp library/include/Repositories/ClientsRepository.h
+        library/src/Repositories/MerchandisesRepository.cpp library/include/Repositories/MerchandisesRepository.h
+        library/src/Managers/MerchandisesManager.cpp library/include/Managers/MerchandisesManager.h
+        library/src/Repositories/OrdersRepository.cpp library/include/Repositories/OrdersRepository.h
     library/src/CourierDelivery.cpp library/include/CourierDelivery.h
     library/src/SelfPickup.cpp library/include/SelfPickup.h
     library/src/CashPayment.cpp library/include/CashPayment.h
     library/src/CardPayment.cpp library/include/CardPayment.h
-    library/src/Merchandises/Laptop.cpp library/include/Merchandises/Laptop.h)
+    library/src/Merchandises/Laptop.cpp library/include/Merchandises/Laptop.h
+        library/src/Exceptions/ClientException.cpp library/include/Exceptions/ClientException.h
+        library/src/Exceptions/OrderException.cpp library/include/Exceptions/OrderException.h)
 
 add_executable(TestProject ${SOURCE_TEST_FILES} )
 

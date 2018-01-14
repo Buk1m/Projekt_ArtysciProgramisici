@@ -24,13 +24,13 @@ private:
 
 public:
     Cart();
-    ~Cart();
+    ~Cart() = default;
 
 public:
     //getters
-    string getProductInfo() const;
-    float getAllProductsPrice() const;
-    vector<shared_ptr<Merchandise>> getProducts() const;
+    const string getProductInfo() const;
+    const float getAllProductsPrice() const;
+    const vector<shared_ptr<Merchandise>>& getProducts() const;
 
     //setters
     void addProduct(const shared_ptr<Merchandise> &product);

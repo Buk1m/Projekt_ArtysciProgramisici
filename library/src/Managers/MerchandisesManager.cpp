@@ -2,7 +2,7 @@
 // Created by Bartek on 1/13/2018.
 //
 
-#include "../include/MerchandisesManager.h"
+#include "../../include/Managers/MerchandisesManager.h"
 
 
 void MerchandisesManager::createMerchandise(const shared_ptr<Merchandise> &merchandise)

@@ -70,6 +70,4 @@ public:
 };
 
 
-
-
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_CLIENT_H

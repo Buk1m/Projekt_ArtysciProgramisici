@@ -19,13 +19,14 @@ Laptop::Laptop(const string &name, float price, int quantity, const string &proc
 string Laptop::getSpecification() const
 {
     stringstream info;
-    info << "-------- Laptop -------- " << endl
+    info << "---------- Laptop ---------- " << endl
+         << "Id: " << merchandiseId << endl
          << "Name: " << name << endl
          << "Processor: " << processor << endl
          << "GraphicCard: " << graphicCard << endl
          << "Ram: " << ram << endl
          << "DiscDrivem: " << discDrive << endl
          << "Display: " << display << endl
-         << "Price: " << price << "PLN" << endl;
+         << "Price: " << price << " PLN" << endl;
     return info.str();
 }

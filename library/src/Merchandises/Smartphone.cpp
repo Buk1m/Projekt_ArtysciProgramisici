@@ -18,11 +18,12 @@ string Smartphone::getSpecification() const
 {
     stringstream info;
     info << "-------- Smartphone -------- " << endl
+         << "Id: " << merchandiseId << endl
          << "Name: " << name << endl
          << "Processor: " << processor << endl
          << "Display: " << display << endl
          << "Camera: " << camera << endl
          << "Ram: " << ram << endl
-         << "Price: " << price << "PLN" << endl;
+         << "Price: " << price << " PLN" << endl;
     return info.str();
 }

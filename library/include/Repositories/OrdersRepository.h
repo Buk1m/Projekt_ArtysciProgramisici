@@ -9,13 +9,11 @@
 #include "Repository.h"
 #include <vector>
 #include <memory>
-#include "Order.h"
+#include "../Order.h"
 
 class OrdersRepository
         : public Repository<Order>
 {
-private:
-    vector<shared_ptr<Order>> orders;
 public:
     OrdersRepository() = default;
 

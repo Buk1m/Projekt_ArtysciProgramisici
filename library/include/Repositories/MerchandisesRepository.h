@@ -12,8 +12,6 @@ class Merchandise;
 class MerchandisesRepository
         : public Repository<Merchandise>
 {
-private:
-    vector<shared_ptr<Merchandise>> merchandises;
 public:
     MerchandisesRepository();
 

@@ -7,35 +7,33 @@
 
 Cart::Cart() {}
 
-Cart::~Cart() {}
-
 //gettery==============================================================
-string Cart::getProductInfo() const
+const string Cart::getProductInfo() const
 {
     stringstream info;
-    info << "=================Cart=================" << endl;
+    info << "============Cart============" << endl;
     for(auto product : products)
     {
-       info << endl;//product->getInfoAboutMerchandise();
+       info << product->getSpecification() << endl;
     }
+    info << "============================" << endl;
     return info.str();
 }
 
-float Cart::getAllProductsPrice() const
+const float Cart::getAllProductsPrice() const
 {
     float sum = 0;
     for(auto product : products)
     {
-        //sum += product->getPrice();
+        sum += product->getPrice();
     }
     return sum;
 }
 
-vector<shared_ptr<Merchandise>> Cart::getProducts() const
+const vector<shared_ptr<Merchandise>>& Cart::getProducts() const
 {
-    //return vector<shared_ptr<Merchandise>>;
+    return products;
 }
-
 
 //settery==============================================================
 void Cart::addProduct(const shared_ptr<Merchandise> &product)

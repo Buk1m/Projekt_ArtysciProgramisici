@@ -110,11 +110,12 @@ bool Client::makePaymant()
 const string Client::getInfoAboutClient() const
 {
     stringstream info;
-    info << "--- Client --- "
-         << "\nfirst name:" << firstName
-         << "\nlast name:" << lastName
-         << "\nemail:" << e_mail
-         << "\naddress:" << clientAddress->getAddressInfo()
+    info << "---------- Client ---------- "
+         << "\nId: " << personalID
+         << "\nFirst name: " << firstName
+         << "\nLast name: " << lastName
+         << "\nEmail: " << e_mail
+         << "\nAddress: " << clientAddress->getAddressInfo()
          << endl;
     return info.str();
 }

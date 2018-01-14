@@ -4,31 +4,31 @@
 
 #include <sstream>
 #include <algorithm>
-#include "../include/MerchandisesRepository.h"
-#include "../include/Merchandise.h"
+#include "../../include/Repositories/MerchandisesRepository.h"
+#include "../../include/Merchandise.h"
 
 MerchandisesRepository::MerchandisesRepository()
 {}
 
 void MerchandisesRepository::create(const shared_ptr<Merchandise> &merchandise)
 {
-    merchandises.push_back(merchandise);
+    objects.push_back(merchandise);
 }
 
 void MerchandisesRepository::remove(const shared_ptr<Merchandise> &merchandise)
 {
-    auto it = find(merchandises.begin(), merchandises.end(), merchandise);
-    merchandises.erase(it);
+    auto it = find(objects.begin(), objects.end(), merchandise);
+    objects.erase(it);
 }
 
 const string MerchandisesRepository::getAll() const
 {
     stringstream info;
-    info << "=== MerchandisesRepository ===\n";
-    for (auto it : merchandises)
+    info << "== MerchandisesRepository ==\n";
+    for (auto merchandise : objects)
     {
-        info << it->getSpecification();
+        info << merchandise->getSpecification();
     }
-    info << "=============================" << endl;
+    info << "============================" << endl;
     return info.str();
 }

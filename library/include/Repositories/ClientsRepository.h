@@ -12,9 +12,6 @@ class Client;
 class ClientRepository
         : public Repository<Client>
 {
-private:
-    vector<shared_ptr<Client>> clients;
-
 public:
     ClientRepository();
     ~ClientRepository() = default;

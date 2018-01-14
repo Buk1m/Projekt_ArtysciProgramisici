@@ -5,8 +5,8 @@
 #ifndef PROJEKT_ARTYSCIPROGRAMISICI_MERCHANDISESMANAGER_H
 #define PROJEKT_ARTYSCIPROGRAMISICI_MERCHANDISESMANAGER_H
 
-#include "Merchandise.h"
-#include "MerchandisesRepository.h"
+#include "../Merchandise.h"
+#include "../Repositories/MerchandisesRepository.h"
 
 class MerchandisesManager
 {
