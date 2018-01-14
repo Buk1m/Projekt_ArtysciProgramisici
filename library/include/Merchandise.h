@@ -25,7 +25,7 @@ protected:
 
 public:
     Merchandise(const string &name, float price, int quantity);
-    virtual ~Merchandise() = default;
+    virtual ~Merchandise();
 
     virtual string getSpecification() const = 0;
     float getPrice() const;
