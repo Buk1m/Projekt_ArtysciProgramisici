@@ -13,8 +13,6 @@ Merchandise::Merchandise(const string &name, float price, int quantity)
              quantity(quantity)
 {}
 
-Merchandise::~Merchandise() {}
-
 float Merchandise::getPrice() const
 {
     return price;
