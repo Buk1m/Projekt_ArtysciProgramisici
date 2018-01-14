@@ -27,16 +27,3 @@ void Merchandise::resupply(const int &quantity)
 {
     this->quantity += quantity;
 }
-
-
-string Merchandise::getInfoAboutMerchandise() const
-{
-    stringstream info;
-    info << "--- Merchandise --- "
-         << "\nid:" << merchandiseId
-         << "\nname:" << name
-         << "\nprice:" << price
-         << "\nquantity:" << quantity
-         << endl;
-    return info.str();
-}

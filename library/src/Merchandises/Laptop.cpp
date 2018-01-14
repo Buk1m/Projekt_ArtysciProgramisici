@@ -3,15 +3,11 @@
 //
 
 #include "../../include/Merchandises/Laptop.h"
-#include "../../include/Components/Processor.h"
-#include "../../include/Components/GraphicCard.h"
-#include "../../include/Components/DiskDrive.h"
-#include "../../include/Components/Display.h"
-#include "../../include/Components/Ram.h"
+#include <sstream>
 
-Laptop::Laptop(const string &name, float price, int quantity, const shared_ptr<Processor> &processor,
-               const shared_ptr<GraphicCard> &graphicCard, const shared_ptr<Ram> &ram,
-               const shared_ptr<DiskDrive> &discDrive, const shared_ptr<Display> &display)
+Laptop::Laptop(const string &name, float price, int quantity, const string &processor,
+               const string &graphicCard, const string &ram,
+               const string &discDrive, const string &display)
        : Merchandise(name, price, quantity),
          processor(processor),
          graphicCard(graphicCard),
@@ -19,3 +15,17 @@ Laptop::Laptop(const string &name, float price, int quantity, const shared_ptr<P
          discDrive(discDrive),
          display(display)
 {}
+
+string Laptop::getSpecification() const
+{
+    stringstream info;
+    info << "-------- Laptop -------- " << endl
+         << "Name: " << name << endl
+         << "Processor: " << processor << endl
+         << "GraphicCard: " << graphicCard << endl
+         << "Ram: " << ram << endl
+         << "DiscDrivem: " << discDrive << endl
+         << "Display: " << display << endl
+         << "Price: " << price << "PLN" << endl;
+    return info.str();
+}

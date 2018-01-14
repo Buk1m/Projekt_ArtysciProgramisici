@@ -33,11 +33,7 @@ set(SOURCE_FILES
     library/src/CashPayment.cpp library/include/CashPayment.h
     library/src/CardPayment.cpp library/include/CardPayment.h
     library/src/Merchandises/Laptop.cpp library/include/Merchandises/Laptop.h
-    library/src/Components/Processor.cpp library/include/Components/Processor.h
-    library/src/Components/GraphicCard.cpp library/include/Components/GraphicCard.h
-    library/src/Components/Ram.cpp library/include/Components/Ram.h
-    library/src/Components/DiskDrive.cpp library/include/Components/DiskDrive.h
-    library/src/Components/Display.cpp library/include/Components/Display.h)
+    library/src/Merchandises/Smartphone.cpp library/include/Merchandises/Smartphone.h)
 
 add_executable(Projekt_ArtysciProgramisici ${SOURCE_FILES})
 
@@ -72,13 +68,7 @@ set(SOURCE_TEST_FILES
     library/src/SelfPickup.cpp library/include/SelfPickup.h
     library/src/CashPayment.cpp library/include/CashPayment.h
     library/src/CardPayment.cpp library/include/CardPayment.h
-    library/src/Merchandises/Laptop.cpp library/include/Merchandises/Laptop.h
-    library/src/Components/Processor.cpp library/include/Components/Processor.h
-    library/src/Components/GraphicCard.cpp library/include/Components/GraphicCard.h
-    library/src/Components/Ram.cpp library/include/Components/Ram.h
-    library/src/Components/DiskDrive.cpp library/include/Components/DiskDrive.h
-    library/src/Components/Display.cpp library/include/Components/Display.h
-     )
+    library/src/Merchandises/Laptop.cpp library/include/Merchandises/Laptop.h)
 
 add_executable(TestProject ${SOURCE_TEST_FILES} )
 

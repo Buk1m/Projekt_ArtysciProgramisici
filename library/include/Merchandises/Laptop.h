@@ -11,30 +11,23 @@
 
 using namespace std;
 
-class Processor;
-class GraphicCard;
-class Ram;
-class DiskDrive;
-class Display;
-
 
 class Laptop : public Merchandise
 {
 private:
-    shared_ptr<Processor> processor;
-    shared_ptr<GraphicCard> graphicCard;
-    shared_ptr<Ram> ram;
-    shared_ptr<DiskDrive> discDrive;
-    shared_ptr<Display> display;
+    string processor;
+    string graphicCard;
+    string ram;
+    string discDrive;
+    string display;
 
 public:
-    string LaptopInfo() const;
-
-    Laptop(const string &name, float price, int quantity, const shared_ptr<Processor> &processor,
-           const shared_ptr<GraphicCard> &graphicCard, const shared_ptr<Ram> &ram,
-           const shared_ptr<DiskDrive> &discDrive, const shared_ptr<Display> &display);
-
+    Laptop(const string &name, float price, int quantity, const string &processor,
+           const string &graphicCard, const string &ram,
+           const string &discDrive, const string &display);
     ~Laptop() = default;
+
+    string getSpecification() const;
 };
 
 

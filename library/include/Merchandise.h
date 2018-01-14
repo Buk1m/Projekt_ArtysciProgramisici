@@ -30,7 +30,6 @@ public:
     virtual string getSpecification() const = 0;
     float getPrice() const;
     int getQuantity() const;
-    string getInfoAboutMerchandise() const;
     void resupply(const int &quantity);
 };
 
