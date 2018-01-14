@@ -119,3 +119,8 @@ const string Client::getInfoAboutClient() const
          << endl;
     return info.str();
 }
+
+const shared_ptr<Cart>& Client::getClientCart() const
+{
+    return cart;
+}

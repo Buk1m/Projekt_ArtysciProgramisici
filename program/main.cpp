@@ -9,6 +9,10 @@
 #include "../library/include/Merchandises/Smartphone.h"
 #include "../library/include/Cart.h"
 #include "../library/include/Client.h"
+#include "../library/include/Shipment/SelfPickup.h"
+#include "../library/include/Shipment/CourierDelivery.h"
+#include "../library/include/Payment/CardPayment.h"
+#include "../library/include/Payment/CashPayment.h"
 
 using namespace std;
 
@@ -51,6 +55,15 @@ int main()
     cout << merchandisesRepo->getAll() << endl;
     cout << clientRepo->getAll() << endl;
     cout << klient1->getProductsCart()<<endl;
+
+    auto cashPayment = make_shared<CashPayment>();
+    auto cardPayment = make_shared<CardPayment>();
+    auto courierDelivery = make_shared<CourierDelivery>();
+    auto selfPickup = make_shared<SelfPickup>();
+
+    auto klient1Order = make_shared<Order>(klient1, klient1->getClientCart(),
+                                           selfPickup, cashPayment,
+                                           "Produkt fabrycznie zaplombowany");
 
     return 0;
 }

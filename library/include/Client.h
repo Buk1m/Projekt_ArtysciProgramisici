@@ -33,40 +33,31 @@ private:
     shared_ptr<Address> deliveryAddress;
     shared_ptr<Address> clientAddress;
     shared_ptr<Cart> cart;
-public:
 
+public:
     Client(const string &firstName, const string &lastName, const string &password, const string &login,
            const string &e_mail, const shared_ptr<Address> &deliveryAddress, const shared_ptr<Address> &clientAddress);
-
     ~Client() = default;
 
     const uuid getPersonalID() const;
-
     const string &getFirstName() const;
-
     const string &getLastName() const;
-
     const string getProductsCart() const;
-
     const string getAddress() const;
-
     const string getDeliveryAddress() const;
+    const string getInfoAboutClient() const;
+    const string getClientOrders() const;
+    const shared_ptr<Cart>& getClientCart() const;
 
     void updateInfo(const string &firstName, const string &lastName, const string &e_mail);
-
     void updateLoginAndPassword(const string &login, const string &password);
 
     void addToCart(const shared_ptr<Merchandise> &product, const int &amount);
-
     void removeFromCart(const shared_ptr<Merchandise> &merchendise);
 
-    const string getClientOrders() const;
 
     void reviceOrder() const;
-
     bool makePaymant();
-
-    const string getInfoAboutClient() const;
 };
 
 

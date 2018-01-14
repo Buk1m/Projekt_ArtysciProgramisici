@@ -66,7 +66,7 @@ public:
     void setOrderState(const string &state);
     void setPaymentType(const shared_ptr<PaymentType> &paymentType);
     void setShipmentType(const shared_ptr<ShipmentType> &shipmentType);
-    string printBill() const; //??? nwm czy dać tutaj ???
+    string printBill() const;
     string getOrderState() const;
     void endOrder();
     string getInfoAboutOrder() const;
