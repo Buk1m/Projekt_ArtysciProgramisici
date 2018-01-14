@@ -5,6 +5,7 @@
 #ifndef PROJEKT_ARTYSCIPROGRAMISICI_CLIENT_H
 #define PROJEKT_ARTYSCIPROGRAMISICI_CLIENT_H
 
+#include <memory>
 #include <string>
 #include "Address.h"
 #include "boost/date_time/local_time/local_time.hpp"
