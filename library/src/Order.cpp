@@ -86,11 +86,11 @@ void Order::endOrder()
 string Order::getInfoAboutOrder() const
 {
     stringstream info;
-    info << "--- Order --- "
-         << "id:" << orderId
-         << "\ncost:" << orderCost
-         << "\ncomment:" << orderComment
-         << "\nstate:" << _state
+    info << "------------Order------------"
+         << "\nId: " << orderId
+         << "\nCost: " << orderCost
+         << "\nComment: " << orderComment
+         << "\nState: " << getOrderState()
          << endl;
     return info.str();
 }

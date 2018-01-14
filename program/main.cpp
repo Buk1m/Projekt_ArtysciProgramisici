@@ -65,5 +65,10 @@ int main()
                                            selfPickup, cashPayment,
                                            "Produkt fabrycznie zaplombowany");
 
+    cout << "Orderinfo : \n" << klient1Order->getInfoAboutOrder() << endl;
+    klient1Order->setOrderState("cancelled");
+    cout << "Orderinfo : \n" << klient1Order->getInfoAboutOrder() << endl;
+
+
     return 0;
 }
