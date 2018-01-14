@@ -9,5 +9,5 @@ Address::Address(const string &street, const string &number) : street(street), n
 
 const string Address::getAddressInfo() const
 {
-    return street + " " + number;
+    return (street + " " + number);
 }

@@ -19,11 +19,11 @@ public:
 
     ~MerchandisesRepository() = default;
 
-    void create(shared_ptr<Merchandise> merchandise);
+    void create(const shared_ptr<Merchandise> &merchandise);
 
-    void remove(shared_ptr<Merchandise> merchandise);
+    void remove(const shared_ptr<Merchandise> &merchandise);
 
-    string getAll();
+    const string getAll() const;
 };
 
 

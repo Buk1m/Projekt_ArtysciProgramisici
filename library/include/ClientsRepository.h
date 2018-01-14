@@ -19,9 +19,9 @@ public:
     ClientRepository();
     ~ClientRepository() = default;
 
-    void create(shared_ptr<Client> client);
-    void remove(shared_ptr<Client> client);
-    string getAll();
+    void create(const shared_ptr<Client> &client);
+    void remove(const shared_ptr<Client> &client);
+    const string getAll() const;
 };
 
 

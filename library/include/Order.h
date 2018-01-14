@@ -10,7 +10,7 @@
 #include <vector>
 #include "boost/uuid/uuid.hpp"
 #include "boost/uuid/uuid_generators.hpp"
-//#include "boost/uuid/uuid_io.hpp"
+#include "boost/uuid/uuid_io.hpp"
 #include "boost/date_time/local_time/local_time.hpp"
 #include "boost/date_time/gregorian/gregorian.hpp"
 #include "boost/date_time/posix_time/posix_time.hpp"
@@ -30,8 +30,8 @@ enum orderState
 };
 
 class Client;
-class Cart;
 class Merchandise;
+class Cart;
 class ShipmentType;
 class PaymentType;
 

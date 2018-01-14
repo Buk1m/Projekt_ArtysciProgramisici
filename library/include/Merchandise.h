@@ -24,7 +24,7 @@ protected:
     int quantity;
 
 public:
-    Merchandise(const string &name, float price, int quantity);
+    Merchandise(const string &name, const float &price, const int &quantity);
     virtual ~Merchandise();
 
     string getSpecification() const;

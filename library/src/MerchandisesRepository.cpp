@@ -10,18 +10,18 @@
 MerchandisesRepository::MerchandisesRepository()
 {}
 
-void MerchandisesRepository::create(shared_ptr<Merchandise> merchandise)
+void MerchandisesRepository::create(const shared_ptr<Merchandise> &merchandise)
 {
     merchandises.push_back(merchandise);
 }
 
-void MerchandisesRepository::remove(shared_ptr<Merchandise> merchandise)
+void MerchandisesRepository::remove(const shared_ptr<Merchandise> &merchandise)
 {
     auto it = find(merchandises.begin(), merchandises.end(), merchandise);
     merchandises.erase(it);
 }
 
-string MerchandisesRepository::getAll()
+const string MerchandisesRepository::getAll() const
 {
     stringstream info;
     info << "=== MerchandisesRepository ===\n";

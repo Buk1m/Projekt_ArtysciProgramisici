@@ -23,9 +23,9 @@ public:
     virtual ~Repository(){}
 
     //metody
-    virtual void    create(shared_ptr<objectType> object) = 0;
-    virtual void    remove(shared_ptr<objectType> object) = 0;
-    virtual string  getAll() = 0;
+    virtual void    create(const shared_ptr<objectType> &object) = 0;
+    virtual void    remove(const shared_ptr<objectType> &object) = 0;
+    virtual const string  getAll() const = 0;
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_REPOSITORY_H
