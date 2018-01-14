@@ -21,9 +21,10 @@ class Cart
 {
 private:
     vector<shared_ptr<Merchandise>> products;
+    int maxCartCapacity;
 
 public:
-    Cart();
+    Cart(const int &maxCartCapacity);
     ~Cart() = default;
 
 public:
