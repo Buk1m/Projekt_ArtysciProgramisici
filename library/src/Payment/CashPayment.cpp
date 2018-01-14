@@ -4,6 +4,14 @@
 
 #include "../../include/Payment/CashPayment.h"
 
-CashPayment::CashPayment() {}
+CashPayment::CashPayment()
+            :PaymentType()
+{
+    paymentPrice = 0;
+}
 
-CashPayment::~CashPayment() {}
+const string CashPayment::getPaymentTypeName()
+{
+    return "CashPayment";
+}
+

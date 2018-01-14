@@ -40,7 +40,6 @@ class Order
 {
 private:
     const uuid orderId;
-    float orderCost;
     string orderComment;
     orderState _state;
 
@@ -57,7 +56,7 @@ public:
           const shared_ptr<ShipmentType> &shipmentType,
           const shared_ptr<PaymentType> &paymentType,
           const string &orderComment);
-    ~Order();
+    ~Order() = default;
 
 private:
     void moveProductsFromCartToOrder(const vector<shared_ptr<Merchandise>> &products);
@@ -68,6 +67,7 @@ public:
     void setShipmentType(const shared_ptr<ShipmentType> &shipmentType);
     string printBill() const;
     string getOrderState() const;
+    const float getOrderCost() const;
     void endOrder();
     string getInfoAboutOrder() const;
 

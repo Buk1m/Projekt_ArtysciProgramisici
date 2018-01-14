@@ -5,15 +5,34 @@
 #include "../../include/Merchandises/Laptop.h"
 #include <sstream>
 
-Laptop::Laptop(const string &name, float price, int quantity, const string &processor,
+Laptop::Laptop(const string &name, float price, const string &processor,
                const string &graphicCard, const string &ram,
                const string &discDrive, const string &display)
-       : Merchandise(name, price, quantity),
+       : Merchandise(name, price),
          processor(processor),
          graphicCard(graphicCard),
          ram(ram),
          discDrive(discDrive),
          display(display)
+{}
+
+Laptop::Laptop(const shared_ptr<Laptop> &laptop)
+        : Merchandise(laptop->name, laptop->price),
+          processor(laptop->processor),
+          graphicCard(laptop->graphicCard),
+          ram(laptop->ram),
+          discDrive(laptop->discDrive),
+          display(laptop->display)
+{}
+
+
+Laptop::Laptop(const Laptop* laptop)
+        : Merchandise(laptop->name, laptop->price),
+          processor(laptop->processor),
+          graphicCard(laptop->graphicCard),
+          ram(laptop->ram),
+          discDrive(laptop->discDrive),
+          display(laptop->display)
 {}
 
 string Laptop::getSpecification() const
@@ -30,3 +49,15 @@ string Laptop::getSpecification() const
          << "Price: " << price << " PLN" << endl;
     return info.str();
 }
+
+vector<shared_ptr<Laptop>> Laptop::resupply(const int &quantity)
+{
+    vector<shared_ptr<Laptop>> laptops;
+    for(int i=0; i<quantity; i++)
+    {
+        auto product = make_shared<Laptop>(this);
+        laptops.push_back(product);
+    }
+    return laptops;
+}
+

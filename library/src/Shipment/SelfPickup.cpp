@@ -4,6 +4,13 @@
 
 #include "../../include/Shipment/SelfPickup.h"
 
-SelfPickup::SelfPickup() {}
+SelfPickup::SelfPickup()
+           :ShipmentType()
+{
+    shipmentPrice = 0.0;
+}
 
-SelfPickup::~SelfPickup() {}
+const string SelfPickup::getShipmentTypeName()
+{
+    return "SelfPickup";
+}

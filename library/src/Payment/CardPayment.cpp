@@ -4,6 +4,19 @@
 
 #include "../../include/Payment/CardPayment.h"
 
-CardPayment::CardPayment() {}
+CardPayment::CardPayment()
+            :PaymentType()
+{
+    paymentPrice = 5.0;
+}
 
-CardPayment::~CardPayment() {}
+void CardPayment::makeDiscount(int productsQuantity)
+{
+    paymentPrice -= (productsQuantity / 2) * 0.1;
+}
+
+const string CardPayment::getPaymentTypeName()
+{
+    return "CardPayment";
+}
+

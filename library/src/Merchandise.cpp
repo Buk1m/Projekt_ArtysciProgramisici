@@ -6,11 +6,10 @@
 #include "../include/Merchandise.h"
 #include "boost/uuid/uuid_io.hpp"
 
-Merchandise::Merchandise(const string &name, const float &price, const int &quantity)
+Merchandise::Merchandise(const string &name, const float &price)
            : merchandiseId(boost::uuids::random_generator()()),
              name(name),
-             price(price),
-             quantity(quantity)
+             price(price)
 {}
 
 float Merchandise::getPrice() const
@@ -18,12 +17,5 @@ float Merchandise::getPrice() const
     return price;
 }
 
-int Merchandise::getQuantity() const
-{
-    return quantity;
-}
 
-void Merchandise::resupply(const int &quantity)
-{
-    this->quantity += quantity;
-}
+

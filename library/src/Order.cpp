@@ -7,6 +7,7 @@
 #include "../include/Shipment/ShipmentType.h"
 #include "../include/Client.h"
 #include "../include/Cart.h"
+#include "../include/Merchandise.h"
 
 //constructor==========================================================================
 Order::Order(const shared_ptr<Client> &client, const shared_ptr<Cart> &cart,
@@ -26,12 +27,7 @@ Order::Order(const shared_ptr<Client> &client, const shared_ptr<Cart> &cart,
     completionOrderTime = nullptr;
 
     moveProductsFromCartToOrder(cart->getProducts());
-    orderCost = cart->getAllProductsPrice();
 }
-
-//descructor==========================================================================
-Order::~Order() { }
-
 
 //methods==========================================================================
 void Order::moveProductsFromCartToOrder(const vector<shared_ptr<Merchandise>> &products)
@@ -88,9 +84,22 @@ string Order::getInfoAboutOrder() const
     stringstream info;
     info << "------------Order------------"
          << "\nId: " << orderId
-         << "\nCost: " << orderCost
+         << "\nOrderDate: " << *submitOrderTime
+         << "\nCost: " << getOrderCost()
          << "\nComment: " << orderComment
+         << "\nShipmentType: " << shipmentType->getShipmentTypeName()
+         << "\nPaymentType: " << paymentType->getPaymentTypeName()
          << "\nState: " << getOrderState()
          << endl;
     return info.str();
+}
+
+const float Order::getOrderCost() const
+{
+    float sum = 0;
+    for(auto product : products)
+    {
+        sum += product->getPrice();
+    }
+    return sum;
 }

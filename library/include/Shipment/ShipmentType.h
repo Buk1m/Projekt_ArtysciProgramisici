@@ -21,9 +21,11 @@ protected:
 
 public:
     ShipmentType();
-    virtual ~ShipmentType();
+    virtual ~ShipmentType() = default;
 
-    float getShipmentPrice() const;
+    const float getShipmentPrice() const;
+    virtual void makeDiscount(int productsQuantity) = 0;
+    virtual const string getShipmentTypeName() = 0;
 };
 
 

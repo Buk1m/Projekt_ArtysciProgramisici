@@ -6,13 +6,15 @@
 #define PROJEKT_ARTYSCIPROGRAMISICI_COURIERDELIVERY_H
 
 #include "ShipmentType.h"
-//class ShipmentType;
 
 class CourierDelivery : public ShipmentType
 {
 public:
     CourierDelivery();
-    ~CourierDelivery();
+    ~CourierDelivery() = default;
+
+    void makeDiscount(int productsQuantity);
+    const string getShipmentTypeName();
 };
 
 

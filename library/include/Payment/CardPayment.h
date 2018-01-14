@@ -11,7 +11,10 @@ class CardPayment : public PaymentType
 {
 public:
     CardPayment();
-    ~CardPayment();
+    ~CardPayment() = default;
+
+    void makeDiscount(int productsQuantity);
+    const string getPaymentTypeName();
 };
 
 

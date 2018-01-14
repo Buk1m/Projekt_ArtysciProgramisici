@@ -42,14 +42,18 @@ int main()
     clientRepo->create(klient2);
     clientRepo->create(klient3);
 
-    auto laptop = make_shared<Laptop>("HP", 3000, 5, "Intel i7", "GTX 1060", "8", "250Gb SSD", "17,3");
-    auto smartphone = make_shared<Smartphone>("LG", 2000, 10, "Snapdragon 810", "5,5 inches", "12 Mpix", "3 Gb");
+    auto laptop = make_shared<Laptop>("HP", 3000, "Intel i7", "GTX 1060", "8", "250Gb SSD", "17,3");
+    auto smartphone = make_shared<Smartphone>("LG", 2000, "Snapdragon 810", "5,5 inches", "12 Mpix", "3 Gb");
 
     merchandisesRepo->create(laptop);
     merchandisesRepo->create(smartphone);
 
     klient1->addToCart(laptop,1);
     klient1->addToCart(smartphone,1);
+
+
+
+
 
     cout << endl << endl;
     cout << merchandisesRepo->getAll() << endl;
@@ -66,8 +70,17 @@ int main()
                                            "Produkt fabrycznie zaplombowany");
 
     cout << "Orderinfo : \n" << klient1Order->getInfoAboutOrder() << endl;
-    klient1Order->setOrderState("cancelled");
+    //klient1Order->setOrderState("cancelled");
+    klient1Order->setPaymentType(cardPayment);
     cout << "Orderinfo : \n" << klient1Order->getInfoAboutOrder() << endl;
+
+   /* vector< shared_ptr<Laptop> > laptops = laptop->resupply(2);
+    for(auto lap : laptops)
+    {
+        cout << lap->getSpecification() << endl;
+    }*/
+
+
 
 
     return 0;

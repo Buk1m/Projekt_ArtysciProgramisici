@@ -19,11 +19,14 @@ private:
     string camera;
     string ram;
 public:
-    Smartphone(const string &name, const float &price, const int &quantity, const string &processor,
+    Smartphone(const string &name, const float &price, const string &processor,
                const string &display, const string &camera, const string &ram);
+    Smartphone(const shared_ptr<Smartphone> &smartphone);
+    Smartphone(const Smartphone* smartphone);
     ~Smartphone() = default;
 
     string getSpecification() const;
+    vector<shared_ptr<Smartphone>> resupply(const int &quantity);
 };
 
 

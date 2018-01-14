@@ -8,10 +8,7 @@ PaymentType::PaymentType()
            : paymentId(boost::uuids::random_generator()())
 {}
 
-PaymentType::~PaymentType() {}
-
-
-float PaymentType::getPaymentPrice() const
+const float PaymentType::getPaymentPrice() const
 {
     return paymentPrice;
 }

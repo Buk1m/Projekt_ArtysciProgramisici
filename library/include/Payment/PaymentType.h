@@ -21,9 +21,11 @@ protected:
 
 public:
     PaymentType();
-    virtual ~PaymentType();
+    virtual ~PaymentType() = default;
 
-    float getPaymentPrice() const;
+    const float getPaymentPrice() const;
+    virtual void makeDiscount(int productsQuantity) = 0;
+    virtual const string getPaymentTypeName() = 0;
 };
 
 

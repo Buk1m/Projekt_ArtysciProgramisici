@@ -11,7 +11,10 @@ class SelfPickup : public ShipmentType
 {
 public:
     SelfPickup();
-    ~SelfPickup();
+    ~SelfPickup() = default;
+
+    void makeDiscount(int productsQuantity) {};
+    const string getShipmentTypeName();
 };
 
 

@@ -22,12 +22,15 @@ private:
     string display;
 
 public:
-    Laptop(const string &name, float price, int quantity, const string &processor,
+    Laptop(const string &name, float price, const string &processor,
            const string &graphicCard, const string &ram,
            const string &discDrive, const string &display);
+    Laptop(const shared_ptr<Laptop>& laptop);
+    Laptop(const Laptop* laptop);
     ~Laptop() = default;
 
     string getSpecification() const;
+    vector<shared_ptr<Laptop>> resupply(const int &quantity);
 };
 
 

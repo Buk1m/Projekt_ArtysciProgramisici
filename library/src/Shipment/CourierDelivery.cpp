@@ -4,6 +4,19 @@
 
 #include "../../include/Shipment/CourierDelivery.h"
 
-CourierDelivery::CourierDelivery() {}
+CourierDelivery::CourierDelivery()
+                :ShipmentType()
+{
+    shipmentPrice = 20.0;
+}
 
-CourierDelivery::~CourierDelivery() {}
+
+void CourierDelivery::makeDiscount(int productsQuantity)
+{
+    shipmentPrice -= (productsQuantity / 3) * 0.2;
+}
+
+const string CourierDelivery::getShipmentTypeName()
+{
+    return "CourierDelivery";
+}
