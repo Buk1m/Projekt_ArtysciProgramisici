@@ -13,7 +13,20 @@ add_executable(Projekt_ArtysciProgramisici program/main.cpp
         library/src/Merchandise.cpp library/include/Merchandise.h
         library/src/Address.cpp library/include/Address.h
         library/src/ClientsManager.cpp library/include/ClientsManager.h
-        library/src/ClientsRepository.cpp library/include/ClientsRepository.h library/src/MerchandisesRepository.cpp library/include/MerchandisesRepository.h library/src/MerchandisesManager.cpp library/include/MerchandisesManager.h library/src/OrdersRepository.cpp library/include/OrdersRepository.h)
+        library/src/ClientsRepository.cpp library/include/ClientsRepository.h
+        library/src/MerchandisesRepository.cpp library/include/MerchandisesRepository.h
+        library/src/MerchandisesManager.cpp library/include/MerchandisesManager.h
+        library/src/OrdersRepository.cpp library/include/OrdersRepository.h
+        library/src/CourierDelivery.cpp library/include/CourierDelivery.h
+        library/src/SelfPickup.cpp library/include/SelfPickup.h
+        library/src/CashPayment.cpp library/include/CashPayment.h
+        library/src/CardPayment.cpp library/include/CardPayment.h
+        library/src/Merchandises/Laptop.cpp library/include/Merchandises/Laptop.h
+        library/src/Components/Processor.cpp library/include/Components/Processor.h
+        library/src/Components/GraphicCard.cpp library/include/Components/GraphicCard.h
+        library/src/Components/Ram.cpp library/include/Components/Ram.h
+        library/src/Components/DiskDrive.cpp library/include/Components/DiskDrive.h
+        library/src/Components/Display.cpp library/include/Components/Display.h)
 
 set(BOOST_ROOT "C:/boost/boost_1_55_0/boost_1_55_0")
 

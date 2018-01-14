@@ -18,6 +18,12 @@ class PaymentType
 protected:
     const uuid paymentId;
     float paymentPrice;
+
+public:
+    PaymentType();
+    virtual ~PaymentType();
+
+    float getPaymentPrice() const;
 };
 
 

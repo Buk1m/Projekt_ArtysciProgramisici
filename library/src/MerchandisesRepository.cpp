@@ -25,9 +25,9 @@ string MerchandisesRepository::getAll()
 {
     stringstream info;
     info << "=== MerchandisesRepository ===\n";
-    for (auto it:merchandises)
+    for (auto it : merchandises)
     {
-        info << it->getInfoAboutMerchandise();
+        info << it->getSpecification();
     }
     info << "=============================" << endl;
     return info.str();

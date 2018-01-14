@@ -3,3 +3,15 @@
 //
 
 #include "../include/PaymentType.h"
+
+PaymentType::PaymentType()
+           : paymentId(boost::uuids::random_generator()())
+{}
+
+PaymentType::~PaymentType() {}
+
+
+float PaymentType::getPaymentPrice() const
+{
+    return paymentPrice;
+}
