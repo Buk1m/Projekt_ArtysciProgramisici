@@ -2,7 +2,7 @@
 // Created by 4DAM on 13.01.2018.
 //
 
-#include "../include/PaymentType.h"
+#include "../../include/Payment/PaymentType.h"
 
 PaymentType::PaymentType()
            : paymentId(boost::uuids::random_generator()())

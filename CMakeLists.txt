@@ -17,8 +17,8 @@ set(SOURCE_FILES
     program/main.cpp
         library/src/Repositories/Repository.cpp library/include/Repositories/Repository.h
     library/src/Order.cpp library/include/Order.h
-    library/src/ShipmentType.cpp library/include/ShipmentType.h
-    library/src/PaymentType.cpp library/include/PaymentType.h
+        library/src/Shipment/ShipmentType.cpp library/include/Shipment/ShipmentType.h
+        library/src/Payment/PaymentType.cpp library/include/Payment/PaymentType.h
     library/src/Client.cpp library/include/Client.h
     library/src/Cart.cpp library/include/Cart.h
     library/src/Merchandise.cpp library/include/Merchandise.h
@@ -28,15 +28,15 @@ set(SOURCE_FILES
         library/src/Repositories/MerchandisesRepository.cpp library/include/Repositories/MerchandisesRepository.h
         library/src/Managers/MerchandisesManager.cpp library/include/Managers/MerchandisesManager.h
         library/src/Repositories/OrdersRepository.cpp library/include/Repositories/OrdersRepository.h
-    library/src/CourierDelivery.cpp library/include/CourierDelivery.h
-    library/src/SelfPickup.cpp library/include/SelfPickup.h
-    library/src/CashPayment.cpp library/include/CashPayment.h
-    library/src/CardPayment.cpp library/include/CardPayment.h
+        library/src/Shipment/CourierDelivery.cpp library/include/Shipment/CourierDelivery.h
+        library/src/Shipment/SelfPickup.cpp library/include/Shipment/SelfPickup.h
+        library/src/Payment/CashPayment.cpp library/include/Payment/CashPayment.h
+        library/src/Payment/CardPayment.cpp library/include/Payment/CardPayment.h
     library/src/Merchandises/Laptop.cpp library/include/Merchandises/Laptop.h
     library/src/Merchandises/Smartphone.cpp library/include/Merchandises/Smartphone.h
         library/src/Exceptions/ClientException.cpp library/include/Exceptions/ClientException.h
         library/src/Exceptions/OrderException.cpp library/include/Exceptions/OrderException.h
-        library/src/Exceptions/MerchandiseException.cpp library/include/Exceptions/MerchandiseException.h)
+        library/src/Exceptions/MerchandiseException.cpp library/include/Exceptions/MerchandiseException.h library/src/Managers/OrdersManager.cpp library/include/Managers/OrdersManager.h)
 
 add_executable(Projekt_ArtysciProgramisici ${SOURCE_FILES})
 
@@ -56,8 +56,8 @@ set(SOURCE_TEST_FILES
     test/TestClient.cpp
         library/src/Repositories/Repository.cpp library/include/Repositories/Repository.h
     library/src/Order.cpp library/include/Order.h
-    library/src/ShipmentType.cpp library/include/ShipmentType.h
-    library/src/PaymentType.cpp library/include/PaymentType.h
+        library/src/Shipment/ShipmentType.cpp library/include/Shipment/ShipmentType.h
+        library/src/Payment/PaymentType.cpp library/include/Payment/PaymentType.h
     library/src/Client.cpp library/include/Client.h
     library/src/Cart.cpp library/include/Cart.h
     library/src/Merchandise.cpp library/include/Merchandise.h
@@ -67,13 +67,13 @@ set(SOURCE_TEST_FILES
         library/src/Repositories/MerchandisesRepository.cpp library/include/Repositories/MerchandisesRepository.h
         library/src/Managers/MerchandisesManager.cpp library/include/Managers/MerchandisesManager.h
         library/src/Repositories/OrdersRepository.cpp library/include/Repositories/OrdersRepository.h
-    library/src/CourierDelivery.cpp library/include/CourierDelivery.h
-    library/src/SelfPickup.cpp library/include/SelfPickup.h
-    library/src/CashPayment.cpp library/include/CashPayment.h
-    library/src/CardPayment.cpp library/include/CardPayment.h
+        library/src/Shipment/CourierDelivery.cpp library/include/Shipment/CourierDelivery.h
+        library/src/Shipment/SelfPickup.cpp library/include/Shipment/SelfPickup.h
+        library/src/Payment/CashPayment.cpp library/include/Payment/CashPayment.h
+        library/src/Payment/CardPayment.cpp library/include/Payment/CardPayment.h
     library/src/Merchandises/Laptop.cpp library/include/Merchandises/Laptop.h
         library/src/Exceptions/ClientException.cpp library/include/Exceptions/ClientException.h
-        library/src/Exceptions/OrderException.cpp library/include/Exceptions/OrderException.h)
+        library/src/Exceptions/OrderException.cpp library/include/Exceptions/OrderException.h library/src/Managers/OrdersManager.cpp library/include/Managers/OrdersManager.h)
 
 add_executable(TestProject ${SOURCE_TEST_FILES} )
 

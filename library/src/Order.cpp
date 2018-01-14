@@ -3,8 +3,8 @@
 //
 
 #include "../include/Order.h"
-#include "../include/PaymentType.h"
-#include "../include/ShipmentType.h"
+#include "../include/Payment/PaymentType.h"
+#include "../include/Shipment/ShipmentType.h"
 #include "../include/Client.h"
 #include "../include/Cart.h"
 
