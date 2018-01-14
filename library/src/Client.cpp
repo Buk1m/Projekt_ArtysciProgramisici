@@ -1,8 +1,7 @@
 //
 
-#include <memory>
+
 #include <sstream>
-#include <boost/uuid/uuid.hpp>
 #include "../include/Client.h"
 #include "../include/Merchandise.h"
 #include "../include/Cart.h"

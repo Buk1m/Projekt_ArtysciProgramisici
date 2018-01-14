@@ -4,8 +4,6 @@
 
 #include "../include/MerchandisesManager.h"
 
-MerchandisesManager::MerchandisesManager()
-{}
 
 void MerchandisesManager::createMerchandise(const shared_ptr<Merchandise> &merchandise)
 {

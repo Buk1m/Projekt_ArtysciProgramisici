@@ -13,7 +13,7 @@ class MerchandisesManager
 private:
     shared_ptr<MerchandisesRepository> merchandiseRepository;
 public:
-    MerchandisesManager();
+    MerchandisesManager() = default;
 
     ~MerchandisesManager() = default;
 
