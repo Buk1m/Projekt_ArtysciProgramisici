@@ -49,3 +49,11 @@ cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Cart.cp
 dir_to_ignore/cmake-build-debug
 dir_to_ignore/.idea
 .idea/Projekt_ArtysciProgramisici.iml
+cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Address.cpp.obj
+cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Address.cpp.obj
+cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/ClientsManager.cpp.obj
+cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/ClientsRepository.cpp.obj
+cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/Merchandise.cpp.obj
+cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/MerchandisesManager.cpp.obj
+cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/MerchandisesRepository.cpp.obj
+cmake-build-debug/CMakeFiles/Projekt_ArtysciProgramisici.dir/library/src/OrdersRepository.cpp.obj
