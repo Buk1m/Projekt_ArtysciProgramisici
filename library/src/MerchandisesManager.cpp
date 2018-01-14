@@ -7,12 +7,12 @@
 MerchandisesManager::MerchandisesManager()
 {}
 
-void MerchandisesManager::createClient(const shared_ptr<Merchandise> &merchandise)
+void MerchandisesManager::createMerchandise(const shared_ptr<Merchandise> &merchandise)
 {
 
 }
 
-void MerchandisesManager::removeClient(const shared_ptr<Merchandise> &merchandise)
+void MerchandisesManager::removeMerchandise(const shared_ptr<Merchandise> &merchandise)
 {
 
 }

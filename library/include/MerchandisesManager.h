@@ -17,9 +17,9 @@ public:
 
     ~MerchandisesManager() = default;
 
-    void createClient(const shared_ptr<Merchandise> &merchandise);
+    void createMerchandise(const shared_ptr<Merchandise> &merchandise);
 
-    void removeClient(const shared_ptr<Merchandise> &merchandise);
+    void removeMerchandise(const shared_ptr<Merchandise> &merchandise);
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_MERCHANDISESMANAGER_H
