@@ -5,21 +5,19 @@
 #include <sstream>
 #include <algorithm>
 #include "../include/OrdersRepository.h"
-#include "../include/Order.h"
 
-
-void OrdersRepository::create(shared_ptr<Order> order)
+void OrdersRepository::create(const shared_ptr<Order> &order)
 {
     orders.push_back(order);
 }
 
-void OrdersRepository::remove(shared_ptr<Order> order)
+void OrdersRepository::remove(const shared_ptr<Order> &order)
 {
     auto it = find(orders.begin(), orders.end(), order);
     orders.erase(it);
 }
 
-string OrdersRepository::getAll() const
+const string OrdersRepository::getAll() const
 {
     stringstream info;
     info << "=== OrderRepository ===\n";

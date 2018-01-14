@@ -3,7 +3,7 @@
 //
 
 #include "../include/Cart.h"
-//#include "../include/Merchandise.h"
+#include "../include/Merchandise.h"
 
 Cart::Cart() {}
 
@@ -16,7 +16,7 @@ string Cart::getProductInfo() const
     info << "=================Cart=================" << endl;
     for(auto product : products)
     {
-        //info << product->toString() << endl;
+       info << endl;//product->getInfoAboutMerchandise();
     }
     return info.str();
 }

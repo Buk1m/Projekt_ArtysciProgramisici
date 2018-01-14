@@ -30,8 +30,8 @@ enum orderState
 };
 
 class Client;
-class Cart;
 class Merchandise;
+class Cart;
 class ShipmentType;
 class PaymentType;
 

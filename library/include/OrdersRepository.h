@@ -9,7 +9,7 @@
 #include "Repository.h"
 #include <vector>
 #include <memory>
-class Order;
+#include "Order.h"
 
 class OrdersRepository
         : public Repository<Order>
@@ -21,11 +21,11 @@ public:
 
     ~OrdersRepository() = default;
 
-    void create(shared_ptr<Order> order);
+    void create(const shared_ptr<Order> &order);
 
-    void remove(shared_ptr<Order> order);
+    void remove(const shared_ptr<Order> &order);
 
-    string getAll() const;
+    const string getAll() const;
 };
 
 

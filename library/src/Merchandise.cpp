@@ -6,7 +6,7 @@
 #include "../include/Merchandise.h"
 #include "boost/uuid/uuid_io.hpp"
 
-Merchandise::Merchandise(const string &name, float price, int quantity)
+Merchandise::Merchandise(const string &name, const float &price, const int &quantity)
            : merchandiseId(boost::uuids::random_generator()()),
              name(name),
              price(price),
@@ -29,4 +29,14 @@ void Merchandise::resupply(const int &quantity)
 }
 
 
-
+string Merchandise::getInfoAboutMerchandise() const
+{
+    stringstream info;
+    info << "--- Merchandise --- "
+         << "\nid:" << merchandiseId
+         << "\nname:" << name
+         << "\nprice:" << price
+         << "\nquantity:" << quantity
+         << endl;
+    return info.str();
+}

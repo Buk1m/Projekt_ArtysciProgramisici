@@ -18,10 +18,7 @@ using namespace boost::posix_time;
 using namespace boost::uuids;
 
 class Merchandise;
-class OrderManager;
 class Cart;
-
-
 class Client
 {
 private:
@@ -36,8 +33,9 @@ private:
     shared_ptr<Address> clientAddress;
     shared_ptr<Cart> cart;
 public:
+
     Client(const string &firstName, const string &lastName, const string &password, const string &login,
-           const string &e_mail);
+           const string &e_mail, const shared_ptr<Address> &deliveryAddress, const shared_ptr<Address> &clientAddress);
 
     ~Client() = default;
 
@@ -47,7 +45,7 @@ public:
 
     const string &getLastName() const;
 
-    shared_ptr<Cart> getProductsCart() const;
+    const string getProductsCart() const;
 
     const string getAddress() const;
 
@@ -69,6 +67,7 @@ public:
 
     const string getInfoAboutClient() const;
 };
+
 
 
 

@@ -24,13 +24,13 @@ protected:
     int quantity;
 
 public:
-    Merchandise(const string &name, float price, int quantity);
+    Merchandise(const string &name, const float &price, const int &quantity);
     virtual ~Merchandise() = default;
 
     virtual string getSpecification() const = 0;
     float getPrice() const;
     int getQuantity() const;
-
+    string getInfoAboutMerchandise() const;
     void resupply(const int &quantity);
 };
 
