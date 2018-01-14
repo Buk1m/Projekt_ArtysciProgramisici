@@ -7,12 +7,12 @@
 OrdersManager::OrdersManager()
 {}
 
-void OrdersManager::createClient(const shared_ptr<Order> &order)
+void OrdersManager::createOrder(const shared_ptr<Order> &order)
 {
     ordersRepository->create(order);
 }
 
-void OrdersManager::removeClient(const shared_ptr<Order> &order)
+void OrdersManager::removeOrder(const shared_ptr<Order> &order)
 {
     ordersRepository->remove(order);
 }

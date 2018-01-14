@@ -20,8 +20,8 @@ public:
     OrdersManager();
     ~OrdersManager() = default;
 
-    void createClient(const shared_ptr<Order> &order);
-    void removeClient(const shared_ptr<Order> &order);
+    void createOrder(const shared_ptr<Order> &order);
+    void removeOrder(const shared_ptr<Order> &order);
 };
 
 
