@@ -13,7 +13,7 @@ using namespace std;
 int main()
 {
 
-    /*auto clientRepo = make_shared<ClientRepository>();
+    auto clientRepo = make_shared<ClientRepository>();
     auto ordersRepo = make_shared<OrdersRepository>();
     auto merchandisesRepo = make_shared<MerchandisesRepository>();
 
@@ -35,7 +35,7 @@ int main()
     clientRepo->create(klient1);
     clientRepo->create(klient2);
     clientRepo->create(klient3);
-
+/*
     auto laptop = make_shared<Merchandise>("HP",6000.99,6);
     auto lgg4 = make_shared<Merchandise>("LG",599.0,4);
     auto ultrawide = make_shared<Merchandise>("LG",799.0,5);
