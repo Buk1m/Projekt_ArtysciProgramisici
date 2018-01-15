@@ -33,6 +33,8 @@ public:
     float getPrice() const;
     void setAvailability(bool availability);
     const string getAvailability() const;
+
+    bool isAvailable() const;
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_MERCHANDISE_H

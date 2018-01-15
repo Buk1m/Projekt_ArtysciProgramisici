@@ -6,9 +6,6 @@
 #include "../include/Merchandise.h"
 #include "../include/Exceptions/CartException.h"
 
-#define FULL_CART_EXCEPTION FullCartException(__FILE__, __LINE__)
-#define NOT_IN_CART_EXCEPTION NotInCartException(__FILE__, __LINE__)
-
 Cart::Cart(const int &maxCartCapacity) : maxCartCapacity(maxCartCapacity)
 {}
 
@@ -46,6 +43,11 @@ void Cart::addProduct(const shared_ptr<Merchandise> &product)
     if (maxCartCapacity <= products.size())
     {
         throw FULL_CART_EXCEPTION;
+    }
+
+    if(product->isAvailable() == false)
+    {
+        throw PRODUCT_NOT_AVAILABLE_EXCEPTION;
     }
     products.push_back(product);
 }

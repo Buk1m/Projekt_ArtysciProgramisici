@@ -31,5 +31,10 @@ const string Merchandise::getAvailability() const
         return "NotAvailable";
 }
 
+bool Merchandise::isAvailable() const
+{
+    return availability;
+}
+
 
 
