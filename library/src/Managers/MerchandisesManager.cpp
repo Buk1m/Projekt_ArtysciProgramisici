@@ -4,6 +4,9 @@
 
 #include "../../include/Managers/MerchandisesManager.h"
 
+MerchandisesManager::MerchandisesManager(shared_ptr<MerchandisesRepository> merchandiseRepository)
+                    :merchandiseRepository(merchandiseRepository)
+{}
 
 void MerchandisesManager::createMerchandise(const shared_ptr<Merchandise> &merchandise)
 {
@@ -14,13 +17,6 @@ void MerchandisesManager::removeMerchandise(const shared_ptr<Merchandise> &merch
 {
     merchandiseRepository->remove(merchandise);
 }
-
-void MerchandisesManager::createArchieveMerchandise(const shared_ptr<Merchandise> &merchandise)
-{
-    archieveMerchandiseRepository->create(merchandise);
-}
-
-
 
 
 

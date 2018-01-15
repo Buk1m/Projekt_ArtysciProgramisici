@@ -5,6 +5,7 @@
 #include <sstream>
 #include <algorithm>
 #include "../../include/Repositories/OrdersRepository.h"
+#include "../../include/Client.h"
 #include "../../include/Order.h"
 
 void OrdersRepository::create(const shared_ptr<Order> order)
@@ -33,4 +34,16 @@ const string OrdersRepository::getAll() const
     }
     info << "=============================" << endl;
     return info.str();
+}
+
+const shared_ptr<Order> OrdersRepository::getOrderForClient(const shared_ptr<Client> &client) const
+{
+    int i = 0;
+    while (objects.begin() != objects.end())
+    {
+        if (objects[i]->getClient() == client) return objects[i];
+        ++i;
+    }
+    return nullptr;
+
 }

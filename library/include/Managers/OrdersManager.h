@@ -11,13 +11,14 @@
 using namespace std;
 
 class Order;
+class Client;
 
 class OrdersManager
 {
 private:
     shared_ptr<OrdersRepository> ordersRepository;
 public:
-    OrdersManager() = default;
+    OrdersManager(const shared_ptr<OrdersRepository> ordersRepository);
     ~OrdersManager() = default;
 
     //void createOrder(const shared_ptr<Order> &order);
@@ -26,7 +27,7 @@ public:
                      const shared_ptr<ShipmentType> shipmentType,
                      const shared_ptr<PaymentType> paymentType,
                      const string orderComment);
-    void cancelOrder(const shared_ptr<Order> &order);
+    void cancelOrder(const shared_ptr<Client> &client);
 };
 
 
