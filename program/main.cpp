@@ -48,19 +48,27 @@ int main()
 
 
 
-    auto laptop = make_shared<Laptop>("HP", 3000, "Intel i7", "GTX 1060", "8", "250Gb SSD", "17,3");
-    auto smartphone = make_shared<Smartphone>("LG", 2000, "Snapdragon 810", "5,5 inches", "12 Mpix", "3 Gb");
-
-    merchandisesRepository->create(laptop);
-    merchandisesRepository->create(smartphone);
-
-    client1->addToCart(laptop);
-    client1->addToCart(smartphone);
+    //auto laptop = make_shared<Laptop>("HP", 3000, "Intel i7", "GTX 1060", "8", "250Gb SSD", "17,3");
+    //auto smartphone = make_shared<Smartphone>("LG", 2000, "Snapdragon 810", "5,5 inches", "12 Mpix", "3 Gb");
 
 
-    cout << endl << endl;
+
+    merchandiseManager->pullLaptopSpecsFromFile();
+    //merchandiseManager->pushLaptopSpecsToFile();
+
+    merchandiseManager->pullSmartphoneSpecsFromFile();
+    //merchandiseManager->pushSmartphoneSpecsToFile();
     cout << merchandisesRepository->getAll() << endl;
-    cout << clientRepository->getAll() << endl;
+    //merchandisesRepository->create(laptop);
+    //merchandisesRepository->create(smartphone);
+
+    //client1->addToCart(laptop);
+    //client1->addToCart(smartphone);
+
+
+    /*cout << endl << endl;
+    cout << merchandisesRepository->getAll() << endl;
+    cout << clientRepository->getAll() << endl;*/
 
 //==========================================================================================
     auto cashPayment = make_shared<CashPayment>();
@@ -68,34 +76,22 @@ int main()
     auto courierDelivery = make_shared<CourierDelivery>();
     auto selfPickup = make_shared<SelfPickup>();
 
-    merchandiseManager->resupplyMerchandise(laptop, 3);
+    //merchandiseManager->resupplyMerchandise(laptop, 3);
 
-    ordersManager->createOrder(client1, client1->getClientCart(),
+    /*ordersManager->createOrder(client1, client1->getClientCart(),
                                courierDelivery, cardPayment,
-                               "Produkt fabrycznie zaplombowany");
-<<<<<<< HEAD
+                               "Produkt fabrycznie zaplombowany");*/
 //==========================================================================================
-    cout << laptop->getSpecification() << endl;
+   /* cout << laptop->getSpecification() << endl;
     //ordersManager->cancelOrder(client1);
     cout << ordersManager->endOrderAndPrintBill(client1) << endl;
-=======
 
-    cout << laptop->getSpecification() << endl;
-    ordersManager->cancelOrder(klient1);
-    cout << ordersManager->endOrderAndPrintBill(klient1) << endl;
-    cout << ordersRepo->getAll()  << endl;
+    cout << laptop->getSpecification() << endl;*/
+    /* ordersManager->cancelOrder(client1);
+     cout << ordersManager->endOrderAndPrintBill(client1) << endl;
+     cout << ordersRepository->getAll()  << endl;
 
->>>>>>> 6ec72a142f0a95ed7489c0b24aa4c5cdf3b149c6
+     cout << ordersRepository->getAll() << endl;*/
 
-    cout << ordersRepository->getAll() << endl;
-
-<<<<<<< HEAD
-=======
-   /* vector< shared_ptr<Laptop> > laptops = laptop->resupply(2);
-    for(auto lap : laptops)
-    {
-        cout << lap->getSpecification() << endl;
-    }*/
->>>>>>> 6ec72a142f0a95ed7489c0b24aa4c5cdf3b149c6
     return 0;
 }

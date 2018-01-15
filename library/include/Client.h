@@ -56,13 +56,10 @@ public:
     void addToCart(const shared_ptr<Merchandise> &product);
     void removeFromCart(const shared_ptr<Merchandise> &merchendise);
 
-<<<<<<< HEAD
     void clearCart();
     void reviceOrder() const;
     bool makePaymant();
 
-=======
->>>>>>> 6ec72a142f0a95ed7489c0b24aa4c5cdf3b149c6
     void setHasOngoingOrder(bool hasOngoingOrder);
 };
 
