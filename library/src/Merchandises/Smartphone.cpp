@@ -3,7 +3,9 @@
 //
 
 #include "../../include/Merchandises/Smartphone.h"
+#include "../../include/Exceptions/MerchandiseException.h"
 #include <sstream>
+
 
 Smartphone::Smartphone(const string &name, const float &price, const string &processor,
                        const string &display, const string &camera, const string &ram)
@@ -39,6 +41,10 @@ string Smartphone::getSpecification() const
 
 vector<shared_ptr<Smartphone>> Smartphone::resupply(const int &quantity)
 {
+    if(quantity < 0)
+    {
+        throw INVALID_QUANTITY_EXCEPTION;
+    }
     vector<shared_ptr<Smartphone>> smartphones;
     for(int i=0; i<quantity; i++)
     {
@@ -51,7 +57,8 @@ vector<shared_ptr<Smartphone>> Smartphone::resupply(const int &quantity)
 string Smartphone::loadSpecification() const
 {
     stringstream info;
-    info << name << endl
+    info << merchandiseId << endl
+         << name << endl
          << processor << endl
          << display << endl
          << camera << endl

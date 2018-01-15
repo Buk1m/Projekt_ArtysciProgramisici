@@ -6,10 +6,15 @@
 #include "../../include/Repositories/MerchandisesRepository.h"
 #include "../../include/Merchandises/Laptop.h"
 #include "../../include/Merchandises/Smartphone.h"
+<<<<<<< HEAD
+#include "../../include/Exceptions/MerchandiseException.h"
+
+=======
 #include <typeinfo>
 #include <fstream>
 
 using namespace std;
+>>>>>>> a12d113b64b989814cdfb42703732073b538010b
 
 MerchandisesManager::MerchandisesManager(shared_ptr<MerchandisesRepository>& merchandiseRepository)
                     :merchandiseRepository(merchandiseRepository)
@@ -65,16 +70,46 @@ void MerchandisesManager::pullLaptopSpecsFromFile()
             createMerchandise(laptop);
         }
     }
+<<<<<<< HEAD
+    else
+        throw FILE_OPENING_EXCEPTION;
+=======
     file.close();
     //else
         //throw;
+>>>>>>> a12d113b64b989814cdfb42703732073b538010b
 }
 
 void MerchandisesManager::pullSmartphoneSpecsFromFile()
 {
     ifstream file;
 
+<<<<<<< HEAD
+    string merchandiseId, name, processor, graphicCard, ram, discDrive, display, camera;
+    float price;
+    file.open("smartphonesData.txt", ios::in);
+    if (file.is_open()) {
+        file >> name;
+        file >> processor;
+        file >> display;
+        file >> camera;
+        file >> ram;
+        file >> price;
+    }
+    else
+        throw FILE_OPENING_EXCEPTION;
+    auto smartphone = make_shared<Laptop>(name, price, processor, display, camera, ram);
+    createMerchandise(smartphone);
+}
+
+void MerchandisesManager::pushSmartphoneSpecsToFile()
+{
+    ifstream file;
+
+    string merchandiseId, name, processor, graphicCard, ram, discDrive, display, camera;
+=======
     string name, processor, graphicCard, ram, discDrive, display, camera;
+>>>>>>> a12d113b64b989814cdfb42703732073b538010b
     float price;
     file.open ("smartphonesData.txt", ios::in);
     if (file.is_open())
@@ -94,9 +129,15 @@ void MerchandisesManager::pullSmartphoneSpecsFromFile()
             createMerchandise(laptop);
         }
     }
+<<<<<<< HEAD
+    else
+        throw FILE_OPENING_EXCEPTION;
+
+=======
     file.close();
     //else
     //throw;
+>>>>>>> a12d113b64b989814cdfb42703732073b538010b
 }
 
 void MerchandisesManager::pushLaptopSpecsToFile()
@@ -116,6 +157,11 @@ void MerchandisesManager::pushLaptopSpecsToFile()
         }
         file.close();
     }
+<<<<<<< HEAD
+    else
+        throw FILE_OPENING_EXCEPTION;
+=======
+>>>>>>> a12d113b64b989814cdfb42703732073b538010b
 }
 
 void MerchandisesManager::pushSmartphoneSpecsToFile()
@@ -137,4 +183,5 @@ void MerchandisesManager::pushSmartphoneSpecsToFile()
         }
         file.close();
     }
+    else FILE_OPENING_EXCEPTION;
 }

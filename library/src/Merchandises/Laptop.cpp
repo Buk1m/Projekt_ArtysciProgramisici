@@ -3,7 +3,9 @@
 //
 
 #include "../../include/Merchandises/Laptop.h"
+#include "../../include/Exceptions/MerchandiseException.h"
 #include <sstream>
+
 
 Laptop::Laptop(const string &name, float price, const string &processor,
                const string &graphicCard, const string &ram,
@@ -53,6 +55,10 @@ string Laptop::getSpecification() const
 
 vector<shared_ptr<Laptop>> Laptop::resupply(const int &quantity)
 {
+    if(quantity < 0)
+    {
+        throw INVALID_QUANTITY_EXCEPTION;
+    }
     vector<shared_ptr<Laptop>> laptops;
     for(int i=0; i<quantity; i++)
     {

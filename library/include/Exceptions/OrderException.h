@@ -28,9 +28,9 @@ class CartIsEmptyExcepton : public OrderException
 {
 public:
     CartIsEmptyExcepton(const string &where, int line);
-    ~CartIsEmptyExcepton() = default;
+    ~CartIsEmptyExcepton() override = default;
 
-    string description() const;
+     string description() const override;
 };
 
 
@@ -38,9 +38,9 @@ class OrderLimitException : public OrderException
 {
 public:
     OrderLimitException(const string &where, int line);
-    ~OrderLimitException() = default;
+    ~OrderLimitException() override = default;
 
-    string description() const;
+   string description() const override;
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_ORDEREXCEPTION_H

@@ -3,15 +3,20 @@
 //
 
 #include "../../include/Payment/CardPayment.h"
+#include "../../include/Exceptions/MerchandiseException.h"
 
 CardPayment::CardPayment()
-            :PaymentType()
+        : PaymentType()
 {
     paymentPrice = 5.0;
 }
 
 float CardPayment::makeDiscount(int productsQuantity)
 {
+    if (productsQuantity < 0)
+    {
+        throw INVALID_QUANTITY_EXCEPTION;
+    }
     return (paymentPrice - (productsQuantity * 2) / 10);
 }
 
