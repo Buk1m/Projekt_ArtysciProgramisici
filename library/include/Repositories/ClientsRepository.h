@@ -18,6 +18,7 @@ public:
 
     void create(const shared_ptr<Client> client);
     void remove(const shared_ptr<Client> client);
+    unsigned long getRepositorySize() const;
     const string getAll() const;
 };
 

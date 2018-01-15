@@ -37,45 +37,45 @@ int main()
     auto client2DeliveryAddress = make_shared<Address>("Politechniki", "7");
 //==========================================================================================
 
-
-    auto client1 = make_shared<Client>("Adam", "Lindner", "PostAdam", "passwd", "lind@gmail.com",
-                                       client1Address, client1DeliveryAddress);
-    auto client2 = make_shared<Client>("Bartosz", "Kudra", "Buk1m", "1123", "kud@gmail.com",
-                                       client1Address, client2DeliveryAddress);
-
-    clientRepository->create(client1);
-    clientRepository->create(client2);
-    
-
-    auto laptop = make_shared<Laptop>("ASUS", 4500, "Intel_i5", "GTX_1050", "12", "500Gb_HDD", "15,6");
-    auto smartphone = make_shared<Smartphone>("SAMSUNG", 3800, "Snapdragon 845", "6,1_inches", "16_Mpix", "6_Gb");
-
-
-    merchandisesRepository->create(laptop);
-    merchandisesRepository->create(smartphone);
-
-    //client1->addToCart(laptop);
-    merchandiseManager->pushLaptopSpecsToFile();
-    merchandiseManager->pushSmartphoneSpecsToFile();
-
-    merchandiseManager->pullLaptopSpecsFromFile();
-    merchandiseManager->pullSmartphoneSpecsFromFile();
-
-    cout << merchandisesRepository->getAll() << endl;
-    //client1->addToCart(smartphone);
-
-
-    /*cout << endl << endl;
-    cout << merchandisesRepository->getAll() << endl;
-    cout << clientRepository->getAll() << endl;*/
-
-//==========================================================================================
-    auto cashPayment = make_shared<CashPayment>();
-    auto cardPayment = make_shared<CardPayment>();
-    auto courierDelivery = make_shared<CourierDelivery>();
-    auto selfPickup = make_shared<SelfPickup>();
-
-    //merchandiseManager->resupplyMerchandise(laptop, 3);
+//
+//    auto client1 = make_shared<Client>("Adam", "Lindner", "PostAdam", "passwd", "lind@gmail.com",
+//                                       client1Address, client1DeliveryAddress);
+//    auto client2 = make_shared<Client>("Bartosz", "Kudra", "Buk1m", "1123", "kud@gmail.com",
+//                                       client1Address, client2DeliveryAddress);
+//
+//    clientRepository->create(client1);
+//    clientRepository->create(client2);
+//
+//
+//    auto laptop = make_shared<Laptop>("ASUS", 4500, "Intel_i5", "GTX_1050", "12", "500Gb_HDD", "15,6");
+//    auto smartphone = make_shared<Smartphone>("SAMSUNG", 3800, "Snapdragon 845", "6,1_inches", "16_Mpix", "6_Gb");
+//
+//
+//    merchandisesRepository->create(laptop);
+//    merchandisesRepository->create(smartphone);
+//
+//    //client1->addToCart(laptop);
+//    merchandiseManager->pushLaptopSpecsToFile();
+//    merchandiseManager->pushSmartphoneSpecsToFile();
+//
+//    merchandiseManager->pullLaptopSpecsFromFile();
+//    merchandiseManager->pullSmartphoneSpecsFromFile();
+//
+//    cout << merchandisesRepository->getAll() << endl;
+//    //client1->addToCart(smartphone);
+//
+//
+//    /*cout << endl << endl;
+//    cout << merchandisesRepository->getAll() << endl;
+//    cout << clientRepository->getAll() << endl;*/
+//
+////==========================================================================================
+//    auto cashPayment = make_shared<CashPayment>();
+//    auto cardPayment = make_shared<CardPayment>();
+//    auto courierDelivery = make_shared<CourierDelivery>();
+//    auto selfPickup = make_shared<SelfPickup>();
+//
+//    //merchandiseManager->resupplyMerchandise(laptop, 3);
 
     /*ordersManager->createOrder(client1, client1->getClientCart(),
                                courierDelivery, cardPayment,

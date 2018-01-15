@@ -18,5 +18,10 @@ void ClientsManager::removeClient(const shared_ptr<Client> &client)
     clientRepository->remove(client);
 }
 
+unsigned long ClientsManager::getClientRepositorySize()
+{
+    return clientRepository->getRepositorySize();
+}
+
 
 

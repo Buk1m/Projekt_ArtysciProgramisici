@@ -52,3 +52,8 @@ const shared_ptr<Order> OrdersRepository::getOrderForClient(const shared_ptr<Cli
     return nullptr;
 
 }
+
+unsigned long OrdersRepository::getRepositorySize() const
+{
+    return objects.size();
+}

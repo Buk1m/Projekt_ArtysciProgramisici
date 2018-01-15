@@ -139,3 +139,8 @@ void MerchandisesManager::pushLaptopSpecsToFile()
     else
         throw FILE_OPENING_EXCEPTION;
 }
+
+unsigned long MerchandisesManager::getMerchandiseRepositorySize() const
+{
+    return merchandiseRepository->getRepositorySize();
+}

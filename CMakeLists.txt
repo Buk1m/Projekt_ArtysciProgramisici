@@ -45,17 +45,16 @@ add_executable(Projekt_ArtysciProgramisici ${SOURCE_FILES})
 target_include_directories(Projekt_ArtysciProgramisici PUBLIC include)
 
 #TESTs
-find_package(Boost 1.66.0 COMPONENTS "unit_test_framework" REQUIRED)
+find_package(Boost 1.60.0 COMPONENTS "unit_test_framework" REQUIRED)
 
 include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${Boost_INCLUDE_DIRS}
 )
 
-#Test source files here
+#Test source files hlere
 set(SOURCE_TEST_FILES
         test/master.cpp
-        test/TestClient.cpp
         library/src/Repositories/Repository.cpp library/include/Repositories/Repository.h
         library/src/Order.cpp library/include/Order.h
         library/src/Shipment/ShipmentType.cpp library/include/Shipment/ShipmentType.h
@@ -81,7 +80,7 @@ set(SOURCE_TEST_FILES
         library/include/Exceptions/CartException.h library/src/Exceptions/CartException.cpp
         library/src/Exceptions/RepositoryException.cpp
         library/include/Exceptions/MerchandiseException.h
-        library/src/Exceptions/MerchandiseException.cpp)
+        library/src/Exceptions/MerchandiseException.cpp test/CartTest.cpp test/ClientTest.cpp test/MerchandiseTest.cpp test/OrderTest.cpp test/ManagersTest.cpp)
 
 add_executable(TestProject ${SOURCE_TEST_FILES})
 
