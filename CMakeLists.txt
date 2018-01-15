@@ -70,6 +70,7 @@ set(SOURCE_TEST_FILES
         library/src/Managers/MerchandisesManager.cpp library/include/Managers/MerchandisesManager.h
         library/src/Repositories/OrdersRepository.cpp library/include/Repositories/OrdersRepository.h
         library/src/Shipment/CourierDelivery.cpp library/include/Shipment/CourierDelivery.h
+        library/src/Merchandises/Smartphone.cpp library/include/Merchandises/Smartphone.h
         library/src/Shipment/SelfPickup.cpp library/include/Shipment/SelfPickup.h
         library/src/Payment/CashPayment.cpp library/include/Payment/CashPayment.h
         library/src/Payment/CardPayment.cpp library/include/Payment/CardPayment.h
@@ -77,7 +78,10 @@ set(SOURCE_TEST_FILES
         library/src/Exceptions/ClientException.cpp library/include/Exceptions/ClientException.h
         library/src/Exceptions/OrderException.cpp library/include/Exceptions/OrderException.h
         library/src/Managers/OrdersManager.cpp library/include/Managers/OrdersManager.h
-        library/include/Exceptions/CartException.h library/src/Exceptions/CartException.cpp library/src/Exceptions/RepositoryException.cpp)
+        library/include/Exceptions/CartException.h library/src/Exceptions/CartException.cpp
+        library/src/Exceptions/RepositoryException.cpp
+        library/include/Exceptions/MerchandiseException.h
+        library/src/Exceptions/MerchandiseException.cpp)
 
 add_executable(TestProject ${SOURCE_TEST_FILES})
 

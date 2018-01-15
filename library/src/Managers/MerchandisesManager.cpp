@@ -100,7 +100,7 @@ void MerchandisesManager::pushSmartphoneSpecsToFile()
 {
     ofstream file;
     string classTypeName;
-    file.open ("laptopsData.txt", ios::out);
+    file.open ("laptopsData.txt", ios::app);
     if (file.is_open())
     {
         auto merchandises = merchandiseRepository->getMerchandises();
@@ -123,7 +123,7 @@ void MerchandisesManager::pushLaptopSpecsToFile()
 {
     ofstream file;
     string classTypeName;
-    file.open ("laptopsData.txt", ios::out);
+    file.open ("laptopsData.txt", ios::app);
     if (file.is_open())
     {
         auto merchandises = merchandiseRepository->getMerchandises();
