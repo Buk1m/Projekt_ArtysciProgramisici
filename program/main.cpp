@@ -60,10 +60,12 @@ int main()
     auto courierDelivery = make_shared<CourierDelivery>();
     auto selfPickup = make_shared<SelfPickup>();
 
+    cout<<klient1->isHasOngoingOrder() << endl<<endl<<endl;
 
     ordersManager->createOrder(klient1, klient1->getClientCart(),
                                selfPickup, cashPayment,
                                "Produkt fabrycznie zaplombowany");
+
 
     cout << laptop->getSpecification() << endl;
     ordersManager->cancelOrder(klient1);
@@ -72,6 +74,7 @@ int main()
     cout << ordersManager->endOrderAndPrintBill(klient1) << endl;
 
     cout << ordersRepo->getAll()  << endl;
+
 
     /*klient1Order->setPaymentType(cardPayment);
     cout << "Orderinfo : \n" << klient1Order->getInfoAboutOrder() << endl;*/

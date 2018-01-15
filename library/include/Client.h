@@ -33,6 +33,7 @@ private:
     shared_ptr<Address> deliveryAddress;
     shared_ptr<Address> clientAddress;
     shared_ptr<Cart> cart;
+    bool hasOngoingOrder;
 public:
     Client(const string &firstName, const string &lastName, const string &password, const string &login,
                                    const string &e_mail, const shared_ptr<Address> &deliveryAddress, const shared_ptr<Address> &clientAddress);
@@ -47,6 +48,7 @@ public:
     const string getInfoAboutClient() const;
     const string getClientOrders() const;
     const shared_ptr<Cart>& getClientCart() const;
+    bool isHasOngoingOrder() const;
 
     void updateInfo(const string &firstName, const string &lastName, const string &e_mail);
     void updateLoginAndPassword(const string &login, const string &password);
@@ -56,6 +58,8 @@ public:
 
     void reviceOrder() const;
     bool makePaymant();
+
+    void setHasOngoingOrder(bool hasOngoingOrder);
 };
 
 

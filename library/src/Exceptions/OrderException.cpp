@@ -23,3 +23,16 @@ string CartIsEmptyExcepton::description() const
          << line << "]:" << endl;
     return sout.str();
 }
+
+OrderLimitException::OrderLimitException(const string &where, int line) : OrderException("Orders limit exceeded.",
+                                                                                         where,
+                                                                                         line)
+{}
+
+string OrderLimitException::description() const
+{
+    stringstream sout;
+    sout << what() << "Client can have up to 1 order at a time." << " [" << where << " line "
+         << line << "]:" << endl;
+    return sout.str();
+}

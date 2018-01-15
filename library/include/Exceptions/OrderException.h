@@ -32,4 +32,12 @@ public:
     string description() const;
 };
 
+class OrderLimitException : public OrderException
+{
+public:
+    OrderLimitException(const string &where, int line);
+    ~OrderLimitException() = default;
+    string description() const;
+};
+
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_ORDEREXCEPTION_H
