@@ -40,3 +40,10 @@ void OrdersManager::cancelOrder(const shared_ptr<Client> &client)
     }
     ordersRepository->cancel(order);
 }
+
+const string OrdersManager::endOrderAndPrintBill(const shared_ptr<Client> &client)
+{
+    auto order = ordersRepository->getOrderForClient(client);
+    order->endOrder();
+    return order->printBill();
+}

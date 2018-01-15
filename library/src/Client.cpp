@@ -90,7 +90,7 @@ const string Client::getClientOrders() const
 
 void Client::reviceOrder() const
 {
-    return laptopOrder.endOrder();
+    return laptopOrder.endOrderAndPrintBill();
 }
 
 bool Client::makePaymant()

@@ -27,7 +27,7 @@ void OrdersRepository::cancel(const shared_ptr<Order> order)
 const string OrdersRepository::getAll() const
 {
     stringstream info;
-    info << "=== OrderRepository ===\n";
+    info << "====== OrderRepository ======\n";
     for (auto order:objects)
     {
         info << order->getInfoAboutOrder();
