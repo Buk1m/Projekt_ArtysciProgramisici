@@ -28,6 +28,8 @@ public:
                      const shared_ptr<PaymentType> paymentType,
                      const string orderComment);
     void cancelOrder(const shared_ptr<Client> &client);
+    const string endOrderAndPrintBill(const shared_ptr<Client> &client);
+
 };
 
 
