@@ -93,31 +93,6 @@ void Client::setHasOngoingOrder(bool hasOngoingOrder)
     Client::hasOngoingOrder = hasOngoingOrder;
 }
 
-/*
-const string Client::getClientOrders() const
-{
-    return ordersManager.getAllClientOrders(shared_ptr<Client> client);
-}
-
-void Client::reviceOrder() const
-{
-    return laptopOrder.endOrderAndPrintBill();
-}
-
-bool Client::makePaymant()
-{
-    try
-    {
-        laptopOrder.state = paid;
-        return true;
-    }
-    catch (...)
-    {
-        return false;
-    }
-}
-*/
-
 const string Client::getInfoAboutClient() const
 {
     stringstream info;
