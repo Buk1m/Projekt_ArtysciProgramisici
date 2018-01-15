@@ -8,7 +8,6 @@
 #include "../../include/Merchandises/Smartphone.h"
 #include "../../include/Exceptions/MerchandiseException.h"
 
-#include <typeinfo>
 #include <fstream>
 
 using namespace std;
@@ -44,11 +43,12 @@ void MerchandisesManager::resupplyMerchandise(const shared_ptr<Smartphone> &smar
         merchandiseRepository->create(smart);
     }
 }
+
+
 void MerchandisesManager::pullLaptopSpecsFromFile()
 {
     ifstream file;
-
-    string name, processor, graphicCard, ram, discDrive, display, camera;
+    string name, processor, graphicCard, ram, discDrive, display;
     float price;
     file.open ("laptopsData.txt");
     if (file.is_open())
@@ -66,12 +66,10 @@ void MerchandisesManager::pullLaptopSpecsFromFile()
                                               graphicCard, ram, discDrive, display);
             createMerchandise(laptop);
         }
+        file.close();
     }
     else
         throw FILE_OPENING_EXCEPTION;
-    file.close();
-    //else
-        //throw;
 }
 
 void MerchandisesManager::pullSmartphoneSpecsFromFile()
@@ -80,8 +78,9 @@ void MerchandisesManager::pullSmartphoneSpecsFromFile()
 
     string name, processor, display, camera, ram;
     float price;
-    file.open("smartphonesData.txt", ios::in);
-    if (file.is_open()) {
+    file.open("smartphonesData.txt");
+    if (file.is_open())
+    {
         file >> name;
         file >> processor;
         file >> display;
@@ -99,30 +98,25 @@ void MerchandisesManager::pullSmartphoneSpecsFromFile()
 void MerchandisesManager::pushSmartphoneSpecsToFile()
 {
     ofstream file;
-    string classTypeName;
-    file.open ("laptopsData.txt", ios::app);
+    file.open ("smartphonesData.txt", ios::app);
     if (file.is_open())
     {
         auto merchandises = merchandiseRepository->getMerchandises();
 
         for(auto merchandise : merchandises)
         {
-            classTypeName = typeid(merchandise).name();
-            if(classTypeName == "Smartphone")
-                file << merchandise->loadSpecification() << endl;
+            if(merchandise->getMerchandiseType() == "Smartphone")
+                file << merchandise->loadSpecification();
         }
         file.close();
     }
     else
         throw FILE_OPENING_EXCEPTION;
-    //else
-    //throw;
 }
 
 void MerchandisesManager::pushLaptopSpecsToFile()
 {
     ofstream file;
-    string classTypeName;
     file.open ("laptopsData.txt", ios::app);
     if (file.is_open())
     {
@@ -130,9 +124,8 @@ void MerchandisesManager::pushLaptopSpecsToFile()
 
         for(auto merchandise : merchandises)
         {
-            classTypeName = typeid(merchandise).name();
-            if(classTypeName == "Laptop")
-                file << merchandise->loadSpecification() << endl;
+            if(merchandise->getMerchandiseType() == "Laptop")
+                file << merchandise->loadSpecification();
         }
         file.close();
     }

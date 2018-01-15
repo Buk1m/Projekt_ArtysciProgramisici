@@ -32,6 +32,7 @@ public:
     string loadSpecification() const;
     string getSpecification() const;
     vector<shared_ptr<Laptop>> resupply(const int &quantity);
+    const string getMerchandiseType() const;
 };
 
 

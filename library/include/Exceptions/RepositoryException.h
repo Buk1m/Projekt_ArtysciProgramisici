@@ -30,7 +30,6 @@ class ObjectNotFoundException : public RepositoryException
 {
 public:
     ObjectNotFoundException(const string &where, int line);
-
     ~ObjectNotFoundException() = default;
 
     string description() const;

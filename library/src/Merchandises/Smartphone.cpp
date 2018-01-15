@@ -57,13 +57,18 @@ vector<shared_ptr<Smartphone>> Smartphone::resupply(const int &quantity)
 string Smartphone::loadSpecification() const
 {
     stringstream info;
-    info << merchandiseId << endl
+    info << endl
          << name << endl
          << processor << endl
          << display << endl
          << camera << endl
          << ram << endl
-         << price << endl;
+         << price;
     return info.str();
+}
+
+const string Smartphone::getMerchandiseType() const
+{
+    return "Smartphone";
 }
 

@@ -46,7 +46,6 @@ public:
     const string getAddress() const;
     const string getDeliveryAddress() const;
     const string getInfoAboutClient() const;
-    const string getClientOrders() const;
     const shared_ptr<Cart>& getClientCart() const;
     bool isHasOngoingOrder() const;
 

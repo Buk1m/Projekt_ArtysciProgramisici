@@ -2,7 +2,6 @@
 // Created by Bartek on 1/14/2018.
 //
 
-#include "../../include/Exceptions/ClientException.h"
 #include "../../include/Exceptions/CartException.h"
 
 

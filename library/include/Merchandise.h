@@ -33,6 +33,7 @@ public:
     float getPrice() const;
     void setAvailability(bool availability);
     const string getAvailability() const;
+    virtual const string getMerchandiseType() const = 0;
 
     bool isAvailable() const;
 };

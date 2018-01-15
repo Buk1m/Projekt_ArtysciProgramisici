@@ -47,21 +47,33 @@ int main()
     clientRepository->create(client2);
     
 
-    auto laptop = make_shared<Laptop>("ASUS", 4500, "Intel_i5", "GTX_1050", "12", "500Gb_HDD", "15,6");
-    auto smartphone = make_shared<Smartphone>("SAMSUNG", 3800, "Snapdragon 845", "6,1_inches", "16_Mpix", "6_Gb");
-
+    auto laptop = make_shared<Laptop>("ASUS", 4500, "Intel_i5", "GTX_1050", "12", "500Gb_HDD", "15.6");
+    auto smartphone = make_shared<Smartphone>("SAMSUNG", 3800, "Snapdragon 845", "6.1_inches", "16_Mpix", "6_Gb");
 
     merchandisesRepository->create(laptop);
     merchandisesRepository->create(smartphone);
 
-    //client1->addToCart(laptop);
-    merchandiseManager->pushLaptopSpecsToFile();
+
     merchandiseManager->pushSmartphoneSpecsToFile();
+    merchandiseManager->pushLaptopSpecsToFile();
+
+    merchandiseManager->removeMerchandise(laptop);
+    merchandiseManager->removeMerchandise(smartphone);
+
+    merchandiseManager->pullSmartphoneSpecsFromFile();
+    merchandiseManager->pullLaptopSpecsFromFile();
+
 
     merchandiseManager->pullLaptopSpecsFromFile();
     merchandiseManager->pullSmartphoneSpecsFromFile();
 
     cout << merchandisesRepository->getAll() << endl;
+
+    cout << endl << endl << endl;
+
+
+    //cout << merchandisesRepository->getAll() << endl;
+    //client1->addToCart(laptop);
     //client1->addToCart(smartphone);
 
 

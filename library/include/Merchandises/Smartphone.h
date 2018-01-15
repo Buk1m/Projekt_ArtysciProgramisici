@@ -28,6 +28,7 @@ public:
     string getSpecification() const;
     string loadSpecification() const;
     vector<shared_ptr<Smartphone>> resupply(const int &quantity);
+    const string getMerchandiseType() const;
 };
 
 

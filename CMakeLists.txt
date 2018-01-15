@@ -34,7 +34,6 @@ set(SOURCE_FILES
         library/src/Payment/CardPayment.cpp library/include/Payment/CardPayment.h
         library/src/Merchandises/Laptop.cpp library/include/Merchandises/Laptop.h
         library/src/Merchandises/Smartphone.cpp library/include/Merchandises/Smartphone.h
-        library/src/Exceptions/ClientException.cpp library/include/Exceptions/ClientException.h
         library/src/Exceptions/OrderException.cpp library/include/Exceptions/OrderException.h
         library/src/Exceptions/MerchandiseException.cpp library/include/Exceptions/MerchandiseException.h
         library/src/Managers/OrdersManager.cpp library/include/Managers/OrdersManager.h
@@ -75,7 +74,6 @@ set(SOURCE_TEST_FILES
         library/src/Payment/CashPayment.cpp library/include/Payment/CashPayment.h
         library/src/Payment/CardPayment.cpp library/include/Payment/CardPayment.h
         library/src/Merchandises/Laptop.cpp library/include/Merchandises/Laptop.h
-        library/src/Exceptions/ClientException.cpp library/include/Exceptions/ClientException.h
         library/src/Exceptions/OrderException.cpp library/include/Exceptions/OrderException.h
         library/src/Managers/OrdersManager.cpp library/include/Managers/OrdersManager.h
         library/include/Exceptions/CartException.h library/src/Exceptions/CartException.cpp
