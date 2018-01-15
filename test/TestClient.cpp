@@ -74,7 +74,6 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         //klient1->addToCart(m3);
 
 
-        BOOST_CHECK_EQUAL(client1->getFirstName(), "Adam");
     }
 
 
