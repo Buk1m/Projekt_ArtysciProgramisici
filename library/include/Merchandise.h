@@ -28,6 +28,7 @@ public:
     Merchandise(const string &name, const float &price);
     virtual ~Merchandise() = default;
 
+    virtual string loadSpecification() const = 0;
     virtual string getSpecification() const = 0;
     float getPrice() const;
     void setAvailability(bool availability);

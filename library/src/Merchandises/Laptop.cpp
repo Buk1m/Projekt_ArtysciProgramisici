@@ -71,8 +71,7 @@ vector<shared_ptr<Laptop>> Laptop::resupply(const int &quantity)
 string Laptop::loadSpecification() const
 {
     stringstream info;
-    info << merchandiseId << endl
-         << name << endl
+    info << name << endl
          << processor << endl
          << graphicCard << endl
          << ram << endl
