@@ -17,11 +17,16 @@ class OrdersManager
 private:
     shared_ptr<OrdersRepository> ordersRepository;
 public:
-    OrdersManager();
+    OrdersManager() = default;
     ~OrdersManager() = default;
 
-    void createOrder(const shared_ptr<Order> &order);
-    void removeOrder(const shared_ptr<Order> &order);
+    //void createOrder(const shared_ptr<Order> &order);
+
+    void createOrder(const shared_ptr<Client> client, const shared_ptr<Cart> cart,
+                     const shared_ptr<ShipmentType> shipmentType,
+                     const shared_ptr<PaymentType> paymentType,
+                     const string orderComment);
+    void cancelOrder(const shared_ptr<Order> &order);
 };
 
 

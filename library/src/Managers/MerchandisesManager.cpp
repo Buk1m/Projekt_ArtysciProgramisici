@@ -7,12 +7,17 @@
 
 void MerchandisesManager::createMerchandise(const shared_ptr<Merchandise> &merchandise)
 {
-
+    merchandiseRepository->create(merchandise);
 }
 
 void MerchandisesManager::removeMerchandise(const shared_ptr<Merchandise> &merchandise)
 {
+    merchandiseRepository->remove(merchandise);
+}
 
+void MerchandisesManager::createArchieveMerchandise(const shared_ptr<Merchandise> &merchandise)
+{
+    archieveMerchandiseRepository->create(merchandise);
 }
 
 

@@ -16,12 +16,11 @@ class OrdersRepository
 {
 public:
     OrdersRepository() = default;
-
     ~OrdersRepository() = default;
 
-    void create(const shared_ptr<Order> &order);
-
-    void remove(const shared_ptr<Order> &order);
+    void create(const shared_ptr<Order> order);
+    void remove(const shared_ptr<Order> order);
+    void cancel(const shared_ptr<Order> order);
 
     const string getAll() const;
 };

@@ -17,14 +17,14 @@ protected:
     vector< shared_ptr<objectType> > objects;
 public:
     //konstruktory
-    Repository(){}
+    Repository() = default;
 
     //destruktory
-    virtual ~Repository(){}
+    virtual ~Repository() = default;
 
     //metody
-    virtual void    create(const shared_ptr<objectType> &object) = 0;
-    virtual void    remove(const shared_ptr<objectType> &object) = 0;
+    virtual void create(const shared_ptr<objectType> object) = 0;
+    virtual void remove(const shared_ptr<objectType> object) = 0;
     virtual const string  getAll() const = 0;
 };
 

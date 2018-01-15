@@ -103,3 +103,8 @@ const float Order::getOrderCost() const
     }
     return sum;
 }
+
+const vector<shared_ptr<Merchandise>> Order::getOrderedProducts() const
+{
+    return products;
+}

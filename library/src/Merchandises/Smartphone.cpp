@@ -32,7 +32,8 @@ string Smartphone::getSpecification() const
          << "Display: " << display << endl
          << "Camera: " << camera << endl
          << "Ram: " << ram << endl
-         << "Price: " << price << " PLN" << endl;
+         << "Price: " << price << " PLN" << endl
+         << "Availability: " << getAvailability() << endl;
     return info.str();
 }
 

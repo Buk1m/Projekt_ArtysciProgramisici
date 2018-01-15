@@ -68,6 +68,7 @@ public:
     string printBill() const;
     string getOrderState() const;
     const float getOrderCost() const;
+    const vector<shared_ptr<Merchandise>> getOrderedProducts() const;
     void endOrder();
     string getInfoAboutOrder() const;
 

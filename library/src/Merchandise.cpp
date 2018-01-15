@@ -9,12 +9,26 @@
 Merchandise::Merchandise(const string &name, const float &price)
            : merchandiseId(boost::uuids::random_generator()()),
              name(name),
-             price(price)
+             price(price),
+             availability(true)
 {}
 
 float Merchandise::getPrice() const
 {
     return price;
+}
+
+void Merchandise::setAvailability(bool availability)
+{
+    this->availability = availability;
+}
+
+const string Merchandise::getAvailability() const
+{
+    if(availability == true)
+        return "Available";
+    else if(availability == false)
+        return "NotAvailable";
 }
 
 

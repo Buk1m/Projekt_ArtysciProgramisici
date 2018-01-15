@@ -46,7 +46,8 @@ string Laptop::getSpecification() const
          << "Ram: " << ram << endl
          << "DiscDrivem: " << discDrive << endl
          << "Display: " << display << endl
-         << "Price: " << price << " PLN" << endl;
+         << "Price: " << price << " PLN" << endl
+         << "Availability: " << getAvailability() << endl;
     return info.str();
 }
 

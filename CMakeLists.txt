@@ -36,7 +36,8 @@ set(SOURCE_FILES
     library/src/Merchandises/Smartphone.cpp library/include/Merchandises/Smartphone.h
         library/src/Exceptions/ClientException.cpp library/include/Exceptions/ClientException.h
         library/src/Exceptions/OrderException.cpp library/include/Exceptions/OrderException.h
-        library/src/Exceptions/MerchandiseException.cpp library/include/Exceptions/MerchandiseException.h library/src/Managers/OrdersManager.cpp library/include/Managers/OrdersManager.h)
+        library/src/Exceptions/MerchandiseException.cpp library/include/Exceptions/MerchandiseException.h
+        library/src/Managers/OrdersManager.cpp library/include/Managers/OrdersManager.h)
 
 add_executable(Projekt_ArtysciProgramisici ${SOURCE_FILES})
 

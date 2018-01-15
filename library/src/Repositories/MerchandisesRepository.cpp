@@ -10,12 +10,12 @@
 MerchandisesRepository::MerchandisesRepository()
 {}
 
-void MerchandisesRepository::create(const shared_ptr<Merchandise> &merchandise)
+void MerchandisesRepository::create(const shared_ptr<Merchandise> merchandise)
 {
     objects.push_back(merchandise);
 }
 
-void MerchandisesRepository::remove(const shared_ptr<Merchandise> &merchandise)
+void MerchandisesRepository::remove(const shared_ptr<Merchandise> merchandise)
 {
     auto it = find(objects.begin(), objects.end(), merchandise);
     objects.erase(it);

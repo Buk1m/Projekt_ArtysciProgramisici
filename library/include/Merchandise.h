@@ -22,16 +22,16 @@ protected:
     uuid merchandiseId;
     string name;
     float price;
+    bool availability;
 
 public:
     Merchandise(const string &name, const float &price);
-
     virtual ~Merchandise() = default;
 
     virtual string getSpecification() const = 0;
     float getPrice() const;
-/*    virtual vector<shared_ptr<Merchandise>>& resupply(const shared_ptr<Merchandise> &merchandise,
-                                                      const int &quantity) = 0;*/
+    void setAvailability(bool availability);
+    const string getAvailability() const;
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_MERCHANDISE_H

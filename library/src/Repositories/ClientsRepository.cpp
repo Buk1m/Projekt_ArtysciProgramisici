@@ -8,12 +8,12 @@
 
 ClientRepository::ClientRepository() {}
 
-void ClientRepository::create(const shared_ptr<Client> &client)
+void ClientRepository::create(const shared_ptr<Client> client)
 {
     objects.push_back(client);
 }
 
-void ClientRepository::remove(const shared_ptr<Client> &client)
+void ClientRepository::remove(const shared_ptr<Client> client)
 {
     auto it = find(objects.begin(), objects.end(), client);
     objects.erase(it);
