@@ -108,3 +108,8 @@ const vector<shared_ptr<Merchandise>> Order::getOrderedProducts() const
 {
     return products;
 }
+
+const shared_ptr<Client>& Order::getClient() const
+{
+    return client;
+}

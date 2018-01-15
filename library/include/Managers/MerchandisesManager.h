@@ -12,14 +12,13 @@ class MerchandisesManager
 {
 private:
     shared_ptr<MerchandisesRepository> merchandiseRepository;
-    shared_ptr<MerchandisesRepository> archieveMerchandiseRepository;
+
 public:
-    MerchandisesManager() = default;
+    MerchandisesManager(shared_ptr<MerchandisesRepository> merchandiseRepository);
     ~MerchandisesManager() = default;
 
     void createMerchandise(const shared_ptr<Merchandise> &merchandise);
     void removeMerchandise(const shared_ptr<Merchandise> &merchandise);
-    void createArchieveMerchandise(const shared_ptr<Merchandise> &merchandise);
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_MERCHANDISESMANAGER_H

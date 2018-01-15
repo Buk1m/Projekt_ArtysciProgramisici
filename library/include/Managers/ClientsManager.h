@@ -17,7 +17,7 @@ class Clientmanager
 private:
     shared_ptr<ClientRepository> clientRepository;
 public:
-    Clientmanager();
+    Clientmanager(shared_ptr<ClientRepository> clientRepository);
     ~Clientmanager() = default;
 
     void createClient(const shared_ptr<Client> &client);

@@ -39,7 +39,10 @@ set(SOURCE_FILES
         library/src/Exceptions/MerchandiseException.cpp library/include/Exceptions/MerchandiseException.h
         library/src/Managers/OrdersManager.cpp library/include/Managers/OrdersManager.h
         library/include/Exceptions/CartException.h library/src/Exceptions/CartException.cpp)
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4d647c5352525c4f93d5ce02b556f3bf1f05031c
 
 add_executable(Projekt_ArtysciProgramisici ${SOURCE_FILES})
 

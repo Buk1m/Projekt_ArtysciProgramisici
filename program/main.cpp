@@ -23,7 +23,7 @@ int main()
     auto ordersRepo = make_shared<OrdersRepository>();
     auto merchandisesRepo = make_shared<MerchandisesRepository>();
 
-    auto ordersManager = make_shared<OrdersManager>();
+    auto ordersManager = make_shared<OrdersManager>(ordersRepo);
 
     auto klient1Address = make_shared<Address>("kupna", "2");
     auto klient2Address = make_shared<Address>("gitignore", "3");
@@ -64,19 +64,14 @@ int main()
     ordersManager->createOrder(klient1, klient1->getClientCart(),
                                selfPickup, cashPayment,
                                "Produkt fabrycznie zaplombowany");
-    /*auto klient1Order = make_shared<Order>(klient1, klient1->getClientCart(),
-                                           selfPickup, cashPayment,
-                                           "Produkt fabrycznie zaplombowany");*/
-/*
-    ordersManager->createOrder(klient1Order);
-*/
-    //cout << laptop->getSpecification() << endl;
-    //cout << "Orderinfo : \n" << klient1Order->getInfoAboutOrder() << endl;
+
+    cout << laptop->getSpecification() << endl;
     //klient1Order->setOrderState("cancelled");
-    //cout << ordersRepo->getAll()  << endl;
-    //cout << laptop->getSpecification() << endl;
-    //klient1Order->setPaymentType(cardPayment);
-    //cout << "Orderinfo : \n" << klient1Order->getInfoAboutOrder() << endl;
+    ordersManager->cancelOrder(klient1);
+    cout << ordersRepo->getAll()  << endl;
+    cout << laptop->getSpecification() << endl;
+    /*klient1Order->setPaymentType(cardPayment);
+    cout << "Orderinfo : \n" << klient1Order->getInfoAboutOrder() << endl;*/
 
    /* vector< shared_ptr<Laptop> > laptops = laptop->resupply(2);
     for(auto lap : laptops)

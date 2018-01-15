@@ -11,6 +11,8 @@
 #include <memory>
 #include "../Order.h"
 
+class Order;
+
 class OrdersRepository
         : public Repository<Order>
 {
@@ -21,6 +23,7 @@ public:
     void create(const shared_ptr<Order> order);
     void remove(const shared_ptr<Order> order);
     void cancel(const shared_ptr<Order> order);
+    const shared_ptr<Order> getOrderForClient(const shared_ptr<Client>& client) const;
 
     const string getAll() const;
 };
