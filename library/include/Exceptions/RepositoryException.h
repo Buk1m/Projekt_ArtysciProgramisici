@@ -20,8 +20,7 @@ protected:
     int line;
 public:
     RepositoryException(const string &message, const string &where, int line);
-
-    virtual ~CartException() = default;
+    virtual ~RepositoryException() = default;
 
     virtual string description() const = 0;
 };
