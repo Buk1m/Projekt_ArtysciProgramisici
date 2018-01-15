@@ -85,10 +85,10 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
 
         auto klient1 = make_shared<Client>("Adam", "Lindner", "dupadupa123", "PostLindner", "lind@gmail.com",
                                            klient1deliveryAddress, klient1Address);
-
-        auto m1 = make_shared<Laptop>("hp", 1999.0, 4, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m2 = make_shared<Laptop>("lg", 1555.0, 3, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m3 = make_shared<Laptop>("xiaomi", 3000.0, 2, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
+/*
+       // auto m1 = make_shared<Laptop>("hp", 1999.0, 4, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
+       // auto m2 = make_shared<Laptop>("lg", 1555.0, 3, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
+       // auto m3 = make_shared<Laptop>("xiaomi", 3000.0, 2, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
         //auto m3 = make_shared<Smartphone>("xiaomi",999.0,4, "ryzen 1600", "grdsg", "sdrg", "sef");
 
         try
@@ -115,7 +115,7 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
 
         BOOST_CHECK_THROW( klient1->addToCart(m2, 1), FullCartException);
         BOOST_CHECK_THROW( klient1->removeFromCart(m3), NotInCartException);
-
+*/
 
         //klient1->addToCart(m3,4);
 

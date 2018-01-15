@@ -12,6 +12,7 @@ void OrdersManager::createOrder(const shared_ptr<Client> client, const shared_pt
                                 const shared_ptr<ShipmentType> shipmentType,
                                 const shared_ptr<PaymentType> paymentType, const string orderComment)
 {
+
     auto order = make_shared<Order>(client, cart, shipmentType, paymentType, orderComment);
     ordersRepository->create(order);
 
