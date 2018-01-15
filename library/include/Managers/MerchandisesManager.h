@@ -33,6 +33,8 @@ public:
     void pullSmartphoneSpecsFromFile();
     void pushSmartphoneSpecsToFile();
     void pushLaptopSpecsToFile();
+
+    unsigned long getMerchandiseRepositorySize() const;
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_MERCHANDISESMANAGER_H

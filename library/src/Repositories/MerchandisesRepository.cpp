@@ -39,3 +39,8 @@ const vector<shared_ptr<Merchandise>> MerchandisesRepository::getMerchandises() 
 {
     return objects;
 }
+
+unsigned long MerchandisesRepository::getRepositorySize() const
+{
+    return objects.size();
+}

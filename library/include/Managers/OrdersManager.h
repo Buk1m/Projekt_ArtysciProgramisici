@@ -30,7 +30,7 @@ public:
                      const string orderComment);
     void cancelOrder(const shared_ptr<Client> &client);
     const string endOrderAndPrintBill(const shared_ptr<Client> &client);
-
+    unsigned long getOrdersRepositorySize() const;
 };
 
 

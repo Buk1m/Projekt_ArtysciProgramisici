@@ -25,6 +25,7 @@ public:
     //metody
     virtual void create(const shared_ptr<objectType> object) = 0;
     virtual void remove(const shared_ptr<objectType> object) = 0;
+    virtual unsigned long getRepositorySize() const =0 ;
     virtual const string  getAll() const = 0;
 };
 

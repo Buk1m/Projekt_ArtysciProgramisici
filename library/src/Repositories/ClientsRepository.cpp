@@ -38,3 +38,8 @@ const string ClientRepository::getAll() const
     return info.str();
 }
 
+unsigned long ClientRepository::getRepositorySize() const
+{
+    return objects.size();
+}
+

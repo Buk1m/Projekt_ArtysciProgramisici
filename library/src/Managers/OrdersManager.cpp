@@ -70,3 +70,8 @@ const string OrdersManager::endOrderAndPrintBill(const shared_ptr<Client> &clien
     ordersRepository->remove(order);
     return order->printBill();
 }
+
+unsigned long OrdersManager::getOrdersRepositorySize() const
+{
+    return ordersRepository->getRepositorySize();
+}
