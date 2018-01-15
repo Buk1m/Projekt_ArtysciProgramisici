@@ -115,8 +115,42 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         ordersManager->cancelOrder(client1);
 
         BOOST_CHECK_EQUAL(client1->isHasOngoingOrder(), false);
-        cout<<client1->isHasOngoingOrder();
-        BOOST_CHECK_NO_THROW(ordersManager->createOrder(client1,client1->getClientCart(),selfPickup,cardPayment,"Check on pickup"));
+        BOOST_CHECK_THROW(ordersManager->createOrder(client1,client1->getClientCart(),selfPickup,cardPayment,"Check on pickup"), CartIsEmptyExcepton);
+    }
+
+    BOOST_AUTO_TEST_CASE(PriceTest)
+    {
+        auto cashPayment = make_shared<CashPayment>();
+        auto cardPayment = make_shared<CardPayment>();
+        auto courierDelivery = make_shared<CourierDelivery>();
+        auto selfPickup = make_shared<SelfPickup>();
+
+        auto ordersRepository = make_shared<OrdersRepository>();
+        auto archieveOrdersRepository = make_shared<OrdersRepository>();
+
+        auto ordersManager = make_shared<OrdersManager>(ordersRepository, archieveOrdersRepository);
+
+        auto client1Address = make_shared<Address>("Piorkowska", "123");
+        auto client1DeliveryAddress = make_shared<Address>("Zgierska", "6");
+
+        auto client1 = make_shared<Client>("Adam", "Lindner", "PostAdam", "passwd", "lind@gmail.com",
+                                           client1Address, client1DeliveryAddress);
+        auto m1 = make_shared<Laptop>("hp", 1999.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
+        auto m2 = make_shared<Laptop>("lg", 1555.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
+        auto m3 = make_shared<Laptop>("xiaomi", 3000.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
+        auto m4 = make_shared<Smartphone>("xiaomi", 999.0, "ryzen 1600", "grdsg", "sdrg", "sef");
+
+        client1->addToCart(m1);
+        client1->addToCart(m2);
+        client1->addToCart(m3);
+
+        float price = 1999.0+1555.0+3000.0;
+        BOOST_CHECK_EQUAL(client1->getClientCart()->getAllProductsPrice(),price);
+
+        client1->removeFromCart(m2);
+        price = 1999.0+3000.0;
+        BOOST_CHECK_EQUAL(client1->getClientCart()->getAllProductsPrice(),price);
+
     }
 
 
