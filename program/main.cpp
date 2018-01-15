@@ -66,17 +66,9 @@ int main()
                                selfPickup, cashPayment,
                                "Produkt fabrycznie zaplombowany");
 
-<<<<<<< HEAD
-=======
-
     cout << laptop->getSpecification() << endl;
->>>>>>> f00775b0ef21dc647f622695057c044e20af21a9
     ordersManager->cancelOrder(klient1);
     cout << ordersManager->endOrderAndPrintBill(klient1) << endl;
-<<<<<<< HEAD
-    
-=======
-
     cout << ordersRepo->getAll()  << endl;
 
 
@@ -88,6 +80,5 @@ int main()
     {
         cout << lap->getSpecification() << endl;
     }*/
->>>>>>> f00775b0ef21dc647f622695057c044e20af21a9
     return 0;
 }

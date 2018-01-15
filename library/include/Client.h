@@ -56,9 +56,6 @@ public:
     void addToCart(const shared_ptr<Merchandise> &product, const int &amount);
     void removeFromCart(const shared_ptr<Merchandise> &merchendise);
 
-    void reviceOrder() const;
-    bool makePaymant();
-
     void setHasOngoingOrder(bool hasOngoingOrder);
 };
 
