@@ -4,17 +4,22 @@
 
 #include "../include/Cart.h"
 #include "../include/Merchandise.h"
+#include "../include/Exceptions/CartException.h"
 
-Cart::Cart() {}
+#define FULL_CART_EXCEPTION FullCartException(__FILE__, __LINE__)
+#define NOT_IN_CART_EXCEPTION NotInCartException(__FILE__, __LINE__)
+
+Cart::Cart(const int &maxCartCapacity) : maxCartCapacity(maxCartCapacity)
+{}
 
 //gettery==============================================================
 const string Cart::getProductInfo() const
 {
     stringstream info;
     info << "============Cart============" << endl;
-    for(auto product : products)
+    for (auto product : products)
     {
-       info << product->getSpecification() << endl;
+        info << product->getSpecification() << endl;
     }
     info << "============================" << endl;
     return info.str();
@@ -23,14 +28,14 @@ const string Cart::getProductInfo() const
 const float Cart::getAllProductsPrice() const
 {
     float sum = 0;
-    for(auto product : products)
+    for (auto product : products)
     {
         sum += product->getPrice();
     }
     return sum;
 }
 
-const vector<shared_ptr<Merchandise>>& Cart::getProducts() const
+const vector<shared_ptr<Merchandise>> &Cart::getProducts() const
 {
     return products;
 }
@@ -38,12 +43,18 @@ const vector<shared_ptr<Merchandise>>& Cart::getProducts() const
 //settery==============================================================
 void Cart::addProduct(const shared_ptr<Merchandise> &product)
 {
+    if (maxCartCapacity <= products.size())
+    {
+        throw FULL_CART_EXCEPTION;
+    }
     products.push_back(product);
 }
 
 void Cart::removeProduct(const shared_ptr<Merchandise> &product)
 {
     auto it = find(products.begin(), products.end(), product);
+    if(it == products.end())
+        throw NOT_IN_CART_EXCEPTION;
     products.erase(it);
 }
 

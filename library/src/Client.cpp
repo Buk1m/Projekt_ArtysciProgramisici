@@ -17,7 +17,7 @@ Client::Client(const string &firstName, const string &lastName, const string &pa
                                                            deliveryAddress(deliveryAddress),
                                                            clientAddress(clientAddress)
 {
-    cart = make_shared<Cart>();
+    cart = make_shared<Cart>(3);
 
     random_generator generateID;
     personalID = generateID();
