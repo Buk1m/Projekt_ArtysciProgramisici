@@ -19,7 +19,6 @@ using namespace std;
 
 int main()
 {
-
     auto clientRepo = make_shared<ClientRepository>();
     auto ordersRepo = make_shared<OrdersRepository>();
     auto merchandisesRepo = make_shared<MerchandisesRepository>();
