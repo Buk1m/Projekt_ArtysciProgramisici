@@ -11,7 +11,7 @@
 
 #define FULL_CART_EXCEPTION FullCartException(__FILE__, __LINE__)
 #define NOT_IN_CART_EXCEPTION NotInCartException(__FILE__, __LINE__)
-#define PRODUCT_NOT_AVAILABLE_EXCEPTION ProductNotAvialable(__FILE__, __LINE__)
+#define PRODUCT_ALREADY_IN_CART_EXCEPTION ProductAlreadyInCartException(__FILE__, __LINE__)
 
 using namespace std;
 
@@ -50,12 +50,12 @@ public:
     string description() const;
 };
 
-class ProductNotAvialable : public CartException
+class ProductAlreadyInCartException : public CartException
 {
 public:
-    ProductNotAvialable(const string &where, int line);
+    ProductAlreadyInCartException(const string &where, int line);
 
-    ~ProductNotAvialable() = default;
+    ~ProductAlreadyInCartException() = default;
 
     string description() const;
 };

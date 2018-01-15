@@ -35,11 +35,11 @@ string NotInCartException::description() const
     return sout.str();
 }
 
-ProductNotAvialable::ProductNotAvialable(const string &where, int line)
+ProductAlreadyInCartException::ProductAlreadyInCartException(const string &where, int line)
         : CartException(where, line, "Product alredy exist in cart.")
 {}
 
-string ProductNotAvialable::description() const
+string ProductAlreadyInCartException::description() const
 {
     stringstream sout;
     sout << what() << "Only one position of the same product allowed."

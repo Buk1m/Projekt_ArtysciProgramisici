@@ -45,9 +45,10 @@ void Cart::addProduct(const shared_ptr<Merchandise> &product)
         throw FULL_CART_EXCEPTION;
     }
 
-    if(product->isAvailable() == false)
+    auto it=find(products.begin(),products.end(), product);
+    if(it != products.end())
     {
-        throw PRODUCT_NOT_AVAILABLE_EXCEPTION;
+        throw PRODUCT_ALREADY_IN_CART_EXCEPTION;
     }
     products.push_back(product);
 }
