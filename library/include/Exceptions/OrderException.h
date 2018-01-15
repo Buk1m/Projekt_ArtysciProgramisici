@@ -12,10 +12,24 @@ using namespace std;
 
 class OrderException : public logic_error
 {
+protected:
+    string where;
+    int line;
 public:
-    OrderException(string message);
-    ~OrderException() = default;
-    string description();
+    OrderException(const string &message, const string &where, int line);
+
+    virtual ~OrderException() = default;
+
+    virtual string description() const = 0;
+};
+
+
+class CartIsEmptyExcepton : public OrderException
+{
+public:
+    CartIsEmptyExcepton(const string &where, int line);
+    ~CartIsEmptyExcepton() = default;
+    string description() const;
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_ORDEREXCEPTION_H

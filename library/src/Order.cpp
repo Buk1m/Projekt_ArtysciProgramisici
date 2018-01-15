@@ -1,4 +1,5 @@
 //
+
 // Created by 4DAM on 13.01.2018.
 //
 
@@ -8,6 +9,9 @@
 #include "../include/Client.h"
 #include "../include/Cart.h"
 #include "../include/Merchandise.h"
+#include "../include/Exceptions/OrderException.h"
+
+#define CART_IS_EMPTY_EXCEPTION CartIsEmptyExcepton(__FILE__, __LINE__)
 
 //constructor==========================================================================
 Order::Order(const shared_ptr<Client> &client, const shared_ptr<Cart> &cart,
@@ -32,6 +36,10 @@ Order::Order(const shared_ptr<Client> &client, const shared_ptr<Cart> &cart,
 //methods==========================================================================
 void Order::moveProductsFromCartToOrder(const vector<shared_ptr<Merchandise>> &products)
 {
+    if(products.empty())
+    {
+        throw CART_IS_EMPTY_EXCEPTION;
+    }
     for(auto product : products)
     {
         this->products.push_back(product);

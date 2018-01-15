@@ -2,13 +2,24 @@
 // Created by 4DAM on 14.01.2018.
 //
 
+#include <sstream>
 #include "../../include/Exceptions/OrderException.h"
 
-OrderException::OrderException(string message)
-              : logic_error(message)
+
+OrderException::OrderException(const string &message, const string &where, int line) : logic_error(message),
+                                                                                       where(where),
+                                                                                       line(line)
 {}
 
-string OrderException::description()
+CartIsEmptyExcepton::CartIsEmptyExcepton(const string &where, int line) : OrderException("Cart is empty.",
+                                                                                         where,
+                                                                                         line)
+{}
+
+string CartIsEmptyExcepton::description() const
 {
-    return std::__cxx11::string();
+    stringstream sout;
+    sout << what() << "Cannot make order from empy cart. Add some products first." << " [" << where << " line "
+         << line << "]:" << endl;
+    return sout.str();
 }
