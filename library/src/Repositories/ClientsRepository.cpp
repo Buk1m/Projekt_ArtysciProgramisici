@@ -4,6 +4,7 @@
 
 #include "../../include/Repositories/ClientsRepository.h"
 #include "../../include/Client.h"
+#include "../../include/Exceptions/RepositoryException.h"
 #include <algorithm>
 
 ClientRepository::ClientRepository() {}
@@ -15,7 +16,12 @@ void ClientRepository::create(const shared_ptr<Client> client)
 
 void ClientRepository::remove(const shared_ptr<Client> client)
 {
+
     auto it = find(objects.begin(), objects.end(), client);
+    if(it == objects.end())
+    {
+        OBJECT_NOT_FOUND_EXCEPTION;
+    }
     objects.erase(it);
 }
 

@@ -7,6 +7,7 @@
 #include "../../include/Repositories/OrdersRepository.h"
 #include "../../include/Client.h"
 #include "../../include/Order.h"
+#include "../../include/Exceptions/RepositoryException.h"
 
 void OrdersRepository::create(const shared_ptr<Order> order)
 {
@@ -16,6 +17,10 @@ void OrdersRepository::create(const shared_ptr<Order> order)
 void OrdersRepository::remove(const shared_ptr<Order> order)
 {
     auto it = find(objects.begin(), objects.end(), order);
+    if(it == objects.end())
+    {
+        OBJECT_NOT_FOUND_EXCEPTION;
+    }
     objects.erase(it);
 }
 

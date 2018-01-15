@@ -38,7 +38,7 @@ set(SOURCE_FILES
         library/src/Exceptions/OrderException.cpp library/include/Exceptions/OrderException.h
         library/src/Exceptions/MerchandiseException.cpp library/include/Exceptions/MerchandiseException.h
         library/src/Managers/OrdersManager.cpp library/include/Managers/OrdersManager.h
-        library/include/Exceptions/CartException.h library/src/Exceptions/CartException.cpp)
+        library/include/Exceptions/CartException.h library/src/Exceptions/CartException.cpp library/include/Exceptions/RepositoryException.h library/src/Exceptions/RepositoryException.cpp)
 
 add_executable(Projekt_ArtysciProgramisici ${SOURCE_FILES})
 
@@ -77,7 +77,7 @@ set(SOURCE_TEST_FILES
         library/src/Exceptions/ClientException.cpp library/include/Exceptions/ClientException.h
         library/src/Exceptions/OrderException.cpp library/include/Exceptions/OrderException.h
         library/src/Managers/OrdersManager.cpp library/include/Managers/OrdersManager.h
-        library/include/Exceptions/CartException.h library/src/Exceptions/CartException.cpp)
+        library/include/Exceptions/CartException.h library/src/Exceptions/CartException.cpp library/src/Exceptions/RepositoryException.cpp)
 
 add_executable(TestProject ${SOURCE_TEST_FILES})
 

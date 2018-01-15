@@ -6,6 +6,8 @@
 #include "../../include/Repositories/MerchandisesRepository.h"
 #include "../../include/Merchandises/Laptop.h"
 #include "../../include/Merchandises/Smartphone.h"
+#include "../../include/Exceptions/MerchandiseException.h"
+
 
 MerchandisesManager::MerchandisesManager(shared_ptr<MerchandisesRepository>& merchandiseRepository)
                     :merchandiseRepository(merchandiseRepository)
@@ -62,8 +64,8 @@ void MerchandisesManager::pullLaptopSpecsFromFile()
         createMerchandise(laptop);
         file.close();
     }
-    //else
-        //throw;
+    else
+        throw FILE_OPENING_EXCEPTION;
 }
 
 void MerchandisesManager::pullSmartphoneSpecsFromFile()
@@ -81,8 +83,8 @@ void MerchandisesManager::pullSmartphoneSpecsFromFile()
         file >> ram;
         file >> price;
     }
-    //else
-        //throw;
+    else
+        throw FILE_OPENING_EXCEPTION;
     auto smartphone = make_shared<Laptop>(name, price, processor, display, camera, ram);
     createMerchandise(smartphone);
 }
@@ -110,8 +112,9 @@ void MerchandisesManager::pushSmartphoneSpecsToFile()
         createMerchandise(laptop);
         file.close();
     }
-    //else
-        //throw;
+    else
+        throw FILE_OPENING_EXCEPTION;
+
 }
 
 void MerchandisesManager::pushLaptopSpecsToFile()
@@ -129,7 +132,8 @@ void MerchandisesManager::pushLaptopSpecsToFile()
         }
         file.close();
     }
-
+    else
+        throw FILE_OPENING_EXCEPTION;
 }
 
 
@@ -148,5 +152,6 @@ void MerchandisesManager::pushSmartphoneSpecsToFile()
         }
         file.close();
     }
+    else FILE_OPENING_EXCEPTION;
 }
 

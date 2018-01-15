@@ -3,6 +3,7 @@
 //
 
 #include "../../include/Shipment/CourierDelivery.h"
+#include "../../include/Exceptions/MerchandiseException.h"
 
 CourierDelivery::CourierDelivery()
                 :ShipmentType()
@@ -13,6 +14,11 @@ CourierDelivery::CourierDelivery()
 
 float CourierDelivery::makeDiscount(int productsQuantity)
 {
+    if (productsQuantity < 0)
+    {
+        throw INVALID_QUANTITY_EXCEPTION;
+    }
+
     return (shipmentPrice - (productsQuantity * 3) / 5);
 }
 
