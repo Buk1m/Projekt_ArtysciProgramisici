@@ -23,6 +23,7 @@ Order::Order(const shared_ptr<Client> &client, const shared_ptr<Cart> &cart,
           paymentType(paymentType),
           orderComment(orderComment)
 {
+
     _state = current;
 
     time_zone_ptr zone(new posix_time_zone("UTC-00:00:00"));
@@ -40,6 +41,7 @@ void Order::moveProductsFromCartToOrder(const vector<shared_ptr<Merchandise>> &p
     {
         throw CART_IS_EMPTY_EXCEPTION;
     }
+
     for(auto product : products)
     {
         this->products.push_back(product);

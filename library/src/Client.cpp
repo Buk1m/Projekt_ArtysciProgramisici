@@ -15,7 +15,8 @@ Client::Client(const string &firstName, const string &lastName, const string &pa
                const shared_ptr<Address> &clientAddress) : firstName(firstName), lastName(lastName), password(password),
                                                            login(login), e_mail(e_mail),
                                                            deliveryAddress(deliveryAddress),
-                                                           clientAddress(clientAddress)
+                                                           clientAddress(clientAddress),
+                                                           hasOngoingOrder(false)
 {
     cart = make_shared<Cart>(3);
 
@@ -57,6 +58,11 @@ const string Client::getDeliveryAddress() const
     return deliveryAddress->getAddressInfo();
 }
 
+bool Client::isHasOngoingOrder() const
+{
+    return hasOngoingOrder;
+}
+
 void Client::updateInfo(const string &firstName, const string &lastName, const string &e_mail)
 {
     this->firstName = firstName;
@@ -70,16 +76,21 @@ void Client::updateLoginAndPassword(const string &login, const string &password)
     this->password = password;
 }
 
+
+
 void Client::addToCart(const shared_ptr<Merchandise> &product, const int &amount)
 {
     cart->addProduct(product);
 }
 
-
-
 void Client::removeFromCart(const shared_ptr<Merchandise> &product)
 {
     cart->removeProduct(product);
+}
+
+void Client::setHasOngoingOrder(bool hasOngoingOrder)
+{
+    Client::hasOngoingOrder = hasOngoingOrder;
 }
 
 /*

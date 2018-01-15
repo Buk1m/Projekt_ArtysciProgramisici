@@ -60,13 +60,34 @@ int main()
     auto courierDelivery = make_shared<CourierDelivery>();
     auto selfPickup = make_shared<SelfPickup>();
 
+    cout<<klient1->isHasOngoingOrder() << endl<<endl<<endl;
 
     ordersManager->createOrder(klient1, klient1->getClientCart(),
                                selfPickup, cashPayment,
                                "Produkt fabrycznie zaplombowany");
 
+<<<<<<< HEAD
+=======
+
+    cout << laptop->getSpecification() << endl;
+>>>>>>> f00775b0ef21dc647f622695057c044e20af21a9
     ordersManager->cancelOrder(klient1);
     cout << ordersManager->endOrderAndPrintBill(klient1) << endl;
+<<<<<<< HEAD
     
+=======
+
+    cout << ordersRepo->getAll()  << endl;
+
+
+    /*klient1Order->setPaymentType(cardPayment);
+    cout << "Orderinfo : \n" << klient1Order->getInfoAboutOrder() << endl;*/
+
+   /* vector< shared_ptr<Laptop> > laptops = laptop->resupply(2);
+    for(auto lap : laptops)
+    {
+        cout << lap->getSpecification() << endl;
+    }*/
+>>>>>>> f00775b0ef21dc647f622695057c044e20af21a9
     return 0;
 }

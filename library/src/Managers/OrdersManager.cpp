@@ -8,6 +8,9 @@
 #include "../../include/Client.h"
 #include "../../include/Merchandise.h"
 #include "../../include/Repositories/MerchandisesRepository.h"
+#include "../../include/Exceptions/OrderException.h"
+
+#define ORDER_LIMIT_EXCEPTION OrderLimitException(__FILE__, __LINE__)
 
 OrdersManager::OrdersManager(const shared_ptr<OrdersRepository> ordersRepository)
               :ordersRepository(ordersRepository)
@@ -18,9 +21,14 @@ void OrdersManager::createOrder(const shared_ptr<Client> client, const shared_pt
                                 const shared_ptr<PaymentType> paymentType, const string orderComment)
 {
 
+    if(client->isHasOngoingOrder())
+    {
+        throw ORDER_LIMIT_EXCEPTION;
+    }
+
     auto order = make_shared<Order>(client, cart, shipmentType, paymentType, orderComment);
     ordersRepository->create(order);
-
+    client->setHasOngoingOrder(true);
     vector<shared_ptr<Merchandise>> productsToArchieve =  cart->getProducts();
 
     for(auto product : productsToArchieve)
@@ -39,11 +47,13 @@ void OrdersManager::cancelOrder(const shared_ptr<Client> &client)
         product->setAvailability(true);
     }
     ordersRepository->cancel(order);
+    client->setHasOngoingOrder(false);
 }
 
 const string OrdersManager::endOrderAndPrintBill(const shared_ptr<Client> &client)
 {
     auto order = ordersRepository->getOrderForClient(client);
     order->endOrder();
+    client->setHasOngoingOrder(false);
     return order->printBill();
 }
