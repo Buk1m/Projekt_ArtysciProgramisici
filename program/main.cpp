@@ -73,12 +73,29 @@ int main()
     ordersManager->createOrder(client1, client1->getClientCart(),
                                courierDelivery, cardPayment,
                                "Produkt fabrycznie zaplombowany");
+<<<<<<< HEAD
 //==========================================================================================
     cout << laptop->getSpecification() << endl;
     //ordersManager->cancelOrder(client1);
     cout << ordersManager->endOrderAndPrintBill(client1) << endl;
+=======
+
+    cout << laptop->getSpecification() << endl;
+    ordersManager->cancelOrder(klient1);
+    cout << ordersManager->endOrderAndPrintBill(klient1) << endl;
+    cout << ordersRepo->getAll()  << endl;
+
+>>>>>>> 6ec72a142f0a95ed7489c0b24aa4c5cdf3b149c6
 
     cout << ordersRepository->getAll() << endl;
 
+<<<<<<< HEAD
+=======
+   /* vector< shared_ptr<Laptop> > laptops = laptop->resupply(2);
+    for(auto lap : laptops)
+    {
+        cout << lap->getSpecification() << endl;
+    }*/
+>>>>>>> 6ec72a142f0a95ed7489c0b24aa4c5cdf3b149c6
     return 0;
 }
