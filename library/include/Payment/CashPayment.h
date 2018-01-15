@@ -13,7 +13,7 @@ public:
     CashPayment();
      ~CashPayment() = default;
 
-    void makeDiscount(int productsQuantity) {};
+    float makeDiscount(int productsQuantity);
     const string getPaymentTypeName();
 };
 

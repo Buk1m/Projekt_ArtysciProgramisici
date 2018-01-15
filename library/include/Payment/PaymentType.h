@@ -24,7 +24,7 @@ public:
     virtual ~PaymentType() = default;
 
     const float getPaymentPrice() const;
-    virtual void makeDiscount(int productsQuantity) = 0;
+    virtual float makeDiscount(int productsQuantity) = 0;
     virtual const string getPaymentTypeName() = 0;
 };
 

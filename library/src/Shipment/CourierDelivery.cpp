@@ -11,9 +11,9 @@ CourierDelivery::CourierDelivery()
 }
 
 
-void CourierDelivery::makeDiscount(int productsQuantity)
+float CourierDelivery::makeDiscount(int productsQuantity)
 {
-    shipmentPrice -= (productsQuantity / 3) * 0.2;
+    return (shipmentPrice - (productsQuantity * 3) / 5);
 }
 
 const string CourierDelivery::getShipmentTypeName()

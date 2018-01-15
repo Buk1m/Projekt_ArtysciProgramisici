@@ -78,7 +78,7 @@ void Client::updateLoginAndPassword(const string &login, const string &password)
 
 
 
-void Client::addToCart(const shared_ptr<Merchandise> &product, const int &amount)
+void Client::addToCart(const shared_ptr<Merchandise> &product)
 {
     cart->addProduct(product);
 }
@@ -134,4 +134,9 @@ const string Client::getInfoAboutClient() const
 const shared_ptr<Cart>& Client::getClientCart() const
 {
     return cart;
+}
+
+void Client::clearCart()
+{
+    cart->clearCart();
 }

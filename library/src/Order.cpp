@@ -105,7 +105,8 @@ string Order::getInfoAboutOrder() const
     info << "------------Order------------"
          << "\nId: " << orderId
          << "\nOrderDate: " << *submitOrderTime
-         << "\nCost: " << getOrderCost()
+         << "\nCompletionDate: " << *completionOrderTime
+         << "\nCost: " << getOrderCost() << " PLN"
          << "\nComment: " << orderComment
          << "\nShipmentType: " << shipmentType->getShipmentTypeName()
          << "\nPaymentType: " << paymentType->getPaymentTypeName()
@@ -116,11 +117,13 @@ string Order::getInfoAboutOrder() const
 
 const float Order::getOrderCost() const
 {
-    float sum = 0;
+    float sum = 0.0;
     for(auto product : products)
     {
         sum += product->getPrice();
     }
+    sum += shipmentType->makeDiscount(products.size());
+    sum += paymentType->makeDiscount(products.size());
     return sum;
 }
 
@@ -132,4 +135,11 @@ const vector<shared_ptr<Merchandise>> Order::getOrderedProducts() const
 const shared_ptr<Client>& Order::getClient() const
 {
     return client;
+}
+
+void Order::setCompletionOrderTime()
+{
+    time_zone_ptr zone(new posix_time_zone("UTC-00:00:00"));
+    ptime currentTime = second_clock::local_time();
+    completionOrderTime = make_shared<local_date_time>(currentTime, zone);
 }

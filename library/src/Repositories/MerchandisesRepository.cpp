@@ -7,9 +7,6 @@
 #include "../../include/Repositories/MerchandisesRepository.h"
 #include "../../include/Merchandise.h"
 
-MerchandisesRepository::MerchandisesRepository()
-{}
-
 void MerchandisesRepository::create(const shared_ptr<Merchandise> merchandise)
 {
     objects.push_back(merchandise);
@@ -31,4 +28,9 @@ const string MerchandisesRepository::getAll() const
     }
     info << "============================" << endl;
     return info.str();
+}
+
+const vector<shared_ptr<Merchandise>> MerchandisesRepository::getMerchandises() const
+{
+    return objects;
 }

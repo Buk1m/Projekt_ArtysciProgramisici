@@ -10,6 +10,11 @@ SelfPickup::SelfPickup()
     shipmentPrice = 0.0;
 }
 
+float SelfPickup::makeDiscount(int productsQuantity)
+{
+    return 0.0;
+}
+
 const string SelfPickup::getShipmentTypeName()
 {
     return "SelfPickup";

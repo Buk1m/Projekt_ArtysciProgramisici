@@ -6,33 +6,32 @@
 #include "../../include/Exceptions/OrderException.h"
 
 
-OrderException::OrderException(const string &message, const string &where, int line) : logic_error(message),
-                                                                                       where(where),
-                                                                                       line(line)
+OrderException::OrderException(const string &message, const string &where, int line)
+               : logic_error(message),
+                 where(where),
+                 line(line)
 {}
 
-CartIsEmptyExcepton::CartIsEmptyExcepton(const string &where, int line) : OrderException("Cart is empty.",
-                                                                                         where,
-                                                                                         line)
+CartIsEmptyExcepton::CartIsEmptyExcepton(const string &where, int line)
+                    : OrderException("Cart is empty.", where, line)
 {}
 
 string CartIsEmptyExcepton::description() const
 {
     stringstream sout;
-    sout << what() << "Cannot make order from empy cart. Add some products first." << " [" << where << " line "
-         << line << "]:" << endl;
+    sout << what() << "Cannot make order from empy cart. Add some products first."
+         << " [" << where << " line "  << line << "]:" << endl;
     return sout.str();
 }
 
-OrderLimitException::OrderLimitException(const string &where, int line) : OrderException("Orders limit exceeded.",
-                                                                                         where,
-                                                                                         line)
+OrderLimitException::OrderLimitException(const string &where, int line)
+                    : OrderException("Orders limit exceeded.", where, line)
 {}
 
 string OrderLimitException::description() const
 {
     stringstream sout;
-    sout << what() << "Client can have up to 1 order at a time." << " [" << where << " line "
-         << line << "]:" << endl;
+    sout << what() << "Client can have up to 1 order at a time."
+         << " [" << where << " line " << line << "]:" << endl;
     return sout.str();
 }

@@ -29,6 +29,7 @@ public:
     Laptop(const Laptop* laptop);
     ~Laptop() = default;
 
+    string loadSpecification() const;
     string getSpecification() const;
     vector<shared_ptr<Laptop>> resupply(const int &quantity);
 };

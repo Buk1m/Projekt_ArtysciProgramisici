@@ -10,9 +10,9 @@ CardPayment::CardPayment()
     paymentPrice = 5.0;
 }
 
-void CardPayment::makeDiscount(int productsQuantity)
+float CardPayment::makeDiscount(int productsQuantity)
 {
-    paymentPrice -= (productsQuantity / 2) * 0.1;
+    return (paymentPrice - (productsQuantity * 2) / 10);
 }
 
 const string CardPayment::getPaymentTypeName()

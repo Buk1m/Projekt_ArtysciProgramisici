@@ -7,6 +7,9 @@
 
 #include "../Merchandise.h"
 #include "../Repositories/MerchandisesRepository.h"
+#include <fstream>
+
+using namespace std;
 
 class Laptop;
 class Smartphone;
@@ -17,13 +20,19 @@ private:
     shared_ptr<MerchandisesRepository> merchandiseRepository;
 
 public:
-    MerchandisesManager(shared_ptr<MerchandisesRepository> merchandiseRepository);
+    MerchandisesManager(shared_ptr<MerchandisesRepository>& merchandiseRepository);
     ~MerchandisesManager() = default;
 
     void createMerchandise(const shared_ptr<Merchandise> &merchandise);
-    void resupplyMerchandise(const shared_ptr<Laptop> &laptop);
-    void resupplyMerchandise(const shared_ptr<Smartphone> &smartphone);
     void removeMerchandise(const shared_ptr<Merchandise> &merchandise);
+
+    void resupplyMerchandise(const shared_ptr<Laptop> &laptop, const int &quantity);
+    void resupplyMerchandise(const shared_ptr<Smartphone> &smartphone, const int &quantity);
+
+    void pullLaptopSpecsFromFile();
+    void pullSmartphoneSpecsFromFile();
+    void pushSmartphoneSpecsToFile();
+    void pushLaptopSpecsToFile();
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_MERCHANDISESMANAGER_H

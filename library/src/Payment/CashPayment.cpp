@@ -10,8 +10,12 @@ CashPayment::CashPayment()
     paymentPrice = 0;
 }
 
+float CashPayment::makeDiscount(int productsQuantity)
+{
+    return 0.0;
+}
+
 const string CashPayment::getPaymentTypeName()
 {
     return "CashPayment";
 }
-

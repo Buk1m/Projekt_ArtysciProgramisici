@@ -12,8 +12,10 @@
 
 #define ORDER_LIMIT_EXCEPTION OrderLimitException(__FILE__, __LINE__)
 
-OrdersManager::OrdersManager(const shared_ptr<OrdersRepository> ordersRepository)
-              :ordersRepository(ordersRepository)
+OrdersManager::OrdersManager(const shared_ptr<OrdersRepository> ordersRepository,
+                             const shared_ptr<OrdersRepository> archieveOrdersRepository)
+              :ordersRepository(ordersRepository),
+              archieveOrdersRepository(archieveOrdersRepository)
 {}
 
 void OrdersManager::createOrder(const shared_ptr<Client> client, const shared_ptr<Cart> cart,
@@ -28,6 +30,7 @@ void OrdersManager::createOrder(const shared_ptr<Client> client, const shared_pt
 
     auto order = make_shared<Order>(client, cart, shipmentType, paymentType, orderComment);
     ordersRepository->create(order);
+
     client->setHasOngoingOrder(true);
     vector<shared_ptr<Merchandise>> productsToArchieve =  cart->getProducts();
 
@@ -35,7 +38,6 @@ void OrdersManager::createOrder(const shared_ptr<Client> client, const shared_pt
     {
         product->setAvailability(false);
     }
-    cart->clearCart();
 }
 
 void OrdersManager::cancelOrder(const shared_ptr<Client> &client)
@@ -48,12 +50,23 @@ void OrdersManager::cancelOrder(const shared_ptr<Client> &client)
     }
     ordersRepository->cancel(order);
     client->setHasOngoingOrder(false);
+    client->clearCart();
+
+    archieveOrdersRepository->create(order);
+    ordersRepository->remove(order);
 }
 
 const string OrdersManager::endOrderAndPrintBill(const shared_ptr<Client> &client)
 {
     auto order = ordersRepository->getOrderForClient(client);
+    if(order->getOrderState() == "cancelled")
+        throw make_shared<CartIsEmptyExcepton>(__FILE__, __LINE__);
     order->endOrder();
     client->setHasOngoingOrder(false);
+    client->clearCart();
+    order->setCompletionOrderTime();
+
+    archieveOrdersRepository->create(order);
+    ordersRepository->remove(order);
     return order->printBill();
 }

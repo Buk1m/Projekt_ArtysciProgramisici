@@ -13,7 +13,7 @@ public:
     CourierDelivery();
     ~CourierDelivery() = default;
 
-    void makeDiscount(int productsQuantity);
+    float makeDiscount(int productsQuantity);
     const string getShipmentTypeName();
 };
 

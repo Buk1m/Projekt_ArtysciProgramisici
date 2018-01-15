@@ -19,7 +19,7 @@ protected:
 public:
     CartException(const string &where, int line, const string message);
     virtual ~CartException() = default;
-    virtual string description() const =0;
+    virtual string description() const = 0;
 };
 
 
@@ -27,7 +27,7 @@ class FullCartException : public CartException
 {
 public:
     FullCartException(const string &where, int line);
-
+    ~FullCartException() = default;
     string description() const;
 };
 
@@ -36,7 +36,7 @@ class NotInCartException: public CartException
 {
 public:
     NotInCartException(const string &where, int line);
-
+    ~NotInCartException() = default;
     string description() const;
 };
 

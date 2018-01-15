@@ -25,7 +25,7 @@ Smartphone::Smartphone(const Smartphone* smartphone)
 string Smartphone::getSpecification() const
 {
     stringstream info;
-    info << "-------- Smartphone -------- " << endl
+    info << "---------Smartphone---------" << endl
          << "Id: " << merchandiseId << endl
          << "Name: " << name << endl
          << "Processor: " << processor << endl
@@ -46,5 +46,18 @@ vector<shared_ptr<Smartphone>> Smartphone::resupply(const int &quantity)
         smartphones.push_back(product);
     }
     return smartphones;
+}
+
+string Smartphone::loadSpecification() const
+{
+    stringstream info;
+    info <<  merchandiseId << endl
+         << name << endl
+         << processor << endl
+         << display << endl
+         << camera << endl
+         << ram << endl
+         << price << endl;
+    return info.str();
 }
 

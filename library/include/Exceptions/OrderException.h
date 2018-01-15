@@ -10,6 +10,7 @@
 
 using namespace std;
 
+
 class OrderException : public logic_error
 {
 protected:
@@ -17,7 +18,6 @@ protected:
     int line;
 public:
     OrderException(const string &message, const string &where, int line);
-
     virtual ~OrderException() = default;
 
     virtual string description() const = 0;
@@ -29,14 +29,17 @@ class CartIsEmptyExcepton : public OrderException
 public:
     CartIsEmptyExcepton(const string &where, int line);
     ~CartIsEmptyExcepton() = default;
+
     string description() const;
 };
+
 
 class OrderLimitException : public OrderException
 {
 public:
     OrderLimitException(const string &where, int line);
     ~OrderLimitException() = default;
+
     string description() const;
 };
 

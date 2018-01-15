@@ -13,7 +13,7 @@ public:
     SelfPickup();
     ~SelfPickup() = default;
 
-    void makeDiscount(int productsQuantity) {};
+    float makeDiscount(int productsQuantity);
     const string getShipmentTypeName();
 };
 

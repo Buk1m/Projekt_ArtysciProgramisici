@@ -38,7 +38,7 @@ Laptop::Laptop(const Laptop* laptop)
 string Laptop::getSpecification() const
 {
     stringstream info;
-    info << "---------- Laptop ---------- " << endl
+    info << "-----------Laptop-----------" << endl
          << "Id: " << merchandiseId << endl
          << "Name: " << name << endl
          << "Processor: " << processor << endl
@@ -60,5 +60,19 @@ vector<shared_ptr<Laptop>> Laptop::resupply(const int &quantity)
         laptops.push_back(product);
     }
     return laptops;
+}
+
+string Laptop::loadSpecification() const
+{
+    stringstream info;
+    info << merchandiseId << endl
+         << name << endl
+         << processor << endl
+         << graphicCard << endl
+         << ram << endl
+         << discDrive << endl
+         << display << endl
+         << price << endl;
+    return info.str();
 }
 

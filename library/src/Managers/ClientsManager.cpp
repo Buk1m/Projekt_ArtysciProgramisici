@@ -4,16 +4,16 @@
 
 #include "../../include/Managers/ClientsManager.h"
 
-Clientmanager::Clientmanager(shared_ptr<ClientRepository> clientRepository)
+ClientsManager::ClientsManager(shared_ptr<ClientRepository> clientRepository)
               :clientRepository(clientRepository)
 {}
 
-void Clientmanager::createClient(const shared_ptr<Client> &client)
+void ClientsManager::createClient(const shared_ptr<Client> &client)
 {
     clientRepository->create(client);
 }
 
-void Clientmanager::removeClient(const shared_ptr<Client> &client)
+void ClientsManager::removeClient(const shared_ptr<Client> &client)
 {
     clientRepository->remove(client);
 }

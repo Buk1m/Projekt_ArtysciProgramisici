@@ -53,9 +53,10 @@ public:
     void updateInfo(const string &firstName, const string &lastName, const string &e_mail);
     void updateLoginAndPassword(const string &login, const string &password);
 
-    void addToCart(const shared_ptr<Merchandise> &product, const int &amount);
+    void addToCart(const shared_ptr<Merchandise> &product);
     void removeFromCart(const shared_ptr<Merchandise> &merchendise);
 
+    void clearCart();
     void reviceOrder() const;
     bool makePaymant();
 
