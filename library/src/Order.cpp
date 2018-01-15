@@ -65,12 +65,22 @@ void Order::setShipmentType(const shared_ptr<ShipmentType> &shipmentType)
     this->shipmentType = shipmentType;
 }
 
-//=============================
 string Order::printBill() const
 {
-    return std::__cxx11::string();
+    stringstream bill;
+    bill << "==================BILL==================" << endl
+         << getInfoAboutOrder() << endl
+         << "PersonalData:===========================" << endl
+         << client->getInfoAboutClient() << endl
+         << "Products:===============================" << endl;
+    for(auto product : products)
+    {
+        bill << product->getSpecification() << endl;
+    }
+    bill << "TotalCost:\t\t\t" << getOrderCost() << " PLN" << endl
+         << "=======================================" << endl;
+    return bill.str();
 }
-//=============================
 
 string Order::getOrderState() const
 {

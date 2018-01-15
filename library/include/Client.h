@@ -35,7 +35,7 @@ private:
     shared_ptr<Cart> cart;
 public:
     Client(const string &firstName, const string &lastName, const string &password, const string &login,
-                                   const string &e_mail, const shared_ptr<Address> &deliveryAddress, const shared_ptr<Address> &clientAddress);
+           const string &e_mail, const shared_ptr<Address> &deliveryAddress, const shared_ptr<Address> &clientAddress);
     ~Client() = default;
 
     const uuid getPersonalID() const;

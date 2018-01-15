@@ -65,21 +65,8 @@ int main()
                                selfPickup, cashPayment,
                                "Produkt fabrycznie zaplombowany");
 
-    cout << laptop->getSpecification() << endl;
     ordersManager->cancelOrder(klient1);
-    cout << ordersRepo->getAll()  << endl;
-    cout << laptop->getSpecification() << endl;
     cout << ordersManager->endOrderAndPrintBill(klient1) << endl;
-
-    cout << ordersRepo->getAll()  << endl;
-
-    /*klient1Order->setPaymentType(cardPayment);
-    cout << "Orderinfo : \n" << klient1Order->getInfoAboutOrder() << endl;*/
-
-   /* vector< shared_ptr<Laptop> > laptops = laptop->resupply(2);
-    for(auto lap : laptops)
-    {
-        cout << lap->getSpecification() << endl;
-    }*/
+    
     return 0;
 }

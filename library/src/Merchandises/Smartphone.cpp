@@ -42,9 +42,8 @@ vector<shared_ptr<Smartphone>> Smartphone::resupply(const int &quantity)
     vector<shared_ptr<Smartphone>> smartphones;
     for(int i=0; i<quantity; i++)
     {
-        //auto product = make_shared<Smartphone>(this);
-        //smartphones.push_back(product);
-        smartphones.push_back(make_shared<Smartphone>(this));
+        auto product = make_shared<Smartphone>(this);
+        smartphones.push_back(product);
     }
     return smartphones;
 }

@@ -27,6 +27,7 @@ void OrdersManager::createOrder(const shared_ptr<Client> client, const shared_pt
     {
         product->setAvailability(false);
     }
+    cart->clearCart();
 }
 
 void OrdersManager::cancelOrder(const shared_ptr<Client> &client)
