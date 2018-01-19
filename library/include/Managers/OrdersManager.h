@@ -19,7 +19,7 @@ private:
     shared_ptr<OrdersRepository> ordersRepository;
     shared_ptr<OrdersRepository> archieveOrdersRepository;
 public:
-    OrdersManager(const shared_ptr<OrdersRepository> ordersRepository,
+    explicit OrdersManager(const shared_ptr<OrdersRepository> ordersRepository,
                   const shared_ptr<OrdersRepository> archieveOrdersRepository);
     ~OrdersManager() = default;
 

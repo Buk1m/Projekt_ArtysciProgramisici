@@ -24,7 +24,7 @@ private:
     int maxCartCapacity;
 
 public:
-    Cart(const int &maxCartCapacity);
+    explicit Cart(const int &maxCartCapacity);
     ~Cart() = default;
 
 public:

@@ -20,7 +20,7 @@ protected:
     float shipmentPrice;
 
 public:
-    ShipmentType();
+    explicit ShipmentType();
     virtual ~ShipmentType() = default;
 
     const float getShipmentPrice() const;

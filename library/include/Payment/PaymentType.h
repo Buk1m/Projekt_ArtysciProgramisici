@@ -20,7 +20,7 @@ protected:
     float paymentPrice;
 
 public:
-    PaymentType();
+    explicit PaymentType();
     virtual ~PaymentType() = default;
 
     const float getPaymentPrice() const;

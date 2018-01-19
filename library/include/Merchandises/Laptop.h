@@ -22,17 +22,17 @@ private:
     string display;
 
 public:
-    Laptop(const string &name, float price, const string &processor,
-           const string &graphicCard, const string &ram,
-           const string &discDrive, const string &display);
+    explicit Laptop(const string &name, float price, const string &processor,
+                    const string &graphicCard, const string &ram,
+                    const string &discDrive, const string &display);
     Laptop(const shared_ptr<Laptop>& laptop);
     Laptop(const Laptop* laptop);
     ~Laptop() = default;
 
-    string loadSpecification() const;
-    string getSpecification() const;
+    string loadSpecification() const override;
+    string getSpecification() const override;
     vector<shared_ptr<Laptop>> resupply(const int &quantity);
-    const string getMerchandiseType() const;
+    const string getMerchandiseType() const override;
 };
 
 

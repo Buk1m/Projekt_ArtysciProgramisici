@@ -25,7 +25,7 @@ protected:
     bool availability;
 
 public:
-    Merchandise(const string &name, const float &price);
+    explicit Merchandise(const string &name, const float &price);
     virtual ~Merchandise() = default;
 
     virtual string loadSpecification() const = 0;

@@ -21,8 +21,7 @@ protected:
     string where;
     int line;
 public:
-    CartException(const string &where, int line, const string message);
-
+    explicit CartException(const string &where, int line, const string message);
     virtual ~CartException() = default;
 
     virtual string description() const = 0;
@@ -32,32 +31,29 @@ public:
 class FullCartException : public CartException
 {
 public:
-    FullCartException(const string &where, int line);
-
+    explicit FullCartException(const string &where, int line);
     ~FullCartException() = default;
 
-    string description() const;
+    string description() const override;
 };
 
 
 class NotInCartException : public CartException
 {
 public:
-    NotInCartException(const string &where, int line);
-
+    explicit NotInCartException(const string &where, int line);
     ~NotInCartException() = default;
 
-    string description() const;
+    string description() const override;
 };
 
 class ProductAlreadyInCartException : public CartException
 {
 public:
-    ProductAlreadyInCartException(const string &where, int line);
-
+    explicit ProductAlreadyInCartException(const string &where, int line);
     ~ProductAlreadyInCartException() = default;
 
-    string description() const;
+    string description() const override;
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_CARTEXCEPTION_H

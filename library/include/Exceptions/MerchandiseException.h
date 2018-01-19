@@ -19,8 +19,7 @@ protected:
     string where;
     int line;
 public:
-    MerchandiseException(const string &message, const string &where, int line);
-
+    explicit MerchandiseException(const string &message, const string &where, int line);
     virtual ~MerchandiseException() = default;
 
     virtual string description() const = 0;
@@ -29,21 +28,19 @@ public:
 class InvalidQuantityException : public MerchandiseException
 {
 public:
-    InvalidQuantityException(const string &where, int line);
-
+    explicit InvalidQuantityException(const string &where, int line);
     ~InvalidQuantityException() = default;
 
-    string description() const;
+    string description() const override;
 };
 
 class FileOpeningException : public MerchandiseException
 {
 public:
-    FileOpeningException(const string &where, int line);
-
+    explicit FileOpeningException(const string &where, int line);
     ~FileOpeningException() = default;
 
-    string description() const;
+    string description() const override;
 };
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_MERCHANDISEEXCEPTION_H

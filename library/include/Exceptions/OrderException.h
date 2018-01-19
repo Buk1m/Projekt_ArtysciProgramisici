@@ -17,7 +17,7 @@ protected:
     string where;
     int line;
 public:
-    OrderException(const string &message, const string &where, int line);
+    explicit OrderException(const string &message, const string &where, int line);
     virtual ~OrderException() = default;
 
     virtual string description() const = 0;
@@ -27,7 +27,7 @@ public:
 class CartIsEmptyExcepton : public OrderException
 {
 public:
-    CartIsEmptyExcepton(const string &where, int line);
+    explicit CartIsEmptyExcepton(const string &where, int line);
     ~CartIsEmptyExcepton() override = default;
 
      string description() const override;
@@ -37,7 +37,7 @@ public:
 class OrderLimitException : public OrderException
 {
 public:
-    OrderLimitException(const string &where, int line);
+    explicit OrderLimitException(const string &where, int line);
     ~OrderLimitException() override = default;
 
    string description() const override;

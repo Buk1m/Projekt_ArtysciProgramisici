@@ -19,16 +19,16 @@ private:
     string camera;
     string ram;
 public:
-    Smartphone(const string &name, const float &price, const string &processor,
-               const string &display, const string &camera, const string &ram);
-    Smartphone(const shared_ptr<Smartphone> &smartphone);
-    Smartphone(const Smartphone* smartphone);
+    explicit Smartphone(const string &name, const float &price, const string &processor,
+                        const string &display, const string &camera, const string &ram);
+    explicit Smartphone(const shared_ptr<Smartphone> &smartphone);
+    explicit Smartphone(const Smartphone* smartphone);
     ~Smartphone() = default;
 
-    string getSpecification() const;
-    string loadSpecification() const;
+    string getSpecification() const override;
+    string loadSpecification() const override;
     vector<shared_ptr<Smartphone>> resupply(const int &quantity);
-    const string getMerchandiseType() const;
+    const string getMerchandiseType() const override;
 };
 
 

@@ -35,8 +35,8 @@ private:
     shared_ptr<Cart> cart;
     bool hasOngoingOrder;
 public:
-    Client(const string &firstName, const string &lastName, const string &password, const string &login,
-           const string &e_mail, const shared_ptr<Address> &deliveryAddress, const shared_ptr<Address> &clientAddress);
+    explicit Client(const string &firstName, const string &lastName, const string &password, const string &login,
+                    const string &e_mail, const shared_ptr<Address> &deliveryAddress, const shared_ptr<Address> &clientAddress);
     ~Client() = default;
 
     const uuid getPersonalID() const;

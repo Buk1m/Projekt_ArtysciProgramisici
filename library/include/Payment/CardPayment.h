@@ -10,11 +10,11 @@
 class CardPayment : public PaymentType
 {
 public:
-    CardPayment();
+    explicit CardPayment();
     ~CardPayment() = default;
 
-    float makeDiscount(int productsQuantity);
-    const string getPaymentTypeName();
+    float makeDiscount(int productsQuantity) override;
+    const string getPaymentTypeName() override;
 };
 
 

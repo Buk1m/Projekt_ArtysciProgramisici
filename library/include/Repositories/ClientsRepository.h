@@ -13,13 +13,13 @@ class ClientRepository
         : public Repository<Client>
 {
 public:
-    ClientRepository() = default;
+    explicit ClientRepository() = default;
     ~ClientRepository() = default;
 
-    void create(const shared_ptr<Client> client);
-    void remove(const shared_ptr<Client> client);
-    unsigned long getRepositorySize() const;
-    const string getAll() const;
+    void create(const shared_ptr<Client> client) override;
+    void remove(const shared_ptr<Client> client) override;
+    unsigned long getRepositorySize() const override;
+    const string getAll() const override;
 };
 
 

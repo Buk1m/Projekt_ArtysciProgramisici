@@ -10,11 +10,11 @@
 class CourierDelivery : public ShipmentType
 {
 public:
-    CourierDelivery();
+    explicit CourierDelivery();
     ~CourierDelivery() = default;
 
-    float makeDiscount(int productsQuantity);
-    const string getShipmentTypeName();
+    float makeDiscount(int productsQuantity) override;
+    const string getShipmentTypeName() override;
 };
 
 

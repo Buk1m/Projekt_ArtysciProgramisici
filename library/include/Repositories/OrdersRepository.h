@@ -17,16 +17,16 @@ class OrdersRepository
         : public Repository<Order>
 {
 public:
-    OrdersRepository() = default;
+    explicit OrdersRepository() = default;
     ~OrdersRepository() = default;
 
-    void create(const shared_ptr<Order> order);
-    void remove(const shared_ptr<Order> order);
+    void create(const shared_ptr<Order> order) override;
+    void remove(const shared_ptr<Order> order) override;
     void cancel(const shared_ptr<Order> order);
-    unsigned long getRepositorySize() const;
+    unsigned long getRepositorySize() const override;
     const shared_ptr<Order> getOrderForClient(const shared_ptr<Client>& client) const;
 
-    const string getAll() const;
+    const string getAll() const override;
 };
 
 

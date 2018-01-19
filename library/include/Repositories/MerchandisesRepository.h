@@ -13,14 +13,14 @@ class MerchandisesRepository
         : public Repository<Merchandise>
 {
 public:
-    MerchandisesRepository() = default;
+    explicit MerchandisesRepository() = default;
     ~MerchandisesRepository() = default;
 
-    void create(const shared_ptr<Merchandise> merchandise);
-    void remove(const shared_ptr<Merchandise> merchandise);
+    void create(const shared_ptr<Merchandise> merchandise) override;
+    void remove(const shared_ptr<Merchandise> merchandise) override;
     const vector<shared_ptr<Merchandise>> getMerchandises() const;
-    unsigned long getRepositorySize() const;
-    const string getAll() const;
+    unsigned long getRepositorySize() const override;
+    const string getAll() const override;
 };
 
 

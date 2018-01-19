@@ -10,11 +10,11 @@
 class CashPayment : public PaymentType
 {
 public:
-    CashPayment();
+    explicit CashPayment();
      ~CashPayment() = default;
 
-    float makeDiscount(int productsQuantity);
-    const string getPaymentTypeName();
+    float makeDiscount(int productsQuantity) override;
+    const string getPaymentTypeName() override;
 };
 
 

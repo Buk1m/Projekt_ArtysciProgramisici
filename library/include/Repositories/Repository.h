@@ -15,14 +15,11 @@ template <typename objectType> class Repository
 {
 protected:
     vector< shared_ptr<objectType> > objects;
-public:
-    //konstruktory
-    Repository() = default;
 
-    //destruktory
+public:
+    explicit Repository() = default;
     virtual ~Repository() = default;
 
-    //metody
     virtual void create(const shared_ptr<objectType> object) = 0;
     virtual void remove(const shared_ptr<objectType> object) = 0;
     virtual unsigned long getRepositorySize() const =0 ;

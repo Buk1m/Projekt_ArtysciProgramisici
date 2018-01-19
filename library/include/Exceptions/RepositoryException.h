@@ -19,7 +19,7 @@ protected:
     string where;
     int line;
 public:
-    RepositoryException(const string &message, const string &where, int line);
+    explicit RepositoryException(const string &message, const string &where, int line);
     virtual ~RepositoryException() = default;
 
     virtual string description() const = 0;
@@ -29,10 +29,10 @@ public:
 class ObjectNotFoundException : public RepositoryException
 {
 public:
-    ObjectNotFoundException(const string &where, int line);
+    explicit ObjectNotFoundException(const string &where, int line);
     ~ObjectNotFoundException() = default;
 
-    string description() const;
+    string description() const override;
 };
 
 

@@ -21,7 +21,7 @@ private:
     shared_ptr<MerchandisesRepository> merchandiseRepository;
 
 public:
-    MerchandisesManager(shared_ptr<MerchandisesRepository>& merchandiseRepository);
+    explicit MerchandisesManager(shared_ptr<MerchandisesRepository>& merchandiseRepository);
     ~MerchandisesManager() = default;
 
     void createMerchandise(const shared_ptr<Merchandise> &merchandise);

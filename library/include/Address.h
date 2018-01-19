@@ -14,8 +14,7 @@ private:
     string street;
     string number;
 public:
-    Address(const string &street, const string &number);
-
+    explicit Address(const string &street, const string &number);
     ~Address() = default;
 
     const string getAddressInfo() const;
