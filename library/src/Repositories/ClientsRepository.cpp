@@ -7,8 +7,6 @@
 #include "../../include/Exceptions/RepositoryException.h"
 #include <algorithm>
 
-ClientRepository::ClientRepository() {}
-
 void ClientRepository::create(const shared_ptr<Client> client)
 {
     objects.push_back(client);

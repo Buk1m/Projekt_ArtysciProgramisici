@@ -22,7 +22,7 @@ using namespace std;
 int main()
 {
 //==========================================================================================
-    auto clientRepository = make_shared<ClientRepository>();
+    /*auto clientRepository = make_shared<ClientRepository>();
     auto merchandisesRepository = make_shared<MerchandisesRepository>();
     auto ordersRepository = make_shared<OrdersRepository>();
     auto archieveOrdersRepository = make_shared<OrdersRepository>();
@@ -34,11 +34,11 @@ int main()
     auto client1Address = make_shared<Address>("Piorkowska", "123");
     auto client2Address = make_shared<Address>("Wlokniarzy", "3");
     auto client1DeliveryAddress = make_shared<Address>("Zgierska", "6");
-    auto client2DeliveryAddress = make_shared<Address>("Politechniki", "7");
+    auto client2DeliveryAddress = make_shared<Address>("Politechniki", "7");*/
 //==========================================================================================
 
 
-    auto client1 = make_shared<Client>("Adam", "Lindner", "PostAdam", "passwd", "lind@gmail.com",
+    /*auto client1 = make_shared<Client>("Adam", "Lindner", "PostAdam", "passwd", "lind@gmail.com",
                                        client1Address, client1DeliveryAddress);
     auto client2 = make_shared<Client>("Bartosz", "Kudra", "Buk1m", "1123", "kud@gmail.com",
                                        client1Address, client2DeliveryAddress);
@@ -67,7 +67,7 @@ int main()
     cout << merchandisesRepository->getAll() << endl;
 
     cout << endl << endl << endl;
-
+*/
 
     //cout << merchandisesRepository->getAll() << endl;
     //client1->addToCart(laptop);
@@ -79,10 +79,10 @@ int main()
     cout << clientRepository->getAll() << endl;*/
 
 //==========================================================================================
-    auto cashPayment = make_shared<CashPayment>();
+    /*auto cashPayment = make_shared<CashPayment>();
     auto cardPayment = make_shared<CardPayment>();
     auto courierDelivery = make_shared<CourierDelivery>();
-    auto selfPickup = make_shared<SelfPickup>();
+    auto selfPickup = make_shared<SelfPickup>();*/
 
     //merchandiseManager->resupplyMerchandise(laptop, 3);
 //

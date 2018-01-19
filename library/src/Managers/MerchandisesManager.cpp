@@ -48,24 +48,11 @@ void MerchandisesManager::resupplyMerchandise(const shared_ptr<Smartphone> &smar
 void MerchandisesManager::pullLaptopSpecsFromFile()
 {
     ifstream file;
-    string name, processor, graphicCard, ram, discDrive, display;
-    float price;
+
     file.open ("laptopsData.txt");
     if (file.is_open())
     {
-        while (!file.eof())
-        {
-            file >> name;
-            file >> processor;
-            file >> graphicCard;
-            file >> ram;
-            file >> discDrive;
-            file >> display;
-            file >> price;
-            auto laptop = make_shared<Laptop>(name, price, processor,
-                                              graphicCard, ram, discDrive, display);
-            createMerchandise(laptop);
-        }
+        readLaptopDataAndCreateObjects(file);
         file.close();
     }
     else
@@ -76,38 +63,25 @@ void MerchandisesManager::pullSmartphoneSpecsFromFile()
 {
     ifstream file;
 
-    string name, processor, display, camera, ram;
-    float price;
     file.open("smartphonesData.txt");
     if (file.is_open())
     {
-        file >> name;
-        file >> processor;
-        file >> display;
-        file >> camera;
-        file >> ram;
-        file >> price;
+        readSmartphoneDataAndCreateObjects(file);
+        file.close();
     }
     else
         throw FILE_OPENING_EXCEPTION;
 
-    auto smartphone = make_shared<Smartphone>(name, price, processor, display, camera, ram);
-    createMerchandise(smartphone);
+
 }
 
 void MerchandisesManager::pushSmartphoneSpecsToFile()
 {
     ofstream file;
-    file.open ("smartphonesData.txt", ios::app);
+    file.open ("smartphonesData.txt", ios::trunc);
     if (file.is_open())
     {
-        auto merchandises = merchandiseRepository->getMerchandises();
-
-        for(auto merchandise : merchandises)
-        {
-            if(merchandise->getMerchandiseType() == "Smartphone")
-                file << merchandise->loadSpecification();
-        }
+        loadMerchandiseData(file, "Smartphone");
         file.close();
     }
     else
@@ -117,23 +91,77 @@ void MerchandisesManager::pushSmartphoneSpecsToFile()
 void MerchandisesManager::pushLaptopSpecsToFile()
 {
     ofstream file;
-    file.open ("laptopsData.txt", ios::app);
+    file.open ("laptopsData.txt", ios::trunc);
     if (file.is_open())
     {
-        auto merchandises = merchandiseRepository->getMerchandises();
-
-        for(auto merchandise : merchandises)
-        {
-            if(merchandise->getMerchandiseType() == "Laptop")
-                file << merchandise->loadSpecification();
-        }
+        loadMerchandiseData(file, "Laptop");
         file.close();
     }
     else
         throw FILE_OPENING_EXCEPTION;
 }
 
+
+
+
 unsigned long MerchandisesManager::getMerchandiseRepositorySize() const
 {
     return merchandiseRepository->getRepositorySize();
+}
+
+bool MerchandisesManager::compareMerchandiseType(shared_ptr<Merchandise> merchandise, string merchType)
+{
+    if(merchandise->getMerchandiseType() == merchType)
+        return true;
+    else
+        return false;
+}
+
+void MerchandisesManager::loadMerchandiseData(ofstream &file, string merchType)
+{
+    auto merchandises = merchandiseRepository->getMerchandises();
+    for(auto merchandise : merchandises)
+    {
+        if( compareMerchandiseType(merchandise, merchType) )
+            file << merchandise->loadSpecification();
+    }
+}
+
+void MerchandisesManager::readSmartphoneDataAndCreateObjects(ifstream &file)
+{
+    string name, processor, display, camera, ram;
+    float price;
+
+    while (!file.eof())
+    {
+        file >> name;
+        file >> processor;
+        file >> display;
+        file >> camera;
+        file >> ram;
+        file >> price;
+
+        auto smartphone = make_shared<Smartphone>(name, price, processor, display, camera, ram);
+        createMerchandise(smartphone);
+    }
+}
+
+void MerchandisesManager::readLaptopDataAndCreateObjects(ifstream &file)
+{
+    string name, processor, graphicCard, ram, discDrive, display;
+    float price;
+
+    while (!file.eof())
+    {
+        file >> name;
+        file >> processor;
+        file >> graphicCard;
+        file >> ram;
+        file >> discDrive;
+        file >> display;
+        file >> price;
+
+        auto laptop = make_shared<Laptop>(name, price, processor, graphicCard, ram, discDrive, display);
+        createMerchandise(laptop);
+    }
 }

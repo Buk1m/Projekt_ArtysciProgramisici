@@ -13,7 +13,7 @@ class ClientRepository
         : public Repository<Client>
 {
 public:
-    ClientRepository();
+    ClientRepository() = default;
     ~ClientRepository() = default;
 
     void create(const shared_ptr<Client> client);

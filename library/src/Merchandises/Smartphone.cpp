@@ -71,4 +71,3 @@ const string Smartphone::getMerchandiseType() const
 {
     return "Smartphone";
 }
-

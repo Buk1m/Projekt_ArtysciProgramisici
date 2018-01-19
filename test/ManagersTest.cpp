@@ -57,11 +57,11 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         clientManager->createClient(client1);
         clientManager->createClient(client2);
 
-        BOOST_CHECK_EQUAL(clientManager->getClientRepositorySize(),2);
+        BOOST_CHECK_EQUAL(clientManager->getClientRepositorySize(), 2);
 
         clientManager->removeClient(client1);
 
-        BOOST_CHECK_EQUAL(clientManager->getClientRepositorySize(),1);
+        BOOST_CHECK_EQUAL(clientManager->getClientRepositorySize(), 1);
     }
 
     BOOST_AUTO_TEST_CASE(OrderManagerTest)

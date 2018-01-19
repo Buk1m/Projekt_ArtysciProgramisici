@@ -86,4 +86,3 @@ const string Laptop::getMerchandiseType() const
 {
     return "Laptop";
 }
-

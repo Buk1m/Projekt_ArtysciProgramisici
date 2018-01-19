@@ -8,6 +8,7 @@
 #include "../Merchandise.h"
 #include "../Repositories/MerchandisesRepository.h"
 #include <fstream>
+#include <map>
 
 using namespace std;
 
@@ -33,6 +34,11 @@ public:
     void pullSmartphoneSpecsFromFile();
     void pushSmartphoneSpecsToFile();
     void pushLaptopSpecsToFile();
+
+    bool compareMerchandiseType(shared_ptr<Merchandise> merchandise, string merchType);
+    void loadMerchandiseData(ofstream &file, string merchType);
+    void readSmartphoneDataAndCreateObjects(ifstream &file);
+    void readLaptopDataAndCreateObjects(ifstream &file);
 
     unsigned long getMerchandiseRepositorySize() const;
 };
