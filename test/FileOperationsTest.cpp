@@ -60,7 +60,6 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
 
         BOOST_CHECK_EQUAL(merchandises[0]->loadSpecification(), smartphoneInfo.str());
         BOOST_CHECK_EQUAL(merchandises[1]->loadSpecification(), laptopInfo.str());
-
     }
 
 BOOST_AUTO_TEST_SUITE_END()
