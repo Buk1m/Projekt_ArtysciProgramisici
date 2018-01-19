@@ -62,17 +62,19 @@ private:
     void moveProductsFromCartToOrder(const vector<shared_ptr<Merchandise>> &products);
 
 public:
-    void setOrderState(const string &state);
-    void setPaymentType(const shared_ptr<PaymentType> &paymentType);
-    void setShipmentType(const shared_ptr<ShipmentType> &shipmentType);
-    void endOrder();
-    string printBill() const;
     string getOrderState() const;
     const float getOrderCost() const;
     const vector<shared_ptr<Merchandise>> getOrderedProducts() const;
     string getInfoAboutOrder() const;
     const shared_ptr<Client>& getClient() const;
+
+    void setOrderState(const string &state);
+    void setPaymentType(const shared_ptr<PaymentType> &paymentType);
+    void setShipmentType(const shared_ptr<ShipmentType> &shipmentType);
     void setCompletionOrderTime();
+
+    void endOrder();
+    string printBill() const;
 
 
 };

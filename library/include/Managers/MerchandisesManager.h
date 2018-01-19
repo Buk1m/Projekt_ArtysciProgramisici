@@ -32,8 +32,8 @@ public:
 
     void pullLaptopSpecsFromFile();
     void pullSmartphoneSpecsFromFile();
-    void pushSmartphoneSpecsToFile();
     void pushLaptopSpecsToFile();
+    void pushSmartphoneSpecsToFile();
 
     bool compareMerchandiseType(shared_ptr<Merchandise> merchandise, string merchType);
     void loadMerchandiseData(ofstream &file, string merchType);

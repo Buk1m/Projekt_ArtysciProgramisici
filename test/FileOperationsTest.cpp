@@ -26,7 +26,6 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         merchandisesRepository->create(laptop);
         merchandisesRepository->create(smartphone);
 
-
         merchandiseManager->pushSmartphoneSpecsToFile();
         merchandiseManager->pushLaptopSpecsToFile();
 
@@ -37,7 +36,6 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         merchandiseManager->pullLaptopSpecsFromFile();
 
 
-        cout << merchandisesRepository->getAll() << endl;
         stringstream laptopInfo, smartphoneInfo;
         laptopInfo  << endl
                     << "ASUS" << endl
