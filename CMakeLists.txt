@@ -78,7 +78,7 @@ set(SOURCE_TEST_FILES
         library/include/Exceptions/CartException.h library/src/Exceptions/CartException.cpp
         library/src/Exceptions/RepositoryException.cpp
         library/include/Exceptions/MerchandiseException.h
-        library/src/Exceptions/MerchandiseException.cpp test/CartTest.cpp test/ClientTest.cpp test/MerchandiseTest.cpp test/OrderTest.cpp test/ManagersTest.cpp)
+        library/src/Exceptions/MerchandiseException.cpp test/CartTest.cpp test/ClientTest.cpp test/OrderTest.cpp test/ManagersTest.cpp)
 
 add_executable(TestProject ${SOURCE_TEST_FILES})
 

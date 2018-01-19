@@ -17,7 +17,6 @@
 #include "../library/include/Exceptions/CartException.h"
 #include "../library/include/Exceptions/MerchandiseException.h"
 #include "../library/include/Exceptions/OrderException.h"
-#include "../library/include/Exceptions/ClientException.h"
 #include "../library/include/Exceptions/RepositoryException.h"
 #include "../library/include/Managers/MerchandisesManager.h"
 #include "../library/include/Repositories/OrdersRepository.h"

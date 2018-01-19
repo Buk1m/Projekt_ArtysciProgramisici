@@ -50,38 +50,6 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         BOOST_CHECK_EQUAL(client1->getLastName(), "Lindner");
     }
 
-<<<<<<< HEAD:test/TestClient.cpp
-    BOOST_AUTO_TEST_CASE(ClientSetters)
-    {
-        //BOOST_CHECK_EQUAL(klient1->getAddress())
-    }
-
-    BOOST_AUTO_TEST_CASE(CartCapacity)
-    {
-        auto client1Address = make_shared<Address>("Piorkowska", "123");
-        auto client1DeliveryAddress = make_shared<Address>("Zgierska", "6");
-
-        auto client1 = make_shared<Client>("Adam", "Lindner", "PostAdam", "passwd", "lind@gmail.com",
-                                           client1Address, client1DeliveryAddress);
-
-        auto m1 = make_shared<Laptop>("hp", 1999.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m2 = make_shared<Laptop>("lg", 1555.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m3 = make_shared<Laptop>("xiaomi", 3000.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m4 = make_shared<Smartphone>("xiaomi", 999.0, "ryzen 1600", "grdsg", "sdrg", "sef");
-
-
-        client1->addToCart(m1);
-        //client1->addToCart(m1);
-        client1->addToCart(m2);
-
-        //BOOST_CHECK_THROW( client1->addToCart(m2), FullCartException);
-        BOOST_CHECK_THROW( client1->removeFromCart(m3), NotInCartException);
-
-        //klient1->addToCart(m3);
-    }
-
-=======
->>>>>>> c1a7838ca92c1a29e0b03f7c1dad26f7c82c7d28:test/ClientTest.cpp
     BOOST_AUTO_TEST_CASE(hasOngoingOredesTest)
     {
         auto cashPayment = make_shared<CashPayment>();
@@ -116,49 +84,6 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         BOOST_CHECK_EQUAL(client1->isHasOngoingOrder(), false);
         BOOST_CHECK_THROW(ordersManager->createOrder(client1,client1->getClientCart(),selfPickup,cardPayment,"Check on pickup"), CartIsEmptyExcepton);
     }
-
-    BOOST_AUTO_TEST_CASE(ProductInCartCheck)
-    {
-        auto cashPayment = make_shared<CashPayment>();
-        auto cardPayment = make_shared<CardPayment>();
-        auto courierDelivery = make_shared<CourierDelivery>();
-        auto selfPickup = make_shared<SelfPickup>();
-
-        auto ordersRepository = make_shared<OrdersRepository>();
-        auto archieveOrdersRepository = make_shared<OrdersRepository>();
-
-        auto ordersManager = make_shared<OrdersManager>(ordersRepository, archieveOrdersRepository);
-
-        auto client1Address = make_shared<Address>("Piorkowska", "123");
-        auto client1DeliveryAddress = make_shared<Address>("Zgierska", "6");
-
-        auto client1 = make_shared<Client>("Adam", "Lindner", "PostAdam", "passwd", "lind@gmail.com",
-                                           client1Address, client1DeliveryAddress);
-        auto m1 = make_shared<Laptop>("hp", 1999.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m2 = make_shared<Laptop>("lg", 1555.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-
-        client1->addToCart(m1);
-        client1->addToCart(m2);
-        /*const <shared_ptr<Cart> productsFromCart = client1->getClientCart();
-
-            BOOST_CHECK_EQUAL(productsFromCart[0], m1);
-            BOOST_CHECK_EQUAL(productsFromCart[1], m2);
-
-        ordersManager->createOrder(client1, client1->getClientCart(), selfPickup, cashPayment, "None");*/
-
-        /*BOOST_CHECK_EQUAL(client1->isHasOngoingOrder(), false);
-        BOOST_CHECK_NO_THROW(ordersManager->createOrder(client1,client1->getClientCart(),selfPickup,cardPayment,"Check on pickup" ));
-
-        BOOST_CHECK_EQUAL(client1->isHasOngoingOrder(), true);
-        BOOST_CHECK_THROW(ordersManager->createOrder(client1,client1->getClientCart(),selfPickup,cardPayment,"Check on pickup" ), OrderLimitException);
-
-        ordersManager->cancelOrder(client1);
-
-        BOOST_CHECK_EQUAL(client1->isHasOngoingOrder(), false);
-        cout<<client1->isHasOngoingOrder();
-        BOOST_CHECK_NO_THROW(ordersManager->createOrder(client1,client1->getClientCart(),selfPickup,cardPayment,"Check on pickup"));*/
-    }
-
 
 
 BOOST_AUTO_TEST_SUITE_END()
