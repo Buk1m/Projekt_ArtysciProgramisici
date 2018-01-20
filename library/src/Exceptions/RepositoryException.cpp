@@ -5,13 +5,14 @@
 #include "../../include/Exceptions/RepositoryException.h"
 
 
-RepositoryException::RepositoryException(const string &message, const string &where, int line) : logic_error(message),
-                                                                                                 where(where),
-                                                                                                 line(line)
+RepositoryException::RepositoryException(const string &message, const string &where, int line)
+                    : logic_error(message),
+                      where(where),
+                      line(line)
 {}
 
 ObjectNotFoundException::ObjectNotFoundException(const string &where, int line)
-        : RepositoryException("Object does not exit in repository", where, line)
+                        : RepositoryException("Object does not exit in repository", where, line)
 {}
 
 std::__cxx11::basic_string<char> ObjectNotFoundException::description() const

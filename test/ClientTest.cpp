@@ -29,28 +29,31 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
 
     BOOST_AUTO_TEST_CASE(CreateAddress)
     {
-        auto client1Address = make_shared<Address>("Piorkowska", "123");
-        auto client2Address = make_shared<Address>("Wlokniarzy", "3");
-        auto client1DeliveryAddress = make_shared<Address>("Zgierska", "6");
-        auto client2DeliveryAddress = make_shared<Address>("Politechniki", "7");
+        auto clientAddress = make_shared<Address>("Piorkowska", "123");
+        auto clientDeliveryAddress = make_shared<Address>("Zgierska", "6");
 
-        BOOST_CHECK_EQUAL(client1Address->getAddressInfo(), "Piorkowska 123");
-        BOOST_CHECK_EQUAL(client2Address->getAddressInfo(), "Wlokniarzy 3");
+        BOOST_CHECK_EQUAL(clientAddress->getAddressInfo(), "Piorkowska 123");
+        BOOST_CHECK_EQUAL(clientDeliveryAddress->getAddressInfo(), "Zgierska 6");
     }
 
     BOOST_AUTO_TEST_CASE(ClientGetters)
     {
-        auto client1Address = make_shared<Address>("Piorkowska", "123");
-        auto client1DeliveryAddress = make_shared<Address>("Zgierska", "6");
+        auto clientAddress = make_shared<Address>("Piorkowska", "123");
+        auto clientDeliveryAddress = make_shared<Address>("Zgierska", "6");
 
-        auto client1 = make_shared<Client>("Adam", "Lindner", "PostAdam", "passwd", "lind@gmail.com",
-                                           client1Address, client1DeliveryAddress);
+        auto client = make_shared<Client>("Adam", "Lindner", "PostAdam", "passwd", "lind@gmail.com",
+                                          clientAddress, clientDeliveryAddress);
 
-        BOOST_CHECK_EQUAL(client1->getFirstName(), "Adam");
-        BOOST_CHECK_EQUAL(client1->getLastName(), "Lindner");
+        BOOST_CHECK_EQUAL(client->getFirstName(), "Adam");
+        BOOST_CHECK_EQUAL(client->getLastName(), "Lindner");
+        BOOST_CHECK_EQUAL(client->getE_mail(), "lind@gmail.com");
+        BOOST_CHECK_EQUAL(client->getAddress(), "Piorkowska 123");
+        BOOST_CHECK_EQUAL(client->getDeliveryAddress(), "Zgierska 6");
+        BOOST_CHECK( client->checkLogin("PostAdam") );
+        BOOST_CHECK( client->checkPassword("passwd") );
     }
 
-    BOOST_AUTO_TEST_CASE(hasOngoingOredesTest)
+    BOOST_AUTO_TEST_CASE(hasOngoingOrdersTest)
     {
         auto cashPayment = make_shared<CashPayment>();
         auto cardPayment = make_shared<CardPayment>();
@@ -62,28 +65,49 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
 
         auto ordersManager = make_shared<OrdersManager>(ordersRepository, archieveOrdersRepository);
 
-        auto client1Address = make_shared<Address>("Piorkowska", "123");
-        auto client1DeliveryAddress = make_shared<Address>("Zgierska", "6");
+        auto clientAddress = make_shared<Address>("Piorkowska", "123");
+        auto clientDeliveryAddress = make_shared<Address>("Zgierska", "6");
 
-        auto client1 = make_shared<Client>("Adam", "Lindner", "PostAdam", "passwd", "lind@gmail.com",
-                                           client1Address, client1DeliveryAddress);
-        auto m1 = make_shared<Laptop>("hp", 1999.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m2 = make_shared<Laptop>("lg", 1555.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
+        auto client = make_shared<Client>("Adam", "Lindner", "PostAdam", "passwd", "lind@gmail.com",
+                                           clientAddress, clientDeliveryAddress);
+        auto m1 = make_shared<Laptop>("HP", 1999.0, "Ryzen_1600", "Radeon_580", "8", "500Gb_SSD", "17,3");
+        auto m2 = make_shared<Laptop>("LG", 1555.0, "Intel_i3", "GTX_1050", "16", "1000Gb_HDD", "17,3");
 
-        client1->addToCart(m1);
-        client1->addToCart(m2);
+        client->addToCart(m1);
+        client->addToCart(m2);
 
-        BOOST_CHECK_EQUAL(client1->isHasOngoingOrder(), false);
-        BOOST_CHECK_NO_THROW(ordersManager->createOrder(client1,client1->getClientCart(),selfPickup,cardPayment,"Check on pickup" ));
+        BOOST_CHECK_EQUAL(client->isHasOngoingOrder(), false);
+        BOOST_CHECK_NO_THROW(ordersManager->createOrder(client, selfPickup, cardPayment, "Check on pickup"));
 
-        BOOST_CHECK_EQUAL(client1->isHasOngoingOrder(), true);
-        BOOST_CHECK_THROW(ordersManager->createOrder(client1,client1->getClientCart(),selfPickup,cardPayment,"Check on pickup" ), OrderLimitException);
+        BOOST_CHECK_EQUAL(client->isHasOngoingOrder(), true);
+        BOOST_CHECK_THROW(ordersManager->createOrder(client, selfPickup, cardPayment, "Check on pickup"), OrderLimitException);
 
-        ordersManager->cancelOrder(client1);
-
-        BOOST_CHECK_EQUAL(client1->isHasOngoingOrder(), false);
-        BOOST_CHECK_THROW(ordersManager->createOrder(client1,client1->getClientCart(),selfPickup,cardPayment,"Check on pickup"), CartIsEmptyExcepton);
+        ordersManager->cancelOrder(client);
+        BOOST_CHECK_EQUAL(client->isHasOngoingOrder(), false);
+        BOOST_CHECK_THROW(ordersManager->createOrder(client, selfPickup, cardPayment, "Check on pickup"), CartIsEmptyException);
     }
 
+    BOOST_AUTO_TEST_CASE(updateInfoTest)
+    {
+        auto clientAddress = make_shared<Address>("Piorkowska", "123");
+        auto clientDeliveryAddress = make_shared<Address>("Zgierska", "6");
 
+        auto client = make_shared<Client>("Adam", "Lindner", "PostAdam", "passwd", "lind@gmail.com",
+                                          clientAddress, clientDeliveryAddress);
+
+        BOOST_CHECK_EQUAL(client->getFirstName(), "Adam");
+        BOOST_CHECK_EQUAL(client->getLastName(), "Lindner");
+        BOOST_CHECK_EQUAL(client->getE_mail(), "lind@gmail.com");
+        BOOST_CHECK( client->checkLogin("PostAdam") );
+        BOOST_CHECK( client->checkPassword("passwd") );
+
+        client->updateInfo("Bartek", "Kudra", "kud@gmail.com");
+        BOOST_CHECK_EQUAL(client->getFirstName(), "Bartek");
+        BOOST_CHECK_EQUAL(client->getLastName(), "Kudra");
+        BOOST_CHECK_EQUAL(client->getE_mail(), "kud@gmail.com");
+
+        client->updateLoginAndPassword("Buk1m", "1123");
+        BOOST_CHECK( client->checkLogin("Buk1m") );
+        BOOST_CHECK( client->checkPassword("1123") );
+    }
 BOOST_AUTO_TEST_SUITE_END()

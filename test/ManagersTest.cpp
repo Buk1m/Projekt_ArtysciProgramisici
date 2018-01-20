@@ -40,7 +40,6 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
     BOOST_AUTO_TEST_CASE(ClientManagerTest)
     {
         auto clientRepository = make_shared<ClientRepository>();
-
         auto clientManager = make_shared<ClientsManager>(clientRepository);
 
         auto client1Address = make_shared<Address>("Piorkowska", "123");
@@ -54,14 +53,19 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         auto client2 = make_shared<Client>("Bartosz", "Kudra", "Buk1m", "1123", "kud@gmail.com",
                                            client1Address, client2DeliveryAddress);
 
+        BOOST_CHECK_EQUAL(clientManager->getClientRepositorySize(), 0);
+
         clientManager->createClient(client1);
         clientManager->createClient(client2);
-
         BOOST_CHECK_EQUAL(clientManager->getClientRepositorySize(), 2);
 
-        clientManager->removeClient(client1);
-
+        BOOST_CHECK_NO_THROW( clientManager->removeClient(client1) );
         BOOST_CHECK_EQUAL(clientManager->getClientRepositorySize(), 1);
+
+        BOOST_CHECK_NO_THROW( clientManager->removeClient(client2) );
+        BOOST_CHECK_EQUAL(clientManager->getClientRepositorySize(), 0);
+
+        BOOST_CHECK_THROW(clientManager->removeClient(client2), ObjectNotFoundException);
     }
 
     BOOST_AUTO_TEST_CASE(OrderManagerTest)
@@ -86,25 +90,32 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         auto client2 = make_shared<Client>("Bartosz", "Kudra", "Buk1m", "1123", "kud@gmail.com",
                                            client1Address, client2DeliveryAddress);
 
-        auto m1 = make_shared<Laptop>("hp", 1999.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m2 = make_shared<Laptop>("lg", 1555.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m3 = make_shared<Laptop>("xiaomi", 3000.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m4 = make_shared<Smartphone>("xiaomi", 999.0, "ryzen 1600", "grdsg", "sdrg", "sef");
+        auto m1 = make_shared<Laptop>("HP", 1999.0, "Ryzen_1600", "Radeon_580", "8", "500Gb_SSD", "17,3");
+        auto m2 = make_shared<Laptop>("LG", 1555.0, "Intel_i3", "GTX_1050", "16", "1000Gb_HDD", "17,3");
+        auto m3 = make_shared<Laptop>("ACER", 3000.0, "Intel_i5", "GTX_970", "4", "500Gb_HDD", "15,6");
+        auto m4 = make_shared<Smartphone>("XIAOMI", 999.0, "Kirin", "5,5_inches", "12.3_Mpix", "3_Gb");
 
         client1->addToCart(m1);
         client1->addToCart(m2);
         client2->addToCart(m3);
         client2->addToCart(m4);
 
-        ordersManager->createOrder(client1,client1->getClientCart(),selfPickup,cardPayment,"Check on pickup" );
-        ordersManager->createOrder(client2,client2->getClientCart(),selfPickup,cardPayment,"Check on pickup" );
+        ordersManager->createOrder(client1, selfPickup, cardPayment, "Check on pickup");
+        BOOST_CHECK(ordersManager->getCurrentOrderForClient(client1) != nullptr);
 
+        ordersManager->createOrder(client2, selfPickup, cardPayment, "Check on pickup");
+        BOOST_CHECK(ordersManager->getCurrentOrderForClient(client2) != nullptr);
 
-        BOOST_CHECK_EQUAL(ordersManager->getOrdersRepositorySize(),2);
+        BOOST_CHECK_EQUAL(ordersManager->getOrdersRepositorySize(), 2);
 
+        auto currentClient1Order = ordersManager->getCurrentOrderForClient(client1);
         ordersManager->endOrderAndPrintBill(client1);
+        auto archOrders = ordersManager->getOrdersForClient(client1);
 
-        BOOST_CHECK_EQUAL(ordersManager->getOrdersRepositorySize(),1);
+        BOOST_CHECK_EQUAL(archOrders[0], currentClient1Order);
+        BOOST_CHECK_EQUAL(ordersManager->getOrdersRepositorySize(), 1);
+
+        BOOST_CHECK_THROW(ordersManager->endOrderAndPrintBill(client1), ObjectNotFoundException);
     }
 
     BOOST_AUTO_TEST_CASE(MerchandisesManagerTest)
@@ -128,10 +139,10 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         auto client2 = make_shared<Client>("Bartosz", "Kudra", "Buk1m", "1123", "kud@gmail.com",
                                            client1Address, client2DeliveryAddress);
 
-        auto m1 = make_shared<Laptop>("hp", 1999.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m2 = make_shared<Laptop>("lg", 1555.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m3 = make_shared<Laptop>("xiaomi", 3000.0, "ryzen 1600", "grdsg", "sdrg", "sef", "asfaes");
-        auto m4 = make_shared<Smartphone>("xiaomi", 999.0, "ryzen 1600", "grdsg", "sdrg", "sef");
+        auto m1 = make_shared<Laptop>("HP", 1999.0, "Ryzen_1600", "Radeon_580", "8", "500Gb_SSD", "17,3");
+        auto m2 = make_shared<Laptop>("LG", 1555.0, "Intel_i3", "GTX_1050", "16", "1000Gb_HDD", "17,3");
+        auto m3 = make_shared<Laptop>("ACER", 3000.0, "Intel_i5", "GTX_970", "4", "500Gb_HDD", "15,6");
+        auto m4 = make_shared<Smartphone>("XIAOMI", 999.0, "Kirin", "5,5_inches", "12.3_Mpix", "3_Gb");
 
         client1->addToCart(m1);
         client1->addToCart(m2);

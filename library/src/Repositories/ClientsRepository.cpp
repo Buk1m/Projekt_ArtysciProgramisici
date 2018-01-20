@@ -18,7 +18,7 @@ void ClientRepository::remove(const shared_ptr<Client> client)
     auto it = find(objects.begin(), objects.end(), client);
     if(it == objects.end())
     {
-        OBJECT_NOT_FOUND_EXCEPTION;
+       throw OBJECT_NOT_FOUND_EXCEPTION;
     }
     objects.erase(it);
 }

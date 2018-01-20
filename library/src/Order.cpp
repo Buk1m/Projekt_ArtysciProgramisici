@@ -11,7 +11,7 @@
 #include "../include/Merchandise.h"
 #include "../include/Exceptions/OrderException.h"
 
-#define CART_IS_EMPTY_EXCEPTION CartIsEmptyExcepton(__FILE__, __LINE__)
+#define CART_IS_EMPTY_EXCEPTION CartIsEmptyException(__FILE__, __LINE__)
 
 //constructor==========================================================================
 Order::Order(const shared_ptr<Client> &client, const shared_ptr<Cart> &cart,
@@ -105,8 +105,12 @@ string Order::getInfoAboutOrder() const
     info << "------------Order------------"
          << "\nId: " << orderId
          << "\nOrderDate: " << *submitOrderTime
-         << "\nCompletionDate: " << *completionOrderTime
-         << "\nCost: " << getOrderCost() << " PLN"
+         << "\nCompletionDate: ";
+    if(completionOrderTime == nullptr)
+        info << "---";
+    else
+        info << *completionOrderTime;
+    info << "\nCost: " << getOrderCost() << " PLN"
          << "\nComment: " << orderComment
          << "\nShipmentType: " << shipmentType->getShipmentTypeName()
          << "\nPaymentType: " << paymentType->getPaymentTypeName()

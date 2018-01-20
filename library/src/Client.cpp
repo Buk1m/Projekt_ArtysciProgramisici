@@ -10,13 +10,13 @@
 
 //
 // Created by Bartek on 1/13/2018.
-Client::Client(const string &firstName, const string &lastName, const string &password, const string &login,
-               const string &e_mail, const shared_ptr<Address> &deliveryAddress,
-               const shared_ptr<Address> &clientAddress) : firstName(firstName), lastName(lastName), password(password),
-                                                           login(login), e_mail(e_mail),
-                                                           deliveryAddress(deliveryAddress),
-                                                           clientAddress(clientAddress),
-                                                           hasOngoingOrder(false)
+Client::Client(const string &firstName, const string &lastName, const string &login, const string &password,
+               const string &e_mail, const shared_ptr<Address> &clientAddress, const shared_ptr<Address> &deliveryAddress)
+        : firstName(firstName), lastName(lastName), password(password),
+          login(login), e_mail(e_mail),
+          deliveryAddress(deliveryAddress),
+          clientAddress(clientAddress),
+          hasOngoingOrder(false)
 {
     cart = make_shared<Cart>(3);
 
@@ -41,6 +41,11 @@ const string &Client::getFirstName() const
 const string &Client::getLastName() const
 {
     return lastName;
+}
+
+const string &Client::getE_mail() const
+{
+    return e_mail;
 }
 
 const string Client::getProductsCart() const
@@ -76,8 +81,6 @@ void Client::updateLoginAndPassword(const string &login, const string &password)
     this->password = password;
 }
 
-
-
 void Client::addToCart(const shared_ptr<Merchandise> &product)
 {
     cart->addProduct(product);
@@ -93,6 +96,34 @@ void Client::setHasOngoingOrder(bool hasOngoingOrder)
     Client::hasOngoingOrder = hasOngoingOrder;
 }
 
+const shared_ptr<Cart>& Client::getClientCart() const
+{
+    return cart;
+}
+
+void Client::clearCart()
+{
+    cart->clearCart();
+}
+
+bool Client::checkPassword(const string password) const
+{
+    if(this->password == password)
+        return true;
+    else
+        return false;
+}
+
+bool Client::checkLogin(const string login) const
+{
+    if(this->login == login)
+        return true;
+    else
+        return false;
+}
+
+
+
 const string Client::getInfoAboutClient() const
 {
     stringstream info;
@@ -104,14 +135,4 @@ const string Client::getInfoAboutClient() const
          << "\nAddress: " << clientAddress->getAddressInfo()
          << endl;
     return info.str();
-}
-
-const shared_ptr<Cart>& Client::getClientCart() const
-{
-    return cart;
-}
-
-void Client::clearCart()
-{
-    cart->clearCart();
 }

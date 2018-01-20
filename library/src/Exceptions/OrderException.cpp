@@ -12,11 +12,11 @@ OrderException::OrderException(const string &message, const string &where, int l
                  line(line)
 {}
 
-CartIsEmptyExcepton::CartIsEmptyExcepton(const string &where, int line)
+CartIsEmptyException::CartIsEmptyException(const string &where, int line)
                     : OrderException("Cart is empty.", where, line)
 {}
 
-string CartIsEmptyExcepton::description() const
+string CartIsEmptyException::description() const
 {
     stringstream sout;
     sout << what() << "Cannot make order from empy cart. Add some products first."
@@ -35,3 +35,17 @@ string OrderLimitException::description() const
          << " [" << where << " line " << line << "]:" << endl;
     return sout.str();
 }
+
+/*
+NoOrderAlreadyMade::NoOrderAlreadyMade(const string &where, int line)
+                   : OrderException("No order made.", where, line)
+{}
+
+string NoOrderAlreadyMade::description() const
+{
+    stringstream sout;
+    sout << what() << "Cannot end order that doesn't exist."
+         << " [" << where << " line " << line << "]:" << endl;
+    return sout.str();
+}
+*/

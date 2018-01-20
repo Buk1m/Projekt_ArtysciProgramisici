@@ -24,7 +24,8 @@ public:
     void remove(const shared_ptr<Order> order) override;
     void cancel(const shared_ptr<Order> order);
     unsigned long getRepositorySize() const override;
-    const shared_ptr<Order> getOrderForClient(const shared_ptr<Client>& client) const;
+    const shared_ptr<Order> getOrderForClient(const shared_ptr<Client> &client) const;
+    const vector<shared_ptr<Order>> getOrdersForClient(const shared_ptr<Client> &client) const;
 
     const string getAll() const override;
 };

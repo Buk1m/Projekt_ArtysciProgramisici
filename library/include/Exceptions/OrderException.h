@@ -24,11 +24,11 @@ public:
 };
 
 
-class CartIsEmptyExcepton : public OrderException
+class CartIsEmptyException : public OrderException
 {
 public:
-    explicit CartIsEmptyExcepton(const string &where, int line);
-    ~CartIsEmptyExcepton() override = default;
+    explicit CartIsEmptyException(const string &where, int line);
+    ~CartIsEmptyException() override = default;
 
      string description() const override;
 };
@@ -42,5 +42,14 @@ public:
 
    string description() const override;
 };
+
+/*class NoOrderAlreadyMade : public OrderException
+{
+public:
+    explicit NoOrderAlreadyMade(const string &where, int line);
+    ~NoOrderAlreadyMade() override = default;
+
+    string description() const override;
+};*/
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_ORDEREXCEPTION_H

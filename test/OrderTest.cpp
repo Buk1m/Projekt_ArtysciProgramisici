@@ -51,7 +51,7 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         client1->addToCart(m2);
 
         BOOST_CHECK_EQUAL(m1->isAvailable(), true);
-        ordersManager->createOrder(client1,client1->getClientCart(),selfPickup,cardPayment,"Check on pickup" );
+        ordersManager->createOrder(client1, selfPickup, cardPayment, "Check on pickup");
         BOOST_CHECK_EQUAL(m1->isAvailable(), false);
 
         ordersManager->cancelOrder(client1);
@@ -59,7 +59,7 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         client1->addToCart(m1);
         client1->addToCart(m2);
 
-        ordersManager->createOrder(client1,client1->getClientCart(),selfPickup,cardPayment,"Check on pickup" );
+        ordersManager->createOrder(client1, selfPickup, cardPayment, "Check on pickup");
         BOOST_CHECK_EQUAL(m1->isAvailable(), false);
 
         ordersManager->endOrderAndPrintBill(client1);

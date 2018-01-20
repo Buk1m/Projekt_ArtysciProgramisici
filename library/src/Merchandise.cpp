@@ -35,6 +35,3 @@ bool Merchandise::isAvailable() const
 {
     return availability;
 }
-
-
-

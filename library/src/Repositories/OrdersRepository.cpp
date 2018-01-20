@@ -19,7 +19,7 @@ void OrdersRepository::remove(const shared_ptr<Order> order)
     auto it = find(objects.begin(), objects.end(), order);
     if(it == objects.end())
     {
-        OBJECT_NOT_FOUND_EXCEPTION;
+        throw OBJECT_NOT_FOUND_EXCEPTION;
     }
     objects.erase(it);
 }
@@ -33,7 +33,7 @@ const string OrdersRepository::getAll() const
 {
     stringstream info;
     info << "====== OrderRepository ======\n";
-    for (auto order:objects)
+    for (auto order : objects)
     {
         info << order->getInfoAboutOrder();
     }
@@ -43,18 +43,28 @@ const string OrdersRepository::getAll() const
 
 const shared_ptr<Order> OrdersRepository::getOrderForClient(const shared_ptr<Client> &client) const
 {
-    int i = 0;
-    while (objects.begin() != objects.end())
+    for(auto i=0; i<objects.size(); i++)
     {
         if (objects[i]->getClient() == client)
             return objects[i];
-        ++i;
     }
     return nullptr;
-
 }
 
 unsigned long OrdersRepository::getRepositorySize() const
 {
     return objects.size();
+}
+
+const vector<shared_ptr<Order>> OrdersRepository::getOrdersForClient(const shared_ptr<Client> &client) const
+{
+    vector<shared_ptr<Order>> orders;
+    for(auto order : objects)
+    {
+        if(order->getClient() == client)
+        {
+            orders.push_back(order);
+        }
+    }
+    return orders;
 }
