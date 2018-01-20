@@ -24,6 +24,7 @@ public:
     void removeClient(const shared_ptr<Client> &client);
     unsigned long getClientRepositorySize();
 
+
 };
 
 

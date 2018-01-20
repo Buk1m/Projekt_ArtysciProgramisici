@@ -75,3 +75,8 @@ unsigned long OrdersManager::getOrdersRepositorySize() const
 {
     return ordersRepository->getRepositorySize();
 }
+
+shared_ptr<Client> OrdersManager::getClientForOrder(shared_ptr<Order> order) const
+{
+    return order->getClient();
+}

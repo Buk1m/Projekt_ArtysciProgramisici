@@ -46,7 +46,8 @@ const shared_ptr<Order> OrdersRepository::getOrderForClient(const shared_ptr<Cli
     int i = 0;
     while (objects.begin() != objects.end())
     {
-        if (objects[i]->getClient() == client) return objects[i];
+        if (objects[i]->getClient() == client)
+            return objects[i];
         ++i;
     }
     return nullptr;

@@ -65,3 +65,8 @@ void Cart::clearCart()
 {
     products.clear();
 }
+
+const int Cart::getProductsQuantity() const
+{
+    return products.size();
+}

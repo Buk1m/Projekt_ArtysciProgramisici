@@ -16,7 +16,6 @@ using namespace std;
 class Merchandise;
 
 
-
 class Cart
 {
 private:
@@ -27,17 +26,13 @@ public:
     explicit Cart(const int &maxCartCapacity);
     ~Cart() = default;
 
-public:
-    //getters
     const string getProductInfo() const;
     const float getAllProductsPrice() const;
     const vector<shared_ptr<Merchandise>>& getProducts() const;
+    const int getProductsQuantity() const;
 
-    //setters
     void addProduct(const shared_ptr<Merchandise> &product);
     void removeProduct(const shared_ptr<Merchandise> &product);
-
-    //methods
     void clearCart();
 };
 
