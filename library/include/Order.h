@@ -64,7 +64,9 @@ private:
 public:
     string getOrderState() const;
     const float getOrderCost() const;
+
     const vector<shared_ptr<Merchandise>> getOrderedProducts() const;
+
     string getInfoAboutOrder() const;
     const shared_ptr<Client>& getClient() const;
 

@@ -64,6 +64,7 @@ const string OrdersManager::endOrderAndPrintBill(const shared_ptr<Client> &clien
         throw OBJECT_NOT_FOUND_EXCEPTION;
     if(order->getOrderState() == "cancelled")
         throw make_shared<CartIsEmptyException>(__FILE__, __LINE__);
+
     order->endOrder();
     client->setHasOngoingOrder(false);
     client->clearCart();

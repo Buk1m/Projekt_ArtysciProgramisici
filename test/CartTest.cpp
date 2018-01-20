@@ -61,11 +61,11 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         client->addToCart(m2);
         client->addToCart(m3);
 
-        float price = 1999.0 + 1555.0 + 3000.0;
+        float price = m1->getPrice() + m2->getPrice() + m3->getPrice();
         BOOST_CHECK_EQUAL(client->getClientCart()->getAllProductsPrice(), price);
 
         client->removeFromCart(m2);
-        price -= 1555.0;
+        price -= m2->getPrice();
         BOOST_CHECK_EQUAL(client->getClientCart()->getAllProductsPrice(), price);
     }
 
