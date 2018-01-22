@@ -28,7 +28,7 @@ using namespace std;
 
 BOOST_AUTO_TEST_SUITE(ProjectTest)
 
-    BOOST_AUTO_TEST_CASE(CreateAddress)
+    BOOST_AUTO_TEST_CASE(TestClient)
     {
         auto clientAddress = make_shared<Address>("Piorkowska", "123");
         auto clientDeliveryAddress = make_shared<Address>("Zgierska", "6");

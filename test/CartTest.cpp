@@ -18,7 +18,7 @@
 using namespace std;
 
 
-BOOST_AUTO_TEST_SUITE(ProjectTest)
+BOOST_AUTO_TEST_SUITE(TestCart)
 
     BOOST_AUTO_TEST_CASE(CartCapacity)
     {

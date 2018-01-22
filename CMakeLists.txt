@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.9)
 #Configuration parameters of cmake
 set(CMAKE_CXX_COMPILER g++)#requires g++ to be available on PATH
 set(CMAKE_C_COMPILER gcc)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(Projekt_ArtysciProgramisici)
@@ -79,25 +79,63 @@ set(SOURCE_TEST_FILES
         library/include/Exceptions/CartException.h library/src/Exceptions/CartException.cpp
         library/src/Exceptions/RepositoryException.cpp
         library/include/Exceptions/MerchandiseException.h
-        library/src/Exceptions/MerchandiseException.cpp
-        test/CartTest.cpp
-        test/ClientTest.cpp
-        test/ManagersTest.cpp
-        test/FileOperationsTest.cpp)
+        library/src/Exceptions/MerchandiseException.cpp)
 
-add_executable(TestProject ${SOURCE_TEST_FILES})
+add_executable(TestClient ${SOURCE_TEST_FILES} test/ClientTest.cpp)
 
-target_include_directories(TestProject PUBLIC include)
+target_include_directories(TestClient PUBLIC include)
 
-target_link_libraries(TestProject
+target_link_libraries(TestClient
         ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
 
-enable_testing()
-
-add_test(NAME Test COMMAND TestProject
+add_test(NAME TestClient COMMAND TestClient
         --report_level=detailed
         --log_level=all
         --color_output=yes)
+
+
+
+add_executable(TestCart ${SOURCE_TEST_FILES} test/CartTest.cpp)
+
+target_include_directories(TestCart PUBLIC include)
+
+target_link_libraries(TestCart
+        ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+add_test(NAME TestCart COMMAND TestCart
+        --report_level=detailed
+        --log_level=all
+        --color_output=yes)
+
+
+
+add_executable(TestFile ${SOURCE_TEST_FILES} test/FileOperationsTest.cpp)
+
+target_include_directories(TestFile PUBLIC include)
+
+target_link_libraries(TestFile
+        ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+add_test(NAME TestFile COMMAND TestFile
+        --report_level=detailed
+        --log_level=all
+        --color_output=yes)
+
+
+
+add_executable(TestManagers ${SOURCE_TEST_FILES} test/ManagersTest.cpp)
+
+target_include_directories(TestManagers PUBLIC include)
+
+target_link_libraries(TestManagers
+        ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+add_test(NAME TestManagers COMMAND TestManagers
+        --report_level=detailed
+        --log_level=all
+        --color_output=yes)
+
+enable_testing()
 
 add_custom_target(check ${CMAKE_COMMAND} -E env CTEST_OUTPUT_ON_FAILURE=1 BOOST_TEST_LOG_LEVEL=all
         ${CMAKE_CTEST_COMMAND} -C $<CONFIG> --verbose

@@ -27,7 +27,7 @@
 using namespace std;
 
 
-BOOST_AUTO_TEST_SUITE(ProjectTest)
+BOOST_AUTO_TEST_SUITE(TestManagers)
 
     BOOST_AUTO_TEST_CASE(ClientManagerTest)
     {
