@@ -8,6 +8,9 @@
 #include <iostream>
 #include <stdexcept>
 
+#define CART_IS_EMPTY_EXCEPTION CartIsEmptyException(__FILE__, __LINE__)
+#define ORDER_LIMIT_EXCEPTION OrderLimitException(__FILE__, __LINE__)
+
 using namespace std;
 
 
@@ -42,14 +45,5 @@ public:
 
    string description() const override;
 };
-
-/*class NoOrderAlreadyMade : public OrderException
-{
-public:
-    explicit NoOrderAlreadyMade(const string &where, int line);
-    ~NoOrderAlreadyMade() override = default;
-
-    string description() const override;
-};*/
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_ORDEREXCEPTION_H

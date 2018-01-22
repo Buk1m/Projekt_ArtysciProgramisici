@@ -22,11 +22,10 @@ private:
     string display;
 
 public:
-    explicit Laptop(const string &name, float price, const string &processor,
+    explicit Laptop(const string &name, const float &price, const string &processor,
                     const string &graphicCard, const string &ram,
                     const string &discDrive, const string &display);
-    Laptop(const shared_ptr<Laptop>& laptop);
-    Laptop(const Laptop* laptop);
+    explicit Laptop(const Laptop* laptop);
     ~Laptop() = default;
 
     string loadSpecification() const override;

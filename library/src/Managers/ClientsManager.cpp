@@ -4,8 +4,8 @@
 
 #include "../../include/Managers/ClientsManager.h"
 
-ClientsManager::ClientsManager(shared_ptr<ClientRepository> clientRepository)
-              :clientRepository(clientRepository)
+ClientsManager::ClientsManager(shared_ptr<ClientRepository> &clientRepository)
+               :clientRepository(clientRepository)
 {}
 
 void ClientsManager::createClient(const shared_ptr<Client> &client)

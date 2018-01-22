@@ -13,6 +13,7 @@
 using namespace std;
 using namespace boost::uuids;
 
+
 class ShipmentType
 {
 protected:
@@ -24,8 +25,8 @@ public:
     virtual ~ShipmentType() = default;
 
     const float getShipmentPrice() const;
-    virtual float makeDiscount(int productsQuantity) = 0;
-    virtual const string getShipmentTypeName() = 0;
+    virtual float makeDiscount(const int &productsQuantity) const = 0;
+    virtual const string getShipmentTypeName() const = 0;
 };
 
 

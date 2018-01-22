@@ -13,17 +13,15 @@
 
 #define CART_IS_EMPTY_EXCEPTION CartIsEmptyException(__FILE__, __LINE__)
 
-//constructor==========================================================================
 Order::Order(const shared_ptr<Client> &client, const shared_ptr<Cart> &cart,
              const shared_ptr<ShipmentType> &shipmentType,
              const shared_ptr<PaymentType> &paymentType, const string &orderComment)
-        : orderId(boost::uuids::random_generator()()),
-          client(client),
-          shipmentType(shipmentType),
-          paymentType(paymentType),
-          orderComment(orderComment)
+      : orderId(boost::uuids::random_generator()()),
+        client(client),
+        shipmentType(shipmentType),
+        paymentType(paymentType),
+        orderComment(orderComment)
 {
-
     _state = current;
 
     time_zone_ptr zone(new posix_time_zone("UTC-00:00:00"));
@@ -34,7 +32,6 @@ Order::Order(const shared_ptr<Client> &client, const shared_ptr<Cart> &cart,
     moveProductsFromCartToOrder(cart->getProducts());
 }
 
-//methods==========================================================================
 void Order::moveProductsFromCartToOrder(const vector<shared_ptr<Merchandise>> &products)
 {
     if(products.empty())
@@ -47,7 +44,6 @@ void Order::moveProductsFromCartToOrder(const vector<shared_ptr<Merchandise>> &p
         this->products.push_back(product);
     }
 }
-
 
 void Order::setOrderState(const string &state)
 {

@@ -9,9 +9,10 @@
 #include "Repository.h"
 #include <vector>
 #include <memory>
-#include "../Order.h"
 
 class Order;
+class Client;
+
 
 class OrdersRepository
         : public Repository<Order>
@@ -20,9 +21,9 @@ public:
     explicit OrdersRepository() = default;
     ~OrdersRepository() = default;
 
-    void create(const shared_ptr<Order> order) override;
-    void remove(const shared_ptr<Order> order) override;
-    void cancel(const shared_ptr<Order> order);
+    void create(const shared_ptr<Order> &order) override;
+    void remove(const shared_ptr<Order> &order) override;
+    void cancel(const shared_ptr<Order> &order);
     unsigned long getRepositorySize() const override;
     const shared_ptr<Order> getOrderForClient(const shared_ptr<Client> &client) const;
     const vector<shared_ptr<Order>> getOrdersForClient(const shared_ptr<Client> &client) const;

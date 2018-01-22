@@ -16,6 +16,7 @@
 using namespace std;
 using namespace boost::uuids;
 
+
 class Merchandise
 {
 protected:

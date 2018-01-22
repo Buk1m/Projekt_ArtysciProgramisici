@@ -9,12 +9,12 @@
 #include "../../include/Order.h"
 #include "../../include/Exceptions/RepositoryException.h"
 
-void OrdersRepository::create(const shared_ptr<Order> order)
+void OrdersRepository::create(const shared_ptr<Order> &order)
 {
     objects.push_back(order);
 }
 
-void OrdersRepository::remove(const shared_ptr<Order> order)
+void OrdersRepository::remove(const shared_ptr<Order> &order)
 {
     auto it = find(objects.begin(), objects.end(), order);
     if(it == objects.end())
@@ -24,7 +24,7 @@ void OrdersRepository::remove(const shared_ptr<Order> order)
     objects.erase(it);
 }
 
-void OrdersRepository::cancel(const shared_ptr<Order> order)
+void OrdersRepository::cancel(const shared_ptr<Order> &order)
 {
     order->setOrderState("cancelled");
 }

@@ -11,18 +11,16 @@ CourierDelivery::CourierDelivery()
     shipmentPrice = 20.0;
 }
 
-
-float CourierDelivery::makeDiscount(int productsQuantity)
+float CourierDelivery::makeDiscount(const int &productsQuantity) const
 {
     if (productsQuantity < 0)
     {
         throw INVALID_QUANTITY_EXCEPTION;
     }
-
     return (shipmentPrice - (productsQuantity * 3) / 5);
 }
 
-const string CourierDelivery::getShipmentTypeName()
+const string CourierDelivery::getShipmentTypeName() const
 {
     return "CourierDelivery";
 }

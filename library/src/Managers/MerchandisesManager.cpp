@@ -109,7 +109,7 @@ unsigned long MerchandisesManager::getMerchandiseRepositorySize() const
     return merchandiseRepository->getRepositorySize();
 }
 
-bool MerchandisesManager::compareMerchandiseType(shared_ptr<Merchandise> merchandise, string merchType)
+bool MerchandisesManager::compareMerchandiseType(const shared_ptr<Merchandise> &merchandise, const string &merchType) const
 {
     if(merchandise->getMerchandiseType() == merchType)
         return true;
@@ -117,7 +117,7 @@ bool MerchandisesManager::compareMerchandiseType(shared_ptr<Merchandise> merchan
         return false;
 }
 
-void MerchandisesManager::loadMerchandiseData(ofstream &file, string merchType)
+void MerchandisesManager::loadMerchandiseData(ofstream &file, const string &merchType) const
 {
     auto merchandises = merchandiseRepository->getMerchandises();
     for(auto merchandise : merchandises)

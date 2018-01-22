@@ -20,6 +20,8 @@ using namespace boost::uuids;
 
 class Merchandise;
 class Cart;
+
+
 class Client
 {
 private:
@@ -37,13 +39,13 @@ private:
 
 public:
     explicit Client(const string &firstName, const string &lastName, const string &login, const string &password,
-                        const string &e_mail, const shared_ptr<Address> &clientAddress, const shared_ptr<Address> &deliveryAddress);
+                    const string &e_mail, const shared_ptr<Address> &clientAddress, const shared_ptr<Address> &deliveryAddress);
     ~Client() = default;
 
     const uuid getPersonalID() const;
-    const string &getFirstName() const;
-    const string &getLastName() const;
-    const string &getE_mail() const;
+    const string getFirstName() const;
+    const string getLastName() const;
+    const string getE_mail() const;
     const string getAddress() const;
     const string getDeliveryAddress() const;
     const string getProductsCart() const;
@@ -52,8 +54,8 @@ public:
     const shared_ptr<Cart>& getClientCart() const;
     bool isHasOngoingOrder() const;
 
-    bool checkPassword(const string password) const;
-    bool checkLogin(const string login) const;
+    bool checkPassword(const string &password) const;
+    bool checkLogin(const string &login) const;
 
     void updateInfo(const string &firstName, const string &lastName, const string &e_mail);
     void updateLoginAndPassword(const string &login, const string &password);

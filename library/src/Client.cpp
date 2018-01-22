@@ -1,19 +1,19 @@
 //
-
+// Created by Bartek on 1/13/2018.
+//
 
 #include <sstream>
 #include "../include/Client.h"
 #include "../include/Merchandise.h"
 #include "../include/Cart.h"
 
-
-
-//
-// Created by Bartek on 1/13/2018.
 Client::Client(const string &firstName, const string &lastName, const string &login, const string &password,
                const string &e_mail, const shared_ptr<Address> &clientAddress, const shared_ptr<Address> &deliveryAddress)
-        : firstName(firstName), lastName(lastName), password(password),
-          login(login), e_mail(e_mail),
+        : firstName(firstName),
+          lastName(lastName),
+          password(password),
+          login(login),
+          e_mail(e_mail),
           deliveryAddress(deliveryAddress),
           clientAddress(clientAddress),
           hasOngoingOrder(false)
@@ -33,17 +33,17 @@ const uuid Client::getPersonalID() const
     return personalID;
 }
 
-const string &Client::getFirstName() const
+const string Client::getFirstName() const
 {
     return firstName;
 }
 
-const string &Client::getLastName() const
+const string Client::getLastName() const
 {
     return lastName;
 }
 
-const string &Client::getE_mail() const
+const string Client::getE_mail() const
 {
     return e_mail;
 }
@@ -106,7 +106,7 @@ void Client::clearCart()
     cart->clearCart();
 }
 
-bool Client::checkPassword(const string password) const
+bool Client::checkPassword(const string &password) const
 {
     if(this->password == password)
         return true;
@@ -114,7 +114,7 @@ bool Client::checkPassword(const string password) const
         return false;
 }
 
-bool Client::checkLogin(const string login) const
+bool Client::checkLogin(const string &login) const
 {
     if(this->login == login)
         return true;
@@ -122,15 +122,14 @@ bool Client::checkLogin(const string login) const
         return false;
 }
 
-
-
 const string Client::getInfoAboutClient() const
 {
     stringstream info;
-    info << "---------- Client ---------- "
+    info << "---------- Client ----------"
          << "\nId: " << personalID
          << "\nFirst name: " << firstName
          << "\nLast name: " << lastName
+         << "\nRegister date: " << registerDate
          << "\nEmail: " << e_mail
          << "\nAddress: " << clientAddress->getAddressInfo()
          << endl;

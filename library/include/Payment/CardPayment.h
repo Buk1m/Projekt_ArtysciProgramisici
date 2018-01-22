@@ -7,14 +7,15 @@
 
 #include "PaymentType.h"
 
+
 class CardPayment : public PaymentType
 {
 public:
     explicit CardPayment();
     ~CardPayment() = default;
 
-    float makeDiscount(int productsQuantity) override;
-    const string getPaymentTypeName() override;
+    float makeDiscount(const int &productsQuantity) const override;
+    const string getPaymentTypeName() const override;
 };
 
 

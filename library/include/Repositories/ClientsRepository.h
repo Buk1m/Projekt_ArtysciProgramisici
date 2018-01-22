@@ -9,6 +9,7 @@
 
 class Client;
 
+
 class ClientRepository
         : public Repository<Client>
 {
@@ -16,8 +17,8 @@ public:
     explicit ClientRepository() = default;
     ~ClientRepository() = default;
 
-    void create(const shared_ptr<Client> client) override;
-    void remove(const shared_ptr<Client> client) override;
+    void create(const shared_ptr<Client> &client) override;
+    void remove(const shared_ptr<Client> &client) override;
     unsigned long getRepositorySize() const override;
     const string getAll() const override;
 };

@@ -6,21 +6,21 @@
 #include "../../include/Exceptions/MerchandiseException.h"
 
 CardPayment::CardPayment()
-        : PaymentType()
+            : PaymentType()
 {
     paymentPrice = 5.0;
 }
 
-float CardPayment::makeDiscount(int productsQuantity)
+float CardPayment::makeDiscount(const int &productsQuantity) const
 {
-    if (productsQuantity < 0)
+    if (productsQuantity <= 0)
     {
         throw INVALID_QUANTITY_EXCEPTION;
     }
     return (paymentPrice - (productsQuantity * 2) / 10);
 }
 
-const string CardPayment::getPaymentTypeName()
+const string CardPayment::getPaymentTypeName() const
 {
     return "CardPayment";
 }

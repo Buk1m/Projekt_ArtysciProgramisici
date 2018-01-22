@@ -13,22 +13,25 @@
 
 #define ORDER_LIMIT_EXCEPTION OrderLimitException(__FILE__, __LINE__)
 
-OrdersManager::OrdersManager(const shared_ptr<OrdersRepository> ordersRepository,
-                             const shared_ptr<OrdersRepository> archieveOrdersRepository)
-              :ordersRepository(ordersRepository),
-              archieveOrdersRepository(archieveOrdersRepository)
+OrdersManager::OrdersManager(const shared_ptr<OrdersRepository> &ordersRepository,
+                             const shared_ptr<OrdersRepository> &archieveOrdersRepository)
+              : ordersRepository(ordersRepository),
+                archieveOrdersRepository(archieveOrdersRepository)
 {}
 
-void OrdersManager::createOrder(const shared_ptr<Client> client, const shared_ptr<ShipmentType> shipmentType,
-                                const shared_ptr<PaymentType> paymentType, const string orderComment)
+void OrdersManager::createOrder(const shared_ptr<Client> &client, const shared_ptr<ShipmentType> &shipmentType,
+                                const shared_ptr<PaymentType> &paymentType, const string &orderComment)
 {
-
     if(client->isHasOngoingOrder())
     {
         throw ORDER_LIMIT_EXCEPTION;
     }
 
     auto cart = client->getClientCart();
+    if(cart->getProductsQuantity() == 0)
+    {
+        throw CART_IS_EMPTY_EXCEPTION;
+    }
     auto order = make_shared<Order>(client, cart, shipmentType, paymentType, orderComment);
     ordersRepository->create(order);
 
@@ -63,7 +66,7 @@ const string OrdersManager::endOrderAndPrintBill(const shared_ptr<Client> &clien
     if(order == nullptr)
         throw OBJECT_NOT_FOUND_EXCEPTION;
     if(order->getOrderState() == "cancelled")
-        throw make_shared<CartIsEmptyException>(__FILE__, __LINE__);
+        throw CART_IS_EMPTY_EXCEPTION;
 
     order->endOrder();
     client->setHasOngoingOrder(false);
@@ -80,7 +83,7 @@ unsigned long OrdersManager::getOrdersRepositorySize() const
     return ordersRepository->getRepositorySize();
 }
 
-const vector<shared_ptr<Order>> OrdersManager::getOrdersForClient(const shared_ptr<Client>& client) const
+const vector<shared_ptr<Order>> OrdersManager::getOrdersForClient(const shared_ptr<Client> &client) const
 {
     vector<shared_ptr<Order>> orders = archieveOrdersRepository->getOrdersForClient(client);
     return orders;

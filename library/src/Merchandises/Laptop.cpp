@@ -7,7 +7,7 @@
 #include <sstream>
 
 
-Laptop::Laptop(const string &name, float price, const string &processor,
+Laptop::Laptop(const string &name, const float &price, const string &processor,
                const string &graphicCard, const string &ram,
                const string &discDrive, const string &display)
        : Merchandise(name, price),
@@ -18,23 +18,13 @@ Laptop::Laptop(const string &name, float price, const string &processor,
          display(display)
 {}
 
-Laptop::Laptop(const shared_ptr<Laptop> &laptop)
-        : Merchandise(laptop->name, laptop->price),
-          processor(laptop->processor),
-          graphicCard(laptop->graphicCard),
-          ram(laptop->ram),
-          discDrive(laptop->discDrive),
-          display(laptop->display)
-{}
-
-
 Laptop::Laptop(const Laptop* laptop)
-        : Merchandise(laptop->name, laptop->price),
-          processor(laptop->processor),
-          graphicCard(laptop->graphicCard),
-          ram(laptop->ram),
-          discDrive(laptop->discDrive),
-          display(laptop->display)
+       : Merchandise(laptop->name, laptop->price),
+         processor(laptop->processor),
+         graphicCard(laptop->graphicCard),
+         ram(laptop->ram),
+         discDrive(laptop->discDrive),
+         display(laptop->display)
 {}
 
 string Laptop::getSpecification() const

@@ -5,7 +5,7 @@
 #include "../../include/Payment/PaymentType.h"
 
 PaymentType::PaymentType()
-           : paymentId(boost::uuids::random_generator()())
+            : paymentId(boost::uuids::random_generator()())
 {}
 
 const float PaymentType::getPaymentPrice() const

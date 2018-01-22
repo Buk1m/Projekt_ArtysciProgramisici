@@ -28,7 +28,7 @@ public:
 
     const string getProductInfo() const;
     const float getAllProductsPrice() const;
-    const vector<shared_ptr<Merchandise>>& getProducts() const;
+    const vector<shared_ptr<Merchandise>> &getProducts() const;
     const int getProductsQuantity() const;
 
     void addProduct(const shared_ptr<Merchandise> &product);

@@ -6,13 +6,13 @@
 
 
 CartException::CartException(const string &where, int line, const string message)
-        : where(where),
-          line(line),
-          logic_error(message)
+              : where(where),
+                line(line),
+                logic_error(message)
 {}
 
 FullCartException::FullCartException(const string &where, int line)
-        : CartException(where, line, "Cart capacity exceeded.")
+                  : CartException(where, line, "Cart capacity exceeded.")
 {}
 
 string FullCartException::description() const
@@ -23,7 +23,7 @@ string FullCartException::description() const
 }
 
 NotInCartException::NotInCartException(const string &where, int line)
-        : CartException(where, line, "Product not found.")
+                   : CartException(where, line, "Product not found.")
 {}
 
 string NotInCartException::description() const
@@ -35,7 +35,7 @@ string NotInCartException::description() const
 }
 
 ProductAlreadyInCartException::ProductAlreadyInCartException(const string &where, int line)
-        : CartException(where, line, "Product alredy exist in cart.")
+                              : CartException(where, line, "Product alredy exist in cart.")
 {}
 
 string ProductAlreadyInCartException::description() const

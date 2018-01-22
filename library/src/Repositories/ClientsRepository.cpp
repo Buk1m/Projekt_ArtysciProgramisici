@@ -7,14 +7,13 @@
 #include "../../include/Exceptions/RepositoryException.h"
 #include <algorithm>
 
-void ClientRepository::create(const shared_ptr<Client> client)
+void ClientRepository::create(const shared_ptr<Client> &client)
 {
     objects.push_back(client);
 }
 
-void ClientRepository::remove(const shared_ptr<Client> client)
+void ClientRepository::remove(const shared_ptr<Client> &client)
 {
-
     auto it = find(objects.begin(), objects.end(), client);
     if(it == objects.end())
     {
@@ -29,7 +28,6 @@ const string ClientRepository::getAll() const
     info << "===== ClientRepository =====\n";
     for(auto client : objects)
     {
-
        info << client->getInfoAboutClient();
     }
     info << "============================" << endl;

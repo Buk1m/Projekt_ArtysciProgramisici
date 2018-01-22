@@ -12,19 +12,19 @@ using namespace std;
 
 class Client;
 
+
 class ClientsManager
 {
 private:
     shared_ptr<ClientRepository> clientRepository;
+
 public:
-    explicit ClientsManager(shared_ptr<ClientRepository> clientRepository);
+    explicit ClientsManager(shared_ptr<ClientRepository> &clientRepository);
     ~ClientsManager() = default;
 
     void createClient(const shared_ptr<Client> &client);
     void removeClient(const shared_ptr<Client> &client);
     unsigned long getClientRepositorySize();
-
-
 };
 
 

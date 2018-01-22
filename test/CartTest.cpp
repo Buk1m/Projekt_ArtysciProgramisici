@@ -1,8 +1,4 @@
 //
-// Created by pobi on 1/15/18.
-//
-
-//
 // Created by Bartek on 1/14/2018.
 //
 
@@ -20,6 +16,7 @@
 #include "../library/include/Managers/OrdersManager.h"
 
 using namespace std;
+
 
 BOOST_AUTO_TEST_SUITE(ProjectTest)
 

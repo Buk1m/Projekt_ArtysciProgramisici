@@ -8,12 +8,12 @@
 #include "../Merchandise.h"
 #include "../Repositories/MerchandisesRepository.h"
 #include <fstream>
-#include <map>
 
 using namespace std;
 
 class Laptop;
 class Smartphone;
+
 
 class MerchandisesManager
 {
@@ -35,12 +35,13 @@ public:
     void pushLaptopSpecsToFile();
     void pushSmartphoneSpecsToFile();
 
-    bool compareMerchandiseType(shared_ptr<Merchandise> merchandise, string merchType);
-    void loadMerchandiseData(ofstream &file, string merchType);
+    bool compareMerchandiseType(const shared_ptr<Merchandise> &merchandise, const string &merchType) const;
+    void loadMerchandiseData(ofstream &file, const string &merchType) const;
     void readSmartphoneDataAndCreateObjects(ifstream &file);
     void readLaptopDataAndCreateObjects(ifstream &file);
 
     unsigned long getMerchandiseRepositorySize() const;
 };
+
 
 #endif //PROJEKT_ARTYSCIPROGRAMISICI_MERCHANDISESMANAGER_H

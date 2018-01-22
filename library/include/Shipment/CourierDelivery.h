@@ -7,14 +7,15 @@
 
 #include "ShipmentType.h"
 
+
 class CourierDelivery : public ShipmentType
 {
 public:
     explicit CourierDelivery();
     ~CourierDelivery() = default;
 
-    float makeDiscount(int productsQuantity) override;
-    const string getShipmentTypeName() override;
+    float makeDiscount(const int &productsQuantity) const override;
+    const string getShipmentTypeName() const override;
 };
 
 

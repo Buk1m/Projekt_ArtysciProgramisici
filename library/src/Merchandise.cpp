@@ -7,10 +7,10 @@
 #include "boost/uuid/uuid_io.hpp"
 
 Merchandise::Merchandise(const string &name, const float &price)
-           : merchandiseId(boost::uuids::random_generator()()),
-             name(name),
-             price(price),
-             availability(true)
+            : merchandiseId(boost::uuids::random_generator()()),
+              name(name),
+              price(price),
+              availability(true)
 {}
 
 float Merchandise::getPrice() const

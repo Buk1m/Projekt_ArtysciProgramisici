@@ -4,7 +4,9 @@
 
 #include "../include/Address.h"
 
-Address::Address(const string &street, const string &number) : street(street), number(number)
+Address::Address(const string &street, const string &number)
+        : street(street),
+          number(number)
 {}
 
 const string Address::getAddressInfo() const

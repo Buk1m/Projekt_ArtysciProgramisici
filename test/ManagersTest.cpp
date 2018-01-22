@@ -1,12 +1,4 @@
 //
-// Created by pobi on 1/15/18.
-//
-
-//
-// Created by pobi on 1/15/18.
-//
-
-//
 // Created by Bartek on 1/14/2018.
 //
 
@@ -32,8 +24,8 @@
 #include "../library/include/Shipment/CourierDelivery.h"
 #include "../library/include/Shipment/SelfPickup.h"
 
-
 using namespace std;
+
 
 BOOST_AUTO_TEST_SUITE(ProjectTest)
 
@@ -94,6 +86,8 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         auto m2 = make_shared<Laptop>("LG", 1555.0, "Intel_i3", "GTX_1050", "16", "1000Gb_HDD", "17,3");
         auto m3 = make_shared<Laptop>("ACER", 3000.0, "Intel_i5", "GTX_970", "4", "500Gb_HDD", "15,6");
         auto m4 = make_shared<Smartphone>("XIAOMI", 999.0, "Kirin", "5,5_inches", "12.3_Mpix", "3_Gb");
+
+        BOOST_CHECK_THROW(ordersManager->createOrder(client1, selfPickup, cardPayment, "Check on pickup"), CartIsEmptyException);
 
         client1->addToCart(m1);
         client1->addToCart(m2);
@@ -193,11 +187,11 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         client2->addToCart(m3);
         client2->addToCart(m4);
 
-        BOOST_CHECK_EQUAL(m1->getAvailability(), "Available");
+        BOOST_CHECK(m1->isAvailable());
         ordersManager->createOrder(client1, selfPickup, cashPayment, "Check on pickup");
-        BOOST_CHECK_EQUAL(m1->getAvailability(), "NotAvailable");
+        BOOST_CHECK( !(m1->isAvailable()) );
         ordersManager->endOrderAndPrintBill(client1);
-        BOOST_CHECK_EQUAL(m1->getAvailability(), "NotAvailable");
+        BOOST_CHECK( !(m1->isAvailable()) );
 
         BOOST_CHECK_EQUAL(merchandisesManager->getMerchandiseRepositorySize(), 4);
         merchandisesManager->removeMerchandise(m4);
@@ -209,6 +203,7 @@ BOOST_AUTO_TEST_SUITE(ProjectTest)
         BOOST_CHECK_EQUAL(merchandisesManager->getMerchandiseRepositorySize(), 0);
         BOOST_CHECK_THROW(merchandisesManager->removeMerchandise(m1), ObjectNotFoundException);
 
+        BOOST_CHECK_THROW(merchandisesManager->resupplyMerchandise(m1, -1), InvalidQuantityException);
         merchandisesManager->resupplyMerchandise(m1, 1);
         merchandisesManager->resupplyMerchandise(m4, 2);
         BOOST_CHECK_EQUAL(merchandisesManager->getMerchandiseRepositorySize(), 3);

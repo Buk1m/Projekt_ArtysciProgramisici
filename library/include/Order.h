@@ -68,7 +68,7 @@ public:
     const vector<shared_ptr<Merchandise>> getOrderedProducts() const;
 
     string getInfoAboutOrder() const;
-    const shared_ptr<Client>& getClient() const;
+    const shared_ptr<Client> &getClient() const;
 
     void setOrderState(const string &state);
     void setPaymentType(const shared_ptr<PaymentType> &paymentType);

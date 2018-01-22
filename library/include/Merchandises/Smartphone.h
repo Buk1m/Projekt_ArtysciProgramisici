@@ -11,6 +11,7 @@
 
 using namespace std;
 
+
 class Smartphone : public Merchandise
 {
 private:
@@ -18,10 +19,10 @@ private:
     string display;
     string camera;
     string ram;
+
 public:
     explicit Smartphone(const string &name, const float &price, const string &processor,
                         const string &display, const string &camera, const string &ram);
-    explicit Smartphone(const shared_ptr<Smartphone> &smartphone);
     explicit Smartphone(const Smartphone* smartphone);
     ~Smartphone() = default;
 

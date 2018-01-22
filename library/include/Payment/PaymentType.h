@@ -13,6 +13,7 @@
 using namespace std;
 using namespace boost::uuids;
 
+
 class PaymentType
 {
 protected:
@@ -24,8 +25,8 @@ public:
     virtual ~PaymentType() = default;
 
     const float getPaymentPrice() const;
-    virtual float makeDiscount(int productsQuantity) = 0;
-    virtual const string getPaymentTypeName() = 0;
+    virtual float makeDiscount(const int &productsQuantity) const = 0;
+    virtual const string getPaymentTypeName() const = 0;
 };
 
 

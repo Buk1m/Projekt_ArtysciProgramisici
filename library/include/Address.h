@@ -8,11 +8,13 @@
 #include <string>
 using namespace std;
 
+
 class Address
 {
 private:
     string street;
     string number;
+
 public:
     explicit Address(const string &street, const string &number);
     ~Address() = default;

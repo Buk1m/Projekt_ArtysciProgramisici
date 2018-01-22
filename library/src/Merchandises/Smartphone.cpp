@@ -9,19 +9,19 @@
 
 Smartphone::Smartphone(const string &name, const float &price, const string &processor,
                        const string &display, const string &camera, const string &ram)
-        : Merchandise(name, price),
-          processor(processor),
-          display(display),
-          camera(camera),
-          ram(ram)
+           : Merchandise(name, price),
+             processor(processor),
+             display(display),
+             camera(camera),
+             ram(ram)
 {}
 
 Smartphone::Smartphone(const Smartphone* smartphone)
-        : Merchandise(smartphone->name, smartphone->price),
-          processor(smartphone->processor),
-          camera(smartphone->camera),
-          ram(smartphone->ram),
-          display(smartphone->display)
+           : Merchandise(smartphone->name, smartphone->price),
+             processor(smartphone->processor),
+             camera(smartphone->camera),
+             ram(smartphone->ram),
+             display(smartphone->display)
 {}
 
 string Smartphone::getSpecification() const
@@ -41,7 +41,7 @@ string Smartphone::getSpecification() const
 
 vector<shared_ptr<Smartphone>> Smartphone::resupply(const int &quantity)
 {
-    if(quantity < 0)
+    if(quantity <= 0)
     {
         throw INVALID_QUANTITY_EXCEPTION;
     }
